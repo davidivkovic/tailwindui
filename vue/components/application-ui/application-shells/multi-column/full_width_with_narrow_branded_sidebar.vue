@@ -1,8 +1,16 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="h-screen flex bg-gray-50 overflow-hidden">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-50">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex">
     <TransitionRoot as="template" :show="mobileMenuOpen">
-      <Dialog as="div" static class="fixed inset-0 flex z-40 lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+      <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="mobileMenuOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <DialogOverlay class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -39,9 +47,7 @@
                     <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">
                       {{ user.name }}
                     </p>
-                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
-                      Account Settings
-                    </p>
+                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">Account Settings</p>
                   </div>
                 </div>
               </a>
@@ -57,9 +63,9 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-20">
-        <div class="flex flex-col h-0 flex-1 overflow-y-auto bg-indigo-600">
-          <div class="flex-1 flex flex-col">
-            <div class="flex-shrink-0 bg-indigo-700 py-4 flex items-center justify-center">
+        <div class="flex-1 flex flex-col min-h-0 overflow-y-auto bg-indigo-600">
+          <div class="flex-1">
+            <div class="bg-indigo-700 py-4 flex items-center justify-center">
               <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="Workflow" />
             </div>
             <nav aria-label="Sidebar" class="py-6 flex flex-col items-center space-y-3">
@@ -76,9 +82,7 @@
                 <p>
                   {{ user.name }}
                 </p>
-                <p>
-                  Account settings
-                </p>
+                <p>Account settings</p>
               </div>
             </a>
           </div>
@@ -103,20 +107,18 @@
       </div>
 
       <main class="flex-1 flex overflow-hidden">
-        <div class="flex-1 flex xl:overflow-hidden">
-          <!-- Primary column -->
-          <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
-            <h1 id="primary-heading" class="sr-only">Account</h1>
-            <!-- Your content -->
-          </section>
+        <!-- Primary column -->
+        <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-y-auto lg:order-last">
+          <h1 id="primary-heading" class="sr-only">Account</h1>
+          <!-- Your content -->
+        </section>
 
-          <!-- Secondary column (hidden on smaller screens) -->
-          <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-            <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-white">
-              <!-- Your content -->
-            </div>
-          </aside>
-        </div>
+        <!-- Secondary column (hidden on smaller screens) -->
+        <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
+          <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-white overflow-y-auto">
+            <!-- Your content -->
+          </div>
+        </aside>
       </main>
     </div>
   </div>
@@ -129,6 +131,7 @@ import { BookmarkAltIcon, FireIcon, HomeIcon, InboxIcon, MenuIcon, UserIcon, XIc
 
 const user = {
   name: 'Emily Selman',
+  email: 'emily.selman@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }

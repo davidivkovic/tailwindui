@@ -7,7 +7,7 @@
           <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Meet our team</h2>
           <p class="text-xl text-gray-300">Ornare sagittis, suspendisse in hendrerit quis. Sed dui aliquet lectus sit pretium egestas vel mattis neque.</p>
         </div>
-        <ul class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
+        <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
           <li v-for="person in people" :key="person.name" class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
               <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" :src="person.imageUrl" alt="" />
@@ -17,7 +17,7 @@
                   <p class="text-indigo-400">{{ person.role }}</p>
                 </div>
 
-                <ul class="flex justify-center space-x-5">
+                <ul role="list" class="flex justify-center space-x-5">
                   <li>
                     <a :href="person.twitterUrl" class="text-gray-400 hover:text-gray-300">
                       <span class="sr-only">Twitter</span>

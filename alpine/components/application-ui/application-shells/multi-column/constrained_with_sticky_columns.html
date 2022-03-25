@@ -4,7 +4,7 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div style="max-height: 800px;" class="overflow-y-auto">
+<div class="h-0 min-h-[800px] bg-gray-100">
     
   <div class="min-h-screen bg-gray-100">
     <header class="bg-white shadow-sm lg:static lg:overflow-y-visible" x-description="When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars" x-state:on="Open" x-state:off="Closed" :class="{ 'fixed inset-0 z-40 overflow-y-auto': open }" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
@@ -87,13 +87,13 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
       <nav x-description="Mobile menu, show/hide based on menu state." class="lg:hidden" aria-label="Global" x-ref="panel" x-show="open" @click.away="open = false">
         <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
           
-            <a href="#" aria-current="page" class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;hover:bg-gray-50&quot;">Dashboard</a>
+            <a href="#" aria-current="page" class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;hover:bg-gray-50&quot;">Dashboard</a>
           
-            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Calendar</a>
+            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Calendar</a>
           
-            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Teams</a>
+            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Teams</a>
           
-            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Directory</a>
+            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Directory</a>
           
         </div>
         <div class="border-t border-gray-200 pt-4 pb-3">
@@ -103,7 +103,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
             </div>
             <div class="ml-3">
               <div class="text-base font-medium text-gray-800">Chelsea Hagon</div>
-              <div class="text-sm font-medium text-gray-500">chelseahagon@example.com</div>
+              <div class="text-sm font-medium text-gray-500">chelsea.hagon@example.com</div>
             </div>
             <button type="button" class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               <span class="sr-only">View notifications</span>

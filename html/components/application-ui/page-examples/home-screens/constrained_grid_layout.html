@@ -16,18 +16,26 @@
           teal: colors.teal,
           cyan: colors.cyan,
           rose: colors.rose,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
       require('@tailwindcss/line-clamp'),
-    ]
+    ],
   }
   ```
 -->
-<div class="relative min-h-screen bg-gray-100">
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+<div class="min-h-full">
   <header class="pb-24 bg-gradient-to-r from-sky-800 to-cyan-600">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
@@ -87,25 +95,15 @@
             <!-- Left nav -->
             <div class="hidden lg:block lg:col-span-2">
               <nav class="flex space-x-4">
-                <a href="#" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page">
-                  Home
-                </a>
+                <a href="#" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> Home </a>
 
-                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10">
-                  Profile
-                </a>
+                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Profile </a>
 
-                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10">
-                  Resources
-                </a>
+                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Resources </a>
 
-                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10">
-                  Company Directory
-                </a>
+                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Company Directory </a>
 
-                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10">
-                  Openings
-                </a>
+                <a href="#" class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Openings </a>
               </nav>
             </div>
             <div class="px-12 lg:px-0">
@@ -212,9 +210,9 @@
               </div>
               <div class="ml-3 min-w-0 flex-1">
                 <div class="text-base font-medium text-gray-800 truncate">Chelsea Hagon</div>
-                <div class="text-sm font-medium text-gray-500 truncate">chelseahagon@example.com</div>
+                <div class="text-sm font-medium text-gray-500 truncate">chelsea.hagon@example.com</div>
               </div>
-              <button class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+              <button type="button" class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
                 <span class="sr-only">View notifications</span>
                 <!-- Heroicon name: outline/bell -->
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -258,9 +256,7 @@
                     </div>
                   </div>
                   <div class="mt-5 flex justify-center sm:mt-0">
-                    <a href="#" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                      View profile
-                    </a>
+                    <a href="#" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View profile </a>
                   </div>
                 </div>
               </div>
@@ -305,9 +301,7 @@
                       Request time off
                     </a>
                   </h3>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                  </p>
+                  <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                 </div>
                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -333,9 +327,7 @@
                       Benefits
                     </a>
                   </h3>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                  </p>
+                  <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                 </div>
                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -361,9 +353,7 @@
                       Schedule a one-on-one
                     </a>
                   </h3>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                  </p>
+                  <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                 </div>
                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -389,9 +379,7 @@
                       Payroll
                     </a>
                   </h3>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                  </p>
+                  <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                 </div>
                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -417,9 +405,7 @@
                       Submit an expense
                     </a>
                   </h3>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                  </p>
+                  <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                 </div>
                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -447,9 +433,7 @@
                       Training
                     </a>
                   </h3>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                  </p>
+                  <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                 </div>
                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -469,7 +453,7 @@
               <div class="p-6">
                 <h2 class="text-base font-medium text-gray-900" id="announcements-title">Announcements</h2>
                 <div class="flow-root mt-6">
-                  <ul class="-my-5 divide-y divide-gray-200">
+                  <ul role="list" class="-my-5 divide-y divide-gray-200">
                     <li class="py-5">
                       <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
                         <h3 class="text-sm font-semibold text-gray-800">
@@ -479,9 +463,7 @@
                             Office closed on July 2nd
                           </a>
                         </h3>
-                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                          Cum qui rem deleniti. Suscipit in dolor veritatis sequi aut. Vero ut earum quis deleniti. Ut a sunt eum cum ut repudiandae possimus. Nihil ex tempora neque cum consectetur dolores.
-                        </p>
+                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">Cum qui rem deleniti. Suscipit in dolor veritatis sequi aut. Vero ut earum quis deleniti. Ut a sunt eum cum ut repudiandae possimus. Nihil ex tempora neque cum consectetur dolores.</p>
                       </div>
                     </li>
 
@@ -494,9 +476,7 @@
                             New password policy
                           </a>
                         </h3>
-                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                          Alias inventore ut autem optio voluptas et repellendus. Facere totam quaerat quam quo laudantium cumque eaque excepturi vel. Accusamus maxime ipsam reprehenderit rerum id repellendus rerum. Culpa cum vel natus. Est sit autem mollitia.
-                        </p>
+                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">Alias inventore ut autem optio voluptas et repellendus. Facere totam quaerat quam quo laudantium cumque eaque excepturi vel. Accusamus maxime ipsam reprehenderit rerum id repellendus rerum. Culpa cum vel natus. Est sit autem mollitia.</p>
                       </div>
                     </li>
 
@@ -509,17 +489,13 @@
                             Office closed on July 2nd
                           </a>
                         </h3>
-                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                          Tenetur libero voluptatem rerum occaecati qui est molestiae exercitationem. Voluptate quisquam iure assumenda consequatur ex et recusandae. Alias consectetur voluptatibus. Accusamus a ab dicta et. Consequatur quis dignissimos voluptatem nisi.
-                        </p>
+                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">Tenetur libero voluptatem rerum occaecati qui est molestiae exercitationem. Voluptate quisquam iure assumenda consequatur ex et recusandae. Alias consectetur voluptatibus. Accusamus a ab dicta et. Consequatur quis dignissimos voluptatem nisi.</p>
                       </div>
                     </li>
                   </ul>
                 </div>
                 <div class="mt-6">
-                  <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                    View all
-                  </a>
+                  <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
                 </div>
               </div>
             </div>
@@ -531,24 +507,18 @@
               <div class="p-6">
                 <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Recent Hires</h2>
                 <div class="flow-root mt-6">
-                  <ul class="-my-5 divide-y divide-gray-200">
+                  <ul role="list" class="-my-5 divide-y divide-gray-200">
                     <li class="py-4">
                       <div class="flex items-center space-x-4">
                         <div class="flex-shrink-0">
                           <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                         </div>
                         <div class="flex-1 min-w-0">
-                          <p class="text-sm font-medium text-gray-900 truncate">
-                            Leonard Krasner
-                          </p>
-                          <p class="text-sm text-gray-500 truncate">
-                            @leonardkrasner
-                          </p>
+                          <p class="text-sm font-medium text-gray-900 truncate">Leonard Krasner</p>
+                          <p class="text-sm text-gray-500 truncate">@leonardkrasner</p>
                         </div>
                         <div>
-                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-                            View
-                          </a>
+                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> View </a>
                         </div>
                       </div>
                     </li>
@@ -559,17 +529,11 @@
                           <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                         </div>
                         <div class="flex-1 min-w-0">
-                          <p class="text-sm font-medium text-gray-900 truncate">
-                            Floyd Miles
-                          </p>
-                          <p class="text-sm text-gray-500 truncate">
-                            @floydmiles
-                          </p>
+                          <p class="text-sm font-medium text-gray-900 truncate">Floyd Miles</p>
+                          <p class="text-sm text-gray-500 truncate">@floydmiles</p>
                         </div>
                         <div>
-                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-                            View
-                          </a>
+                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> View </a>
                         </div>
                       </div>
                     </li>
@@ -580,17 +544,11 @@
                           <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                         </div>
                         <div class="flex-1 min-w-0">
-                          <p class="text-sm font-medium text-gray-900 truncate">
-                            Emily Selman
-                          </p>
-                          <p class="text-sm text-gray-500 truncate">
-                            @emilyselman
-                          </p>
+                          <p class="text-sm font-medium text-gray-900 truncate">Emily Selman</p>
+                          <p class="text-sm text-gray-500 truncate">@emilyselman</p>
                         </div>
                         <div>
-                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-                            View
-                          </a>
+                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> View </a>
                         </div>
                       </div>
                     </li>
@@ -601,26 +559,18 @@
                           <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                         </div>
                         <div class="flex-1 min-w-0">
-                          <p class="text-sm font-medium text-gray-900 truncate">
-                            Kristin Watson
-                          </p>
-                          <p class="text-sm text-gray-500 truncate">
-                            @kristinwatson
-                          </p>
+                          <p class="text-sm font-medium text-gray-900 truncate">Kristin Watson</p>
+                          <p class="text-sm text-gray-500 truncate">@kristinwatson</p>
                         </div>
                         <div>
-                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-                            View
-                          </a>
+                          <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> View </a>
                         </div>
                       </div>
                     </li>
                   </ul>
                 </div>
                 <div class="mt-6">
-                  <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                    View all
-                  </a>
+                  <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
                 </div>
               </div>
             </div>

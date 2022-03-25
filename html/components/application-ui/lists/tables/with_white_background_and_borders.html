@@ -1,0 +1,81 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="px-4 sm:px-6 lg:px-8">
+  <div class="sm:flex sm:items-center">
+    <div class="sm:flex-auto">
+      <h1 class="text-xl font-semibold text-gray-900">Plans</h1>
+      <p class="mt-2 text-sm text-gray-700">Your team is on the <strong class="font-semibold text-gray-900">Startup</strong> plan. The next payment of $80 will be due on August 4, 2022.</p>
+    </div>
+    <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+      <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Update credit card</button>
+    </div>
+  </div>
+  <div class="-mx-4 mt-10 ring-1 ring-gray-300 sm:-mx-6 md:mx-0 md:rounded-lg">
+    <table class="min-w-full divide-y divide-gray-300">
+      <thead>
+        <tr>
+          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Plan</th>
+          <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Memory</th>
+          <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">CPU</th>
+          <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Storage</th>
+          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Price</th>
+          <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+            <span class="sr-only">Select</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="relative py-4 pl-4 sm:pl-6 pr-3 text-sm">
+            <div class="font-medium text-gray-900">Hobby</div>
+            <div class="mt-1 flex flex-col text-gray-500 sm:block lg:hidden">
+              <span>4 GB RAM / 4 CPUs</span>
+              <span class="hidden sm:inline"> · </span>
+              <span>128 GB SSD disk</span>
+            </div>
+          </td>
+          <td class="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">4 GB RAM</td>
+          <td class="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">4 CPUs</td>
+          <td class="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">128 GB SSD disk</td>
+          <td class="px-3 py-3.5 text-sm text-gray-500">
+            <div class="sm:hidden">$40/mo</div>
+            <div class="hidden sm:block">$40/month</div>
+          </td>
+          <td class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-medium">
+            <button type="button" class="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-30">Select<span class="sr-only">, Hobby</span></button>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="relative py-4 pl-4 sm:pl-6 pr-3 text-sm border-t border-transparent">
+            <div class="font-medium text-gray-900">
+              Startup
+
+              <span class="text-indigo-600">(Current Plan)</span>
+            </div>
+            <div class="mt-1 flex flex-col text-gray-500 sm:block lg:hidden">
+              <span>8 GB RAM / 6 CPUs</span>
+              <span class="hidden sm:inline"> · </span>
+              <span>256 GB SSD disk</span>
+            </div>
+
+            <div class="absolute right-0 left-6 -top-px h-px bg-gray-200"></div>
+          </td>
+          <td class="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell border-t border-gray-200">8 GB RAM</td>
+          <td class="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell border-t border-gray-200">6 CPUs</td>
+          <td class="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell border-t border-gray-200">256 GB SSD disk</td>
+          <td class="px-3 py-3.5 text-sm text-gray-500 border-t border-gray-200">
+            <div class="sm:hidden">$80/mo</div>
+            <div class="hidden sm:block">$80/month</div>
+          </td>
+          <td class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-medium border-t border-transparent">
+            <button type="button" class="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-30" disabled>Select<span class="sr-only">, Startup</span></button>
+
+            <div class="absolute right-6 left-0 -top-px h-px bg-gray-200"></div>
+          </td>
+        </tr>
+
+        <!-- More plans... -->
+      </tbody>
+    </table>
+  </div>
+</div>

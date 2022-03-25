@@ -10,12 +10,23 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative min-h-screen flex flex-col">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full">
+    <body class="h-full">
+    ```
+  -->
+  <!-- Background color split screen for large screens -->
+  <div class="fixed top-0 left-0 w-1/2 h-full bg-white" aria-hidden="true" />
+  <div class="fixed top-0 right-0 w-1/2 h-full bg-gray-50" aria-hidden="true" />
+  <div class="relative min-h-full flex flex-col">
     <!-- Navbar -->
     <Disclosure as="nav" class="flex-shrink-0 bg-indigo-600" v-slot="{ open }">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -76,11 +87,11 @@
 
       <DisclosurePanel class="lg:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'text-white bg-indigo-800' : 'text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+          <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'text-white bg-indigo-800' : 'text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
         </div>
         <div class="pt-4 pb-3 border-t border-indigo-800">
           <div class="px-2 space-y-1">
-            <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">{{ item.name }}</a>
+            <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">{{ item.name }}</DisclosureButton>
           </div>
         </div>
       </DisclosurePanel>
@@ -113,12 +124,8 @@
                   </div>
                   <!-- Action buttons -->
                   <div class="flex flex-col sm:flex-row xl:flex-col">
-                    <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 xl:w-full">
-                      New Project
-                    </button>
-                    <button type="button" class="mt-3 inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 xl:ml-0 xl:mt-3 xl:w-full">
-                      Invite Team
-                    </button>
+                    <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 xl:w-full">New Project</button>
+                    <button type="button" class="mt-3 inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 xl:ml-0 xl:mt-3 xl:w-full">Invite Team</button>
                   </div>
                 </div>
                 <!-- Meta info -->
@@ -164,7 +171,7 @@
               </Menu>
             </div>
           </div>
-          <ul class="relative z-0 divide-y divide-gray-200 border-b border-gray-200">
+          <ul role="list" class="relative z-0 divide-y divide-gray-200 border-b border-gray-200">
             <li v-for="project in projects" :key="project.repo" class="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6">
               <div class="flex items-center justify-between space-x-4">
                 <!-- Repo name and link -->
@@ -198,10 +205,8 @@
                 <!-- Repo meta info -->
                 <div class="hidden sm:flex flex-col flex-shrink-0 items-end space-y-3">
                   <p class="flex items-center space-x-4">
-                    <a :href="project.siteHref" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
-                      Visit site
-                    </a>
-                    <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                    <a :href="project.siteHref" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium"> Visit site </a>
+                    <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                       <span class="sr-only">{{ project.starred ? 'Add to favorites' : 'Remove from favorites' }}</span>
                       <StarIcon :class="[project.starred ? 'text-yellow-300 hover:text-yellow-400' : 'text-gray-300 hover:text-gray-400', 'h-5 w-5']" aria-hidden="true" />
                     </button>
@@ -226,7 +231,7 @@
             <h2 class="text-sm font-semibold">Activity</h2>
           </div>
           <div>
-            <ul class="divide-y divide-gray-200">
+            <ul role="list" class="divide-y divide-gray-200">
               <li v-for="item in activityItems" :key="item.commit" class="py-4">
                 <div class="flex space-x-3">
                   <img class="h-6 w-6 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80" alt="" />
@@ -251,7 +256,6 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import {
   BadgeCheckIcon,
@@ -313,14 +317,11 @@ export default {
     XIcon,
   },
   setup() {
-    const open = ref(false)
-
     return {
       navigation,
       userNavigation,
       projects,
       activityItems,
-      open,
     }
   },
 }

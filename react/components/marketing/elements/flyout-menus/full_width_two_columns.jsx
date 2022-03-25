@@ -42,7 +42,7 @@ const blogPosts = [
     href: '#',
     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
     imageUrl:
-      'https://images.unsplash.com/1/apple-gear-looking-pretty.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
+      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
   },
 ]
 
@@ -76,7 +76,6 @@ export default function Example() {
           </div>
 
           <Transition
-            show={open}
             as={Fragment}
             enter="transition ease-out duration-200"
             enterFrom="opacity-0 -translate-y-1"
@@ -85,7 +84,7 @@ export default function Example() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-1"
           >
-            <Popover.Panel static className="absolute z-10 inset-x-0 transform shadow-lg">
+            <Popover.Panel className="absolute z-10 inset-x-0 transform shadow-lg">
               <div className="absolute inset-0 flex" aria-hidden="true">
                 <div className="bg-white w-1/2" />
                 <div className="bg-gray-50 w-1/2" />
@@ -100,7 +99,7 @@ export default function Example() {
                   </h2>
                   <div>
                     <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
-                    <ul className="mt-5 space-y-6">
+                    <ul role="list" className="mt-5 space-y-6">
                       {company.map((item) => (
                         <li key={item.name} className="flow-root">
                           <a
@@ -116,7 +115,7 @@ export default function Example() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
-                    <ul className="mt-5 space-y-6">
+                    <ul role="list" className="mt-5 space-y-6">
                       {resources.map((item) => (
                         <li key={item.name} className="flow-root">
                           <a
@@ -134,7 +133,7 @@ export default function Example() {
                 <div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                   <div>
                     <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">From the blog</h3>
-                    <ul className="mt-6 space-y-6">
+                    <ul role="list" className="mt-6 space-y-6">
                       {blogPosts.map((post) => (
                         <li key={post.id} className="flow-root">
                           <a

@@ -6,7 +6,15 @@
 -->
 <div class="bg-white">
     
-  <div class="min-h-screen flex flex-col">
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full">
+  <body class="h-full">
+  ```
+  -->
+  <div class="min-h-full flex flex-col">
     <div class="relative bg-white" x-data="Components.popover({ open: false, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">

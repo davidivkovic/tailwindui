@@ -8,25 +8,17 @@
         <div v-if="show" class="max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5 divide-x divide-gray-200">
           <div class="w-0 flex-1 flex items-center p-4">
             <div class="w-full">
-              <p class="text-sm font-medium text-gray-900">
-                Receive notifications
-              </p>
-              <p class="mt-1 text-sm text-gray-500">
-                Notications may include alerts, sounds, and badges.
-              </p>
+              <p class="text-sm font-medium text-gray-900">Receive notifications</p>
+              <p class="mt-1 text-sm text-gray-500">Notifications may include alerts, sounds, and badges.</p>
             </div>
           </div>
           <div class="flex">
             <div class="flex flex-col divide-y divide-gray-200">
               <div class="h-0 flex-1 flex">
-                <button @click="show = false" class="w-full border border-transparent rounded-none rounded-tr-lg px-4 py-3 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:z-10 focus:ring-2 focus:ring-indigo-500">
-                  Reply
-                </button>
+                <button @click="show = false" class="w-full border border-transparent rounded-none rounded-tr-lg px-4 py-3 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:z-10 focus:ring-2 focus:ring-indigo-500">Reply</button>
               </div>
               <div class="h-0 flex-1 flex">
-                <button @click="show = false" class="w-full border border-transparent rounded-none rounded-br-lg px-4 py-3 flex items-center justify-center text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                  Don't allow
-                </button>
+                <button @click="show = false" class="w-full border border-transparent rounded-none rounded-br-lg px-4 py-3 flex items-center justify-center text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">Don't allow</button>
               </div>
             </div>
           </div>

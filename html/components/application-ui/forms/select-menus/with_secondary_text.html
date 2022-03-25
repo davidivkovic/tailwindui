@@ -1,25 +1,11 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<!--
-  Custom select controls like this require a considerable amount of JS to implement from scratch. We're planning
-  to build some low-level libraries to make this easier with popular frameworks like React, Vue, and even Alpine.js
-  in the near future, but in the mean time we recommend these reference guides when building your implementation:
-
-  https://www.w3.org/TR/wai-aria-practices/#Listbox
-  https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
--->
 <div>
-  <label id="listbox-label" class="block text-sm font-medium text-gray-700">
-    Assigned to
-  </label>
+  <label id="listbox-label" class="block text-sm font-medium text-gray-700"> Assigned to </label>
   <div class="mt-1 relative">
     <button type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
       <span class="w-full inline-flex truncate">
-        <span class="truncate">
-          Tom Cook
-        </span>
-        <span class="ml-2 truncate text-gray-500">
-          @tomcook
-        </span>
+        <span class="truncate"> Tom Cook </span>
+        <span class="ml-2 truncate text-gray-500"> @tomcook </span>
       </span>
       <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
         <!-- Heroicon name: solid/selector -->
@@ -48,13 +34,9 @@
       <li class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9" id="listbox-option-0" role="option">
         <div class="flex">
           <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-          <span class="font-normal truncate">
-            Wade Cooper
-          </span>
+          <span class="font-normal truncate"> Wade Cooper </span>
           <!-- Highlighted: "text-indigo-200", Not Highlighted: "text-gray-500" -->
-          <span class="text-gray-500 ml-2 truncate">
-            @wadecooper
-          </span>
+          <span class="text-gray-500 ml-2 truncate"> @wadecooper </span>
         </div>
 
         <!--

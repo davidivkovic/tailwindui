@@ -13,21 +13,29 @@
       extend: {
         colors: {
           rose: colors.rose,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
       require('@tailwindcss/typography'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative h-screen flex overflow-hidden bg-white">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-white">
+    <body class="h-full">
+    ```
+  -->
+  <div class="min-h-full flex">
     <TransitionRoot as="template" :show="sidebarOpen">
-      <Dialog as="div" static class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false" :open="sidebarOpen">
+      <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <DialogOverlay class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -53,9 +61,7 @@
                   </a>
                 </div>
                 <div class="mt-10">
-                  <p class="px-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Projects
-                  </p>
+                  <p class="px-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Projects</p>
                   <div class="mt-2 space-y-1">
                     <a v-for="project in projects" :key="project.id" :href="project.href" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-2 py-2 text-base font-medium rounded-md">
                       <span class="truncate">{{ project.name }}</span>
@@ -73,40 +79,36 @@
     </TransitionRoot>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden lg:flex lg:flex-shrink-0">
-      <div class="flex flex-col w-64">
-        <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex flex-col h-0 flex-1">
-          <div class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-rose-500-mark-white-text.svg" alt="Workflow" />
-          </div>
-          <div class="flex-1 flex flex-col overflow-y-auto">
-            <nav class="flex-1 px-2 py-4 bg-gray-800">
-              <div class="space-y-1">
-                <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
-                  <component :is="item.icon" :class="[item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300', 'mr-3 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
-                  {{ item.name }}
+    <div class="hidden lg:flex lg:w-64 lg:fixed lg:inset-y-0">
+      <!-- Sidebar component, swap this element with another sidebar if you like -->
+      <div class="flex-1 flex flex-col min-h-0">
+        <div class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
+          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-rose-500-mark-white-text.svg" alt="Workflow" />
+        </div>
+        <div class="flex-1 flex flex-col overflow-y-auto bg-gray-800">
+          <nav class="flex-1 px-2 py-4">
+            <div class="space-y-1">
+              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
+                <component :is="item.icon" :class="[item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300', 'mr-3 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
+                {{ item.name }}
+              </a>
+            </div>
+            <div class="mt-10">
+              <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Projects</p>
+              <div class="mt-2 space-y-1">
+                <a v-for="project in projects" :key="project.id" :href="project.href" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700">
+                  <span class="truncate">
+                    {{ project.name }}
+                  </span>
                 </a>
               </div>
-              <div class="mt-10">
-                <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  Projects
-                </p>
-                <div class="mt-2 space-y-1">
-                  <a v-for="project in projects" :key="project.id" :href="project.href" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700">
-                    <span class="truncate">
-                      {{ project.name }}
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </nav>
-          </div>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
-    <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <div class="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200">
+    <div class="lg:pl-64 flex flex-col w-0 flex-1">
+      <div class="sticky top-0 z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200">
         <button type="button" class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900 lg:hidden" @click="sidebarOpen = true">
           <span class="sr-only">Open sidebar</span>
           <MenuAlt2Icon class="h-6 w-6" aria-hidden="true" />
@@ -124,14 +126,12 @@
             </form>
           </div>
           <div class="ml-4 flex items-center lg:ml-6">
-            <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-              Create
-            </button>
+            <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Create</button>
           </div>
         </div>
       </div>
 
-      <main class="flex-1 relative overflow-y-auto focus:outline-none">
+      <main class="flex-1">
         <div class="py-8 xl:py-10">
           <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 xl:max-w-5xl xl:grid xl:grid-cols-3">
             <div class="xl:col-span-2 xl:pr-8 xl:border-r xl:border-gray-200">
@@ -180,7 +180,7 @@
                     <div class="mt-6 border-t border-b border-gray-200 py-6 space-y-8">
                       <div>
                         <h2 class="text-sm font-medium text-gray-500">Assignees</h2>
-                        <ul class="mt-3 space-y-3">
+                        <ul role="list" class="mt-3 space-y-3">
                           <li class="flex justify-start">
                             <a href="#" class="flex items-center space-x-3">
                               <div class="flex-shrink-0">
@@ -193,7 +193,7 @@
                       </div>
                       <div>
                         <h2 class="text-sm font-medium text-gray-500">Tags</h2>
-                        <ul class="mt-2 leading-8">
+                        <ul role="list" class="mt-2 leading-8">
                           <li class="inline">
                             <a href="#" class="relative inline-flex items-center rounded-full border border-gray-300 px-3 py-0.5">
                               <div class="absolute flex-shrink-0 flex items-center justify-center">
@@ -219,19 +219,11 @@
                   <div class="py-3 xl:pt-6 xl:pb-0">
                     <h2 class="sr-only">Description</h2>
                     <div class="prose max-w-none">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic? Commodi cumque similique id tempora molestiae deserunt at suscipit, dolor voluptatem, numquam, harum consequatur laboriosam voluptas tempore aut voluptatum alias?
-                      </p>
-                      <ul>
-                        <li>
-                          Tempor ultrices proin nunc fames nunc ut auctor vitae sed. Eget massa parturient vulputate fermentum id facilisis nam pharetra. Aliquet leo tellus.
-                        </li>
-                        <li>
-                          Turpis ac nunc adipiscing adipiscing metus tincidunt senectus tellus.
-                        </li>
-                        <li>
-                          Semper interdum porta sit tincidunt. Dui suspendisse scelerisque amet metus eget sed. Ut tellus in sed dignissim.
-                        </li>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic? Commodi cumque similique id tempora molestiae deserunt at suscipit, dolor voluptatem, numquam, harum consequatur laboriosam voluptas tempore aut voluptatum alias?</p>
+                      <ul role="list">
+                        <li>Tempor ultrices proin nunc fames nunc ut auctor vitae sed. Eget massa parturient vulputate fermentum id facilisis nam pharetra. Aliquet leo tellus.</li>
+                        <li>Turpis ac nunc adipiscing adipiscing metus tincidunt senectus tellus.</li>
+                        <li>Semper interdum porta sit tincidunt. Dui suspendisse scelerisque amet metus eget sed. Ut tellus in sed dignissim.</li>
                       </ul>
                     </div>
                   </div>
@@ -246,10 +238,10 @@
                     <div class="pt-6">
                       <!-- Activity feed-->
                       <div class="flow-root">
-                        <ul class="-mb-8">
+                        <ul role="list" class="-mb-8">
                           <li v-for="(item, itemIdx) in activity" :key="item.id">
                             <div class="relative pb-8">
-                              <span v-if="(itemIdx !== activity.length - 1)" class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+                              <span v-if="itemIdx !== activity.length - 1" class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
                               <div class="relative flex items-start space-x-3">
                                 <template v-if="item.type === 'comment'">
                                   <div class="relative">
@@ -351,9 +343,7 @@
                                   <CheckCircleIcon class="-ml-1 mr-2 h-5 w-5 text-green-500" aria-hidden="true" />
                                   <span>Close issue</span>
                                 </button>
-                                <button type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                                  Comment
-                                </button>
+                                <button type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Comment</button>
                               </div>
                             </form>
                           </div>
@@ -383,7 +373,7 @@
               <div class="mt-6 border-t border-gray-200 py-6 space-y-8">
                 <div>
                   <h2 class="text-sm font-medium text-gray-500">Assignees</h2>
-                  <ul class="mt-3 space-y-3">
+                  <ul role="list" class="mt-3 space-y-3">
                     <li class="flex justify-start">
                       <a href="#" class="flex items-center space-x-3">
                         <div class="flex-shrink-0">
@@ -396,7 +386,7 @@
                 </div>
                 <div>
                   <h2 class="text-sm font-medium text-gray-500">Tags</h2>
-                  <ul class="mt-2 leading-8">
+                  <ul role="list" class="mt-2 leading-8">
                     <li class="inline">
                       <a href="#" class="relative inline-flex items-center rounded-full border border-gray-300 px-3 py-0.5">
                         <div class="absolute flex-shrink-0 flex items-center justify-center">

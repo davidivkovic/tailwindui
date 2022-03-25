@@ -2,9 +2,7 @@
 <template>
   <div class="bg-gray-50">
     <div class="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-gray-900">
-        Frequently asked questions
-      </h2>
+      <h2 class="text-3xl font-extrabold text-gray-900">Frequently asked questions</h2>
       <div class="mt-8">
         <dl class="divide-y divide-gray-200">
           <div v-for="faq in faqs" :key="faq.id" class="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">

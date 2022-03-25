@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -170,13 +170,13 @@ export default function Example() {
 
             <div className="sm:col-span-3">
               <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                Country / Region
+                Country
               </label>
               <div className="mt-1">
                 <select
                   id="country"
                   name="country"
-                  autoComplete="country"
+                  autoComplete="country-name"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                 >
                   <option>United States</option>
@@ -210,34 +210,36 @@ export default function Example() {
                   type="text"
                   name="city"
                   id="city"
+                  autoComplete="address-level2"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="region" className="block text-sm font-medium text-gray-700">
                 State / Province
               </label>
               <div className="mt-1">
                 <input
                   type="text"
-                  name="state"
-                  id="state"
+                  name="region"
+                  id="region"
+                  autoComplete="address-level1"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="zip" className="block text-sm font-medium text-gray-700">
-                ZIP / Postal
+              <label htmlFor="postal-code" className="block text-sm font-medium text-gray-700">
+                ZIP / Postal code
               </label>
               <div className="mt-1">
                 <input
                   type="text"
-                  name="zip"
-                  id="zip"
+                  name="postal-code"
+                  id="postal-code"
                   autoComplete="postal-code"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                 />

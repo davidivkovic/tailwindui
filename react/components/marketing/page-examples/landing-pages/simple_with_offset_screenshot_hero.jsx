@@ -13,13 +13,13 @@
       extend: {
         colors: {
           rose: colors.rose,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */

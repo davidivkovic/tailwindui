@@ -10,11 +10,19 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="min-h-screen bg-gray-100">
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+<div class="min-h-full">
   <div class="bg-indigo-600 pb-32">
     <nav class="bg-indigo-600 border-b border-indigo-300 border-opacity-25 lg:border-none">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -26,25 +34,15 @@
             <div class="hidden lg:block lg:ml-10">
               <div class="flex space-x-4">
                 <!-- Current: "bg-indigo-700 text-white", Default: "text-white hover:bg-indigo-500 hover:bg-opacity-75" -->
-                <a href="#" class="bg-indigo-700 text-white rounded-md py-2 px-3 text-sm font-medium">
-                  Dashboard
-                </a>
+                <a href="#" class="bg-indigo-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page"> Dashboard </a>
 
-                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">
-                  Team
-                </a>
+                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium"> Team </a>
 
-                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">
-                  Projects
-                </a>
+                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium"> Projects </a>
 
-                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">
-                  Calendar
-                </a>
+                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium"> Calendar </a>
 
-                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">
-                  Reports
-                </a>
+                <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium"> Reports </a>
               </div>
             </div>
           </div>
@@ -86,7 +84,7 @@
           </div>
           <div class="hidden lg:block lg:ml-4">
             <div class="flex items-center">
-              <button class="bg-indigo-600 flex-shrink-0 rounded-full p-1 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white">
+              <button type="button" class="bg-indigo-600 flex-shrink-0 rounded-full p-1 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white">
                 <span class="sr-only">View notifications</span>
                 <!-- Heroicon name: outline/bell -->
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -115,17 +113,11 @@
                 -->
                 <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   <!-- Active: "bg-gray-100", Not Active: "" -->
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">
-                    Your Profile
-                  </a>
+                  <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"> Your Profile </a>
 
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">
-                    Settings
-                  </a>
+                  <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1"> Settings </a>
 
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">
-                    Sign out
-                  </a>
+                  <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2"> Sign out </a>
                 </div>
               </div>
             </div>
@@ -137,25 +129,15 @@
       <div class="lg:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
           <!-- Current: "bg-indigo-700 text-white", Default: "text-white hover:bg-indigo-500 hover:bg-opacity-75" -->
-          <a href="#" class="bg-indigo-700 text-white block rounded-md py-2 px-3 text-base font-medium">
-            Dashboard
-          </a>
+          <a href="#" class="bg-indigo-700 text-white block rounded-md py-2 px-3 text-base font-medium" aria-current="page"> Dashboard </a>
 
-          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">
-            Team
-          </a>
+          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium"> Team </a>
 
-          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">
-            Projects
-          </a>
+          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium"> Projects </a>
 
-          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">
-            Calendar
-          </a>
+          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium"> Calendar </a>
 
-          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">
-            Reports
-          </a>
+          <a href="#" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium"> Reports </a>
         </div>
         <div class="pt-4 pb-3 border-t border-indigo-700">
           <div class="px-5 flex items-center">
@@ -166,7 +148,7 @@
               <div class="text-base font-medium text-white">Tom Cook</div>
               <div class="text-sm font-medium text-indigo-300">tom@example.com</div>
             </div>
-            <button class="ml-auto bg-indigo-600 flex-shrink-0 rounded-full p-1 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white">
+            <button type="button" class="ml-auto bg-indigo-600 flex-shrink-0 rounded-full p-1 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white">
               <span class="sr-only">View notifications</span>
               <!-- Heroicon name: outline/bell -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -175,26 +157,18 @@
             </button>
           </div>
           <div class="mt-3 px-2 space-y-1">
-            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75">
-              Your Profile
-            </a>
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75"> Your Profile </a>
 
-            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75">
-              Settings
-            </a>
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75"> Settings </a>
 
-            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75">
-              Sign out
-            </a>
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75"> Sign out </a>
           </div>
         </div>
       </div>
     </nav>
     <header class="py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-white">
-          Dashboard
-        </h1>
+        <h1 class="text-3xl font-bold text-white">Dashboard</h1>
       </div>
     </header>
   </div>

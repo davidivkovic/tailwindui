@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
   }
   ```
 */
@@ -20,8 +20,7 @@ const people = [
     role: 'Senior Front-end Developer',
     imageUrl:
       'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio:
-      'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
     twitterUrl: '#',
     linkedinUrl: '#',
   },
@@ -41,7 +40,10 @@ export default function Example() {
             </p>
           </div>
           <div className="lg:col-span-2">
-            <ul className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
+            <ul
+              role="list"
+              className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8"
+            >
               {people.map((person) => (
                 <li key={person.name}>
                   <div className="space-y-4">
@@ -56,7 +58,7 @@ export default function Example() {
                       <p className="text-gray-500">{person.bio}</p>
                     </div>
 
-                    <ul className="flex space-x-5">
+                    <ul role="list" className="flex space-x-5">
                       <li>
                         <a href={person.twitterUrl} className="text-gray-400 hover:text-gray-500">
                           <span className="sr-only">Twitter</span>

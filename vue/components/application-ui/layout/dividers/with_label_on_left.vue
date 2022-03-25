@@ -5,9 +5,7 @@
       <div class="w-full border-t border-gray-300" />
     </div>
     <div class="relative flex justify-start">
-      <span class="pr-2 bg-white text-sm text-gray-500">
-        Continue
-      </span>
+      <span class="pr-2 bg-white text-sm text-gray-500"> Continue </span>
     </div>
   </div>
 </template>

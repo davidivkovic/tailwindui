@@ -1,10 +1,10 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <nav aria-label="Progress">
-    <ol class="overflow-hidden">
+    <ol role="list" class="overflow-hidden">
       <li v-for="(step, stepIdx) in steps" :key="step.name" :class="[stepIdx !== steps.length - 1 ? 'pb-10' : '', 'relative']">
         <template v-if="step.status === 'complete'">
-          <div v-if="(stepIdx !== steps.length - 1)" class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-indigo-600" aria-hidden="true" />
+          <div v-if="stepIdx !== steps.length - 1" class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-indigo-600" aria-hidden="true" />
           <a :href="step.href" class="relative flex items-start group">
             <span class="h-9 flex items-center">
               <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-indigo-600 rounded-full group-hover:bg-indigo-800">
@@ -18,7 +18,7 @@
           </a>
         </template>
         <template v-else-if="step.status === 'current'" condition="step.status === 'current'">
-          <div v-if="(stepIdx !== steps.length - 1)" class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true" />
+          <div v-if="stepIdx !== steps.length - 1" class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true" />
           <a :href="step.href" class="relative flex items-start group" aria-current="step">
             <span class="h-9 flex items-center" aria-hidden="true">
               <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-indigo-600 rounded-full">
@@ -32,7 +32,7 @@
           </a>
         </template>
         <template v-else>
-          <div v-if="(stepIdx !== steps.length - 1)" class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true" />
+          <div v-if="stepIdx !== steps.length - 1" class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true" />
           <a :href="step.href" class="relative flex items-start group">
             <span class="h-9 flex items-center" aria-hidden="true">
               <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">

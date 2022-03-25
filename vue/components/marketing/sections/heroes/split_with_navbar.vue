@@ -52,12 +52,8 @@
               </transition>
             </Popover>
 
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
-            </a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Docs
-            </a>
+            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Pricing </a>
+            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Docs </a>
 
             <Popover class="relative" v-slot="{ open }">
               <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
@@ -83,10 +79,8 @@
                     </div>
                     <div class="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                       <div>
-                        <h3 class="text-sm tracking-wide font-medium text-gray-500 uppercase">
-                          Recent Posts
-                        </h3>
-                        <ul class="mt-4 space-y-4">
+                        <h3 class="text-sm tracking-wide font-medium text-gray-500 uppercase">Recent Posts</h3>
+                        <ul role="list" class="mt-4 space-y-4">
                           <li v-for="item in recentPosts" :key="item.id" class="text-base truncate">
                             <a :href="item.href" class="font-medium text-gray-900 hover:text-gray-700">
                               {{ item.name }}
@@ -104,12 +98,8 @@
             </Popover>
           </PopoverGroup>
           <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-              Sign in
-            </a>
-            <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-              Sign up
-            </a>
+            <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> Sign in </a>
+            <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
           </div>
         </div>
       </div>
@@ -142,26 +132,18 @@
             </div>
             <div class="py-6 px-5 space-y-6">
               <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Pricing
-                </a>
+                <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Pricing </a>
 
-                <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Docs
-                </a>
+                <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Docs </a>
                 <a v-for="item in resources" :key="item.name" :href="item.href" class="text-base font-medium text-gray-900 hover:text-gray-700">
                   {{ item.name }}
                 </a>
               </div>
               <div>
-                <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                  Sign up
-                </a>
+                <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
                 <p class="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?
-                  <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-500"> Sign in </a>
                 </p>
               </div>
             </div>
@@ -178,19 +160,13 @@
             {{ ' ' }}
             <span class="block text-indigo-600 xl:inline">online business</span>
           </h1>
-          <p class="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
-          </p>
+          <p class="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
           <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div class="rounded-md shadow">
-              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                Get started
-              </a>
+              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Get started </a>
             </div>
             <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                Live demo
-              </a>
+              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"> Live demo </a>
             </div>
           </div>
         </div>

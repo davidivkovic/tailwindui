@@ -4,7 +4,17 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div class="relative min-h-screen bg-white">
+<div class="min-h-[1024px] bg-white">
+    
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+  -->
+  <div class="min-h-full">
     <!-- Navbar -->
     <nav x-data="{ open: false }" class="bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +70,7 @@
           <!-- Actions section -->
           <div class="hidden lg:block lg:ml-4">
             <div class="flex items-center">
-              <button class="bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
+              <button type="button" class="bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
                 <span class="sr-only">View notifications</span>
                 <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -117,9 +127,9 @@
             </div>
             <div class="ml-3">
               <div class="text-base font-medium text-gray-800">Whitney Francis</div>
-              <div class="text-sm font-medium text-gray-500">whitneyfrancis@example.com</div>
+              <div class="text-sm font-medium text-gray-500">whitney.francis@example.com</div>
             </div>
-            <button class="ml-auto bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
+            <button type="button" class="ml-auto bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
               <span class="sr-only">View notifications</span>
               <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -144,7 +154,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:flex xl:items-center xl:justify-between">
         <div class="flex-1 min-w-0">
           <nav class="flex" aria-label="Breadcrumb">
-            <ol class="flex items-center space-x-4" role="list">
+            <ol role="list" class="flex items-center space-x-4">
               <li>
                 <div>
                   <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-700">Jobs</a>
@@ -212,14 +222,7 @@
           </span>
 
           <span class="sm:ml-3 relative z-0">
-            <!--
-  Custom select controls like this require a considerable amount of JS to implement from scratch. We're planning
-  to build some low-level libraries to make this easier with popular frameworks like React, Vue, and even Alpine.js
-  in the near future, but in the mean time we recommend these reference guides when building your implementation:
-
-  https://www.w3.org/TR/wai-aria-practices/#Listbox
-  https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
---><div x-data="Components.listbox({ modelName: 'selected', open: false, selectedIndex: 0, activeIndex: 0, items: [{&quot;name&quot;:&quot;Published&quot;,&quot;description&quot;:&quot;This job posting can be viewed by anyone who has the link.&quot;,&quot;current&quot;:true},{&quot;name&quot;:&quot;Draft&quot;,&quot;description&quot;:&quot;This job posting will no longer be publicly accessible.&quot;,&quot;current&quot;:false}] })" x-init="init()">
+            <div x-data="Components.listbox({ modelName: 'selected', open: false, selectedIndex: 0, activeIndex: 0, items: [{&quot;name&quot;:&quot;Published&quot;,&quot;description&quot;:&quot;This job posting can be viewed by anyone who has the link.&quot;,&quot;current&quot;:true},{&quot;name&quot;:&quot;Draft&quot;,&quot;description&quot;:&quot;This job posting will no longer be publicly accessible.&quot;,&quot;current&quot;:false}] })" x-init="init()">
               <label id="listbox-label" class="sr-only" @click="$refs.button.focus()">
                 Change published status
               </label>
@@ -316,6 +319,7 @@
           <!-- Tabs -->
           <div class="sm:hidden">
             <label for="tabs" class="sr-only">Select a tab</label>
+            <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
             <select id="tabs" name="tabs" class="mt-4 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md">
               
                 <option>Applied</option>
@@ -366,7 +370,7 @@
         </div>
 
         <!-- Stacked list -->
-        <ul class="mt-5 border-t border-gray-200 divide-y divide-gray-200 sm:mt-0 sm:border-t-0" role="list">
+        <ul role="list" class="mt-5 border-t border-gray-200 divide-y divide-gray-200 sm:mt-0 sm:border-t-0">
           
             <li>
               <a href="#" class="group block">
@@ -383,7 +387,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">emilyselman@example.com</span>
+                          <span class="truncate">emily.selman@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -427,7 +431,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">michaelfoster@example.com</span>
+                          <span class="truncate">michael.foster@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -471,7 +475,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">emmadorsey@example.com</span>
+                          <span class="truncate">emma.dorsey@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -515,7 +519,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">annaroberts@example.com</span>
+                          <span class="truncate">anna.roberts@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -559,7 +563,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">leonardkrasner@example.com</span>
+                          <span class="truncate">leonard.krasner@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -603,7 +607,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">floydmiles@example.com</span>
+                          <span class="truncate">floy.dmiles@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -647,7 +651,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">benjaminrussel@example.com</span>
+                          <span class="truncate">benjamin.russel@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -691,7 +695,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">courtneyhenry@example.com</span>
+                          <span class="truncate">courtney.henry@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -735,7 +739,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">lawrencehunter@example.com</span>
+                          <span class="truncate">lawrence.hunter@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -779,7 +783,7 @@
   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 </svg>
-                          <span class="truncate">aliciabell@example.com</span>
+                          <span class="truncate">alicia.bell@example.com</span>
                         </p>
                       </div>
                       <div class="hidden md:block">
@@ -852,4 +856,6 @@
         </nav>
       </div>
     </main>
+  </div>
+
   </div>

@@ -16,19 +16,27 @@
           teal: colors.teal,
           cyan: colors.cyan,
           rose: colors.rose,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
       require('@tailwindcss/line-clamp'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative min-h-screen bg-gray-100">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full">
+    ```
+  -->
+  <div class="min-h-full">
     <Popover as="header" class="pb-24 bg-gradient-to-r from-sky-800 to-cyan-600" v-slot="{ open }">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
@@ -108,11 +116,11 @@
       <TransitionRoot as="template" :show="open">
         <div class="lg:hidden">
           <TransitionChild as="template" enter="duration-150 ease-out" enter-from="opacity-0" enter-to="opacity-100" leave="duration-150 ease-in" leave-from="opacity-100" leave-to="opacity-0">
-            <PopoverOverlay static class="z-20 fixed inset-0 bg-black bg-opacity-25" />
+            <PopoverOverlay class="z-20 fixed inset-0 bg-black bg-opacity-25" />
           </TransitionChild>
 
           <TransitionChild as="template" enter="duration-150 ease-out" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="duration-150 ease-in" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
-            <PopoverPanel focus static class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top">
+            <PopoverPanel focus class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top">
               <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y divide-gray-200">
                 <div class="pt-3 pb-2">
                   <div class="flex items-center justify-between px-4">
@@ -139,7 +147,7 @@
                       <div class="text-base font-medium text-gray-800 truncate">{{ user.name }}</div>
                       <div class="text-sm font-medium text-gray-500 truncate">{{ user.email }}</div>
                     </div>
-                    <button class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+                    <button type="button" class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
                       <span class="sr-only">View notifications</span>
                       <BellIcon class="h-6 w-6" aria-hidden="true" />
                     </button>
@@ -178,9 +186,7 @@
                       </div>
                     </div>
                     <div class="mt-5 flex justify-center sm:mt-0">
-                      <a href="#" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                        View profile
-                      </a>
+                      <a href="#" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View profile </a>
                     </div>
                   </div>
                 </div>
@@ -212,9 +218,7 @@
                         {{ action.name }}
                       </a>
                     </h3>
-                    <p class="mt-2 text-sm text-gray-500">
-                      Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
-                    </p>
+                    <p class="mt-2 text-sm text-gray-500">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
                   </div>
                   <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -234,7 +238,7 @@
                 <div class="p-6">
                   <h2 class="text-base font-medium text-gray-900" id="announcements-title">Announcements</h2>
                   <div class="flow-root mt-6">
-                    <ul class="-my-5 divide-y divide-gray-200">
+                    <ul role="list" class="-my-5 divide-y divide-gray-200">
                       <li v-for="announcement in announcements" :key="announcement.id" class="py-5">
                         <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
                           <h3 class="text-sm font-semibold text-gray-800">
@@ -252,9 +256,7 @@
                     </ul>
                   </div>
                   <div class="mt-6">
-                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                      View all
-                    </a>
+                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
                   </div>
                 </div>
               </div>
@@ -266,7 +268,7 @@
                 <div class="p-6">
                   <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Recent Hires</h2>
                   <div class="flow-root mt-6">
-                    <ul class="-my-5 divide-y divide-gray-200">
+                    <ul role="list" class="-my-5 divide-y divide-gray-200">
                       <li v-for="person in recentHires" :key="person.handle" class="py-4">
                         <div class="flex items-center space-x-4">
                           <div class="flex-shrink-0">
@@ -281,18 +283,14 @@
                             </p>
                           </div>
                           <div>
-                            <a :href="person.href" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-                              View
-                            </a>
+                            <a :href="person.href" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> View </a>
                           </div>
                         </div>
                       </li>
                     </ul>
                   </div>
                   <div class="mt-6">
-                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                      View all
-                    </a>
+                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
                   </div>
                 </div>
               </div>
@@ -337,7 +335,7 @@ import { SearchIcon } from '@heroicons/vue/solid'
 
 const user = {
   name: 'Chelsea Hagon',
-  email: 'chelseahagon@example.com',
+  email: 'chelsea.hagon@example.com',
   role: 'Human Resources Manager',
   imageUrl:
     'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',

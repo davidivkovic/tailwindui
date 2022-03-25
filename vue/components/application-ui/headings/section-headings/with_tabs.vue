@@ -10,15 +10,13 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
   <div class="pb-5 border-b border-gray-200 sm:pb-0">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      Candidates
-    </h3>
+    <h3 class="text-lg leading-6 font-medium text-gray-900">Candidates</h3>
     <div class="mt-3 sm:mt-4">
       <div class="sm:hidden">
         <label for="current-tab" class="sr-only">Select a tab</label>

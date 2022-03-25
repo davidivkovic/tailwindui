@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -26,9 +26,9 @@ export default function Example() {
         className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         defaultValue="Canada"
       >
-        <option>USA</option>
+        <option>United States</option>
         <option>Canada</option>
-        <option>EU</option>
+        <option>Mexico</option>
       </select>
     </div>
   )

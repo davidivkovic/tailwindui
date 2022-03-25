@@ -4,7 +4,7 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div class="min-h-screen bg-white" style="min-height: 772px;">
+<div class="min-h-[772px] bg-white">
     
   <div class="relative bg-white" x-data="Components.popover({ open: true, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -217,7 +217,7 @@
                       <h3 class="text-sm tracking-wide font-medium text-gray-500 uppercase">
                         Recent Posts
                       </h3>
-                      <ul class="mt-4 space-y-4">
+                      <ul role="list" class="mt-4 space-y-4">
                         
                           <li class="text-base truncate">
                             <a href="#" class="font-medium text-gray-900 hover:text-gray-700">

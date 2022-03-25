@@ -4,12 +4,22 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div x-data="{ open: false }" @keydown.window.escape="open = false" class="h-screen flex overflow-hidden bg-white">
+<div class="h-0 min-h-[768px] bg-white">
+    
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full overflow-hidden">
+  ```
+  -->
+  <div x-data="{ open: false }" @keydown.window.escape="open = false" class="h-full flex">
     
       <div x-show="open" class="fixed inset-0 flex z-40 lg:hidden" x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state." x-ref="dialog" aria-modal="true">
         
-          <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." class="fixed inset-0 bg-gray-600 bg-opacity-75" @click="open = false" aria-hidden="true"></div>
-        
+          <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." class="fixed inset-0 bg-gray-600 bg-opacity-75" @click="open = false" aria-hidden="true">
+        </div>
         
           <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-description="Off-canvas menu, show/hide based on off-canvas menu state." class="relative flex-1 flex flex-col max-w-xs w-full bg-white focus:outline-none">
             
@@ -103,7 +113,7 @@
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-gray-100">
+        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-900-text.svg" alt="Workflow">
@@ -200,7 +210,7 @@
           </div>
           <!-- End main area -->
         </main>
-        <aside class="hidden relative xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200">
+        <aside class="hidden relative xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200 overflow-y-auto">
           <!-- Start secondary column (hidden on smaller screens) -->
           <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
             <div class="h-full border-2 border-gray-200 border-dashed rounded-lg"></div>
@@ -209,4 +219,6 @@
         </aside>
       </div>
     </div>
+  </div>
+
   </div>

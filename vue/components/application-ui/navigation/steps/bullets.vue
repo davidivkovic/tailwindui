@@ -2,7 +2,7 @@
 <template>
   <nav class="flex items-center justify-center" aria-label="Progress">
     <p class="text-sm font-medium">Step {{ steps.findIndex((step) => step.status === 'current') + 1 }} of {{ steps.length }}</p>
-    <ol class="ml-8 flex items-center space-x-5">
+    <ol role="list" class="ml-8 flex items-center space-x-5">
       <li v-for="step in steps" :key="step.name">
         <a v-if="step.status === 'complete'" :href="step.href" class="block w-2.5 h-2.5 bg-indigo-600 rounded-full hover:bg-indigo-900">
           <span class="sr-only">{{ step.name }}</span>

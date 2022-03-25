@@ -4,9 +4,20 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div style="max-height: 800px;" class="overflow-y-auto">
+<div class="max-h-[800px] overflow-y-auto">
     
-  <div class="relative min-h-screen flex flex-col">
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full">
+  <body class="h-full">
+  ```
+  -->
+  <!-- Background color split screen for large screens -->
+  <div class="fixed top-0 left-0 w-1/2 h-full bg-white" aria-hidden="true"></div>
+  <div class="fixed top-0 right-0 w-1/2 h-full bg-gray-50" aria-hidden="true"></div>
+  <div class="relative min-h-full flex flex-col">
     <!-- Navbar -->
     <nav x-data="{ open: false }" class="flex-shrink-0 bg-indigo-600">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -185,7 +196,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
               </div>
             </div>
           </div>
-          <ul class="relative z-0 divide-y divide-gray-200 border-b border-gray-200">
+          <ul role="list" class="relative z-0 divide-y divide-gray-200 border-b border-gray-200">
             
               <li class="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6">
                 <div class="flex items-center justify-between space-x-4">
@@ -225,7 +236,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Add to favorites</span>
                         <svg class="text-yellow-300 hover:text-yellow-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -281,7 +292,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Add to favorites</span>
                         <svg class="text-yellow-300 hover:text-yellow-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -337,7 +348,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Add to favorites</span>
                         <svg class="text-yellow-300 hover:text-yellow-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -393,7 +404,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Remove from favorites</span>
                         <svg class="text-gray-300 hover:text-gray-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -449,7 +460,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Add to favorites</span>
                         <svg class="text-yellow-300 hover:text-yellow-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -505,7 +516,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Remove from favorites</span>
                         <svg class="text-gray-300 hover:text-gray-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -561,7 +572,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Remove from favorites</span>
                         <svg class="text-gray-300 hover:text-gray-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -617,7 +628,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Remove from favorites</span>
                         <svg class="text-gray-300 hover:text-gray-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -673,7 +684,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       <a href="#" class="relative text-sm text-gray-500 hover:text-gray-900 font-medium">
                         Visit site
                       </a>
-                      <button class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+                      <button type="button" class="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span class="sr-only">Remove from favorites</span>
                         <svg class="text-gray-300 hover:text-gray-400 h-5 w-5" x-state:on="Starred" x-state:off="Not Starred" x-state-description="Starred: &quot;text-yellow-300 hover:text-yellow-400&quot;, Not Starred: &quot;text-gray-300 hover:text-gray-400&quot;" x-description="Heroicon name: solid/star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -701,7 +712,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
             <h2 class="text-sm font-semibold">Activity</h2>
           </div>
           <div>
-            <ul class="divide-y divide-gray-200">
+            <ul role="list" class="divide-y divide-gray-200">
               
                 <li class="py-4">
                   <div class="flex space-x-3">

@@ -10,14 +10,22 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative h-screen flex overflow-hidden bg-white">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-white">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex">
     <TransitionRoot as="template" :show="sidebarOpen">
-      <Dialog as="div" static class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false" :open="sidebarOpen">
+      <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <DialogOverlay class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -61,9 +69,7 @@
                     <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">
                       {{ user.name }}
                     </p>
-                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
-                      View profile
-                    </p>
+                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
                   </div>
                 </div>
               </a>
@@ -80,7 +86,7 @@
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-gray-100">
+        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-pink-500-mark-gray-900-text.svg" alt="Workflow" />
@@ -111,9 +117,7 @@
                   <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
                     {{ user.name }}
                   </p>
-                  <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
-                    View profile
-                  </p>
+                  <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
                 </div>
               </div>
             </a>
@@ -207,9 +211,7 @@
                   </dd>
                 </div>
                 <div class="sm:col-span-2">
-                  <dt class="text-sm font-medium text-gray-500">
-                    About
-                  </dt>
+                  <dt class="text-sm font-medium text-gray-500">About</dt>
                   <dd class="mt-1 max-w-prose text-sm text-gray-900 space-y-5" v-html="profile.about" />
                 </div>
               </dl>
@@ -242,9 +244,7 @@
         <aside class="hidden xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200">
           <div class="px-6 pt-6 pb-4">
             <h2 class="text-lg font-medium text-gray-900">Directory</h2>
-            <p class="mt-1 text-sm text-gray-600">
-              Search directory of 3,018 employees
-            </p>
+            <p class="mt-1 text-sm text-gray-600">Search directory of 3,018 employees</p>
             <form class="mt-6 flex space-x-4" action="#">
               <div class="flex-1 min-w-0">
                 <label for="search" class="sr-only">Search</label>
@@ -267,7 +267,7 @@
               <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
                 <h3>{{ letter }}</h3>
               </div>
-              <ul class="relative z-0 divide-y divide-gray-200">
+              <ul role="list" class="relative z-0 divide-y divide-gray-200">
                 <li v-for="person in directory[letter]" :key="person.id">
                   <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                     <div class="flex-shrink-0">
@@ -319,10 +319,10 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
+  { name: 'Dashboard', href: '#', icon: HomeIcon, current: false },
   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
   { name: 'Teams', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Directory', href: '#', icon: SearchCircleIcon, current: false },
+  { name: 'Directory', href: '#', icon: SearchCircleIcon, current: true },
   { name: 'Announcements', href: '#', icon: SpeakerphoneIcon, current: false },
   { name: 'Office Map', href: '#', icon: MapIcon, current: false },
 ]

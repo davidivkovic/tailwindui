@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -97,75 +97,67 @@ export default function Example() {
                       </div>
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-4 relative flex-shrink-0">
-                        {({ open }) => (
-                          <>
-                            <div>
-                              <Menu.Button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white">
-                                <span className="sr-only">Open user menu</span>
-                                <img
-                                  className="h-8 w-8 rounded-full"
-                                  src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80"
-                                  alt=""
-                                />
-                              </Menu.Button>
-                            </div>
-                            <Transition
-                              show={open}
-                              as={Fragment}
-                              enter="transition ease-out duration-100"
-                              enterFrom="transform opacity-0 scale-95"
-                              enterTo="transform opacity-100 scale-100"
-                              leave="transition ease-in duration-75"
-                              leaveFrom="transform opacity-100 scale-100"
-                              leaveTo="transform opacity-0 scale-95"
-                            >
-                              <Menu.Items
-                                static
-                                className="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                              >
-                                <Menu.Item>
-                                  {({ active }) => (
-                                    <a
-                                      href="#"
-                                      className={classNames(
-                                        active ? 'bg-gray-100' : '',
-                                        'block px-4 py-2 text-sm text-gray-700'
-                                      )}
-                                    >
-                                      View Profile
-                                    </a>
+                        <div>
+                          <Menu.Button className="bg-indigo-700 flex text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white">
+                            <span className="sr-only">Open user menu</span>
+                            <img
+                              className="h-8 w-8 rounded-full"
+                              src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80"
+                              alt=""
+                            />
+                          </Menu.Button>
+                        </div>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active ? 'bg-gray-100' : '',
+                                    'block px-4 py-2 text-sm text-gray-700'
                                   )}
-                                </Menu.Item>
-                                <Menu.Item>
-                                  {({ active }) => (
-                                    <a
-                                      href="#"
-                                      className={classNames(
-                                        active ? 'bg-gray-100' : '',
-                                        'block px-4 py-2 text-sm text-gray-700'
-                                      )}
-                                    >
-                                      Settings
-                                    </a>
+                                >
+                                  View Profile
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active ? 'bg-gray-100' : '',
+                                    'block px-4 py-2 text-sm text-gray-700'
                                   )}
-                                </Menu.Item>
-                                <Menu.Item>
-                                  {({ active }) => (
-                                    <a
-                                      href="#"
-                                      className={classNames(
-                                        active ? 'bg-gray-100' : '',
-                                        'block px-4 py-2 text-sm text-gray-700'
-                                      )}
-                                    >
-                                      Logout
-                                    </a>
+                                >
+                                  Settings
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active ? 'bg-gray-100' : '',
+                                    'block px-4 py-2 text-sm text-gray-700'
                                   )}
-                                </Menu.Item>
-                              </Menu.Items>
-                            </Transition>
-                          </>
-                        )}
+                                >
+                                  Logout
+                                </a>
+                              )}
+                            </Menu.Item>
+                          </Menu.Items>
+                        </Transition>
                       </Menu>
                     </div>
                   </div>
@@ -174,36 +166,44 @@ export default function Example() {
 
               <Disclosure.Panel className="lg:hidden">
                 <div className="px-2 pt-2 pb-3">
-                  <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">
+                  <Disclosure.Button
+                    as="a"
+                    href="#"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800"
+                  >
                     Dashboard
-                  </a>
-                  <a
+                  </Disclosure.Button>
+                  <Disclosure.Button
+                    as="a"
                     href="#"
                     className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600"
                   >
                     Support
-                  </a>
+                  </Disclosure.Button>
                 </div>
                 <div className="pt-4 pb-3 border-t border-indigo-800">
                   <div className="px-2">
-                    <a
+                    <Disclosure.Button
+                      as="a"
                       href="#"
                       className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600"
                     >
                       Your Profile
-                    </a>
-                    <a
+                    </Disclosure.Button>
+                    <Disclosure.Button
+                      as="a"
                       href="#"
                       className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600"
                     >
                       Settings
-                    </a>
-                    <a
+                    </Disclosure.Button>
+                    <Disclosure.Button
+                      as="a"
                       href="#"
                       className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600"
                     >
                       Sign out
-                    </a>
+                    </Disclosure.Button>
                   </div>
                 </div>
               </Disclosure.Panel>

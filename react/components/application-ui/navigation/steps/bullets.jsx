@@ -12,7 +12,7 @@ export default function Example() {
       <p className="text-sm font-medium">
         Step {steps.findIndex((step) => step.status === 'current') + 1} of {steps.length}
       </p>
-      <ol className="ml-8 flex items-center space-x-5">
+      <ol role="list" className="ml-8 flex items-center space-x-5">
         {steps.map((step) => (
           <li key={step.name}>
             {step.status === 'complete' ? (

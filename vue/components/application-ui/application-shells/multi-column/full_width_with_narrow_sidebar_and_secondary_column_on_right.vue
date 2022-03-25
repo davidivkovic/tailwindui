@@ -10,12 +10,20 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="h-screen bg-gray-50 flex overflow-hidden">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-50">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex">
     <!-- Narrow sidebar -->
     <div class="hidden w-28 bg-indigo-700 overflow-y-auto md:block">
       <div class="w-full py-6 flex flex-col items-center">
@@ -33,7 +41,7 @@
 
     <!-- Mobile menu -->
     <TransitionRoot as="template" :show="mobileMenuOpen">
-      <Dialog as="div" static class="md:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+      <Dialog as="div" class="md:hidden" @close="mobileMenuOpen = false">
         <div class="fixed inset-0 z-40 flex">
           <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
             <DialogOverlay class="fixed inset-0 bg-gray-600 bg-opacity-75" />
@@ -109,7 +117,7 @@
               </Menu>
 
               <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <PlusIcon class="h-6 w-6" aria-hidden="true" />
+                <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
                 <span class="sr-only">Add file</span>
               </button>
             </div>
@@ -121,7 +129,7 @@
       <div class="flex-1 flex items-stretch overflow-hidden">
         <main class="flex-1 overflow-y-auto">
           <!-- Primary column -->
-          <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
+          <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col lg:order-last">
             <h1 id="primary-heading" class="sr-only">Photos</h1>
             <!-- Your content -->
           </section>
@@ -154,7 +162,7 @@ import {
   HomeIcon,
   MenuAlt2Icon,
   PhotographIcon,
-  PlusIcon,
+  PlusSmIcon,
   UserGroupIcon,
   ViewGridIcon,
   XIcon,
@@ -185,7 +193,7 @@ export default {
     TransitionChild,
     TransitionRoot,
     MenuAlt2Icon,
-    PlusIcon,
+    PlusSmIcon,
     SearchIcon,
     XIcon,
   },

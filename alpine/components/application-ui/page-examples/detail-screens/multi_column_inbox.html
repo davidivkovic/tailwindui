@@ -4,7 +4,17 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div class="relative h-screen overflow-hidden bg-gray-100 flex flex-col">
+<div class="h-[768px] bg-gray-100">
+    
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full overflow-hidden">
+  ```
+  -->
+  <div class="h-full flex flex-col">
     <!-- Top nav-->
     <header x-data="{ open: false }" @keydown.window.escape="open = false" class="flex-shrink-0 relative h-16 bg-white flex items-center">
       <!-- Logo area -->
@@ -49,8 +59,8 @@
       <div class="hidden lg:min-w-0 lg:flex-1 lg:flex lg:items-center lg:justify-between">
         <div class="min-w-0 flex-1">
           <div class="max-w-2xl relative text-gray-400 focus-within:text-gray-500">
-            <label for="search" class="sr-only">Search all inboxes</label>
-            <input id="search" type="search" placeholder="Search all inboxes" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0">
+            <label for="desktop-search" class="sr-only">Search all inboxes</label>
+            <input id="desktop-search" type="search" placeholder="Search all inboxes" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0">
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-4">
               <svg class="h-5 w-5" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
@@ -135,8 +145,8 @@
       
         <div x-show="open" class="fixed inset-0 z-40 lg:hidden" x-ref="dialog" aria-modal="true">
           
-            <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." class="hidden sm:block sm:fixed sm:inset-0 sm:bg-gray-600 sm:bg-opacity-75" @click="open = false" aria-hidden="true"></div>
-          
+            <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." class="hidden sm:block sm:fixed sm:inset-0 sm:bg-gray-600 sm:bg-opacity-75" @click="open = false" aria-hidden="true">
+          </div>
 
           
             <nav x-show="open" x-transition:enter="transition ease-out duration-150 sm:ease-in-out sm:duration-300" x-transition:enter-start="transform opacity-0 scale-110 sm:translate-x-full sm:scale-100 sm:opacity-100" x-transition:enter-end="transform opacity-100 scale-100 sm:translate-x-0 sm:scale-100 sm:opacity-100" x-transition:leave="transition ease-in duration-150 sm:ease-in-out sm:duration-300" x-transition:leave-start="transform opacity-100 scale-100 sm:translate-x-0 sm:scale-100 sm:opacity-100" x-transition:leave-end="transform opacity-0 scale-110 sm:translate-x-full sm:scale-100 sm:opacity-100" x-description="Mobile menu, toggle classes based on menu state." class="fixed z-40 inset-0 h-full w-full bg-white sm:inset-y-0 sm:left-auto sm:right-0 sm:max-w-sm sm:w-full sm:shadow-lg" aria-label="Global">
@@ -153,8 +163,8 @@
               </div>
               <div class="mt-2 max-w-8xl mx-auto px-4 sm:px-6">
                 <div class="relative text-gray-400 focus-within:text-gray-500">
-                  <label for="search" class="sr-only">Search all inboxes</label>
-                  <input id="search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-blue-600 focus:ring-blue-600">
+                  <label for="mobile-search" class="sr-only">Search all inboxes</label>
+                  <input id="mobile-search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-blue-600 focus:ring-blue-600">
                   <div class="absolute inset-y-0 left-0 flex items-center justify-center pl-3">
                     <svg class="h-5 w-5" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
@@ -187,7 +197,7 @@
                   </div>
                   <div class="ml-3 min-w-0 flex-1">
                     <div class="text-base font-medium text-gray-800 truncate">Whitney Francis</div>
-                    <div class="text-sm font-medium text-gray-500 truncate">whitneyfrancis@example.com</div>
+                    <div class="text-sm font-medium text-gray-500 truncate">whitney.francis@example.com</div>
                   </div>
                   <a href="#" class="ml-auto flex-shrink-0 bg-white p-2 text-gray-400 hover:text-gray-500">
                     <span class="sr-only">View notifications</span>
@@ -413,7 +423,7 @@
               </div>
             </div>
             <!-- Thread section-->
-            <ul class="py-4 space-y-2 sm:px-6 sm:space-y-4 lg:px-8">
+            <ul role="list" class="py-4 space-y-2 sm:px-6 sm:space-y-4 lg:px-8">
               
                 <li class="bg-white px-4 py-6 shadow sm:rounded-lg sm:px-6">
                   <div class="sm:flex sm:justify-between sm:items-baseline">
@@ -490,7 +500,7 @@
               </div>
             </div>
             <nav aria-label="Message list" class="min-h-0 flex-1 overflow-y-auto">
-              <ul class="border-b border-gray-200 divide-y divide-gray-200">
+              <ul role="list" class="border-b border-gray-200 divide-y divide-gray-200">
                 
                   <li class="relative bg-white py-5 px-6 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600">
                     <div class="flex justify-between space-x-3">
@@ -678,4 +688,6 @@
         </aside>
       </main>
     </div>
+  </div>
+
   </div>

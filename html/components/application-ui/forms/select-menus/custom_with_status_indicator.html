@@ -1,24 +1,11 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<!--
-  Custom select controls like this require a considerable amount of JS to implement from scratch. We're planning
-  to build some low-level libraries to make this easier with popular frameworks like React, Vue, and even Alpine.js
-  in the near future, but in the mean time we recommend these reference guides when building your implementation:
-
-  https://www.w3.org/TR/wai-aria-practices/#Listbox
-  https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
--->
 <div>
-  <label id="listbox-label" class="block text-sm font-medium text-gray-700">
-    Assigned to
-  </label>
+  <label id="listbox-label" class="block text-sm font-medium text-gray-700"> Assigned to </label>
   <div class="mt-1 relative">
     <button type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
       <div class="flex items-center">
-        <!-- On: "bg-green-400", Off: "bg-gray-200" -->
         <span aria-label="Online" class="bg-green-400 flex-shrink-0 inline-block h-2 w-2 rounded-full"></span>
-        <span class="ml-3 block truncate">
-          Tom Cook
-        </span>
+        <span class="ml-3 block truncate"> Tom Cook </span>
       </div>
       <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
         <!-- Heroicon name: solid/selector -->

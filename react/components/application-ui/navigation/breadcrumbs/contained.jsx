@@ -9,7 +9,7 @@ const pages = [
 export default function Example() {
   return (
     <nav className="flex" aria-label="Breadcrumb">
-      <ol className="bg-white rounded-md shadow px-6 flex space-x-4">
+      <ol role="list" className="bg-white rounded-md shadow px-6 flex space-x-4">
         <li className="flex">
           <div className="flex items-center">
             <a href="#" className="text-gray-400 hover:text-gray-500">

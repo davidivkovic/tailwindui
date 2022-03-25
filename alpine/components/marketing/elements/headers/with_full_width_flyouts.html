@@ -4,7 +4,7 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div class="bg-gray-100" style="min-height: 730px;">
+<div class="min-h-[730px] bg-gray-100">
     
   <div class="relative bg-white" x-data="Components.popover({ open: true, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
     <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true"></div>
@@ -193,7 +193,7 @@
                         <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
                           Company
                         </h3>
-                        <ul class="mt-5 space-y-6">
+                        <ul role="list" class="mt-5 space-y-6">
                           
                             <li class="flow-root">
                               <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
@@ -246,7 +246,7 @@
                         <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
                           Resources
                         </h3>
-                        <ul class="mt-5 space-y-6">
+                        <ul role="list" class="mt-5 space-y-6">
                           
                             <li class="flow-root">
                               <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
@@ -292,7 +292,7 @@
                         <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
                           From the blog
                         </h3>
-                        <ul class="mt-6 space-y-6">
+                        <ul role="list" class="mt-6 space-y-6">
                           
                             <li class="flow-root">
                               <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
@@ -313,7 +313,7 @@
                             <li class="flow-root">
                               <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
                                 <div class="hidden sm:block flex-shrink-0">
-                                  <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/1/apple-gear-looking-pretty.jpg?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2850&amp;q=80" alt="">
+                                  <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2300&amp;q=80" alt="">
                                 </div>
                                 <div class="w-0 flex-1 sm:ml-8">
                                   <h4 class="text-base font-medium text-gray-900 truncate">

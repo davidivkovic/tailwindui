@@ -10,11 +10,19 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="h-screen bg-gray-50 flex overflow-hidden">
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-50">
+  <body class="h-full overflow-hidden">
+  ```
+-->
+<div class="h-full flex">
   <!-- Narrow sidebar -->
   <div class="hidden w-28 bg-indigo-700 overflow-y-auto md:block">
     <div class="w-full py-6 flex flex-col items-center">
@@ -254,9 +262,9 @@
             </div>
 
             <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <!-- Heroicon name: outline/plus -->
+              <!-- Heroicon name: outline/plus-sm -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
               </svg>
               <span class="sr-only">Add file</span>
             </button>
@@ -269,7 +277,7 @@
     <div class="flex-1 flex items-stretch overflow-hidden">
       <main class="flex-1 overflow-y-auto">
         <!-- Primary column -->
-        <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
+        <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col lg:order-last">
           <h1 id="primary-heading" class="sr-only">Photos</h1>
           <!-- Your content -->
         </section>

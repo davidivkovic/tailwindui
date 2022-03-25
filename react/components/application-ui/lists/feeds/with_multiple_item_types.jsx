@@ -13,9 +13,9 @@
       extend: {
         colors: {
           rose: colors.rose,
-        }
-      }
-    }
+        },
+      },
+    },
   }
   ```
 */
@@ -69,7 +69,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <div className="flow-root">
-      <ul className="-mb-8">
+      <ul role="list" className="-mb-8">
         {activity.map((activityItem, activityItemIdx) => (
           <li key={activityItem.id}>
             <div className="relative pb-8">

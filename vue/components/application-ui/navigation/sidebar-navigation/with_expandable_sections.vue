@@ -20,9 +20,9 @@
               {{ item.name }}
             </DisclosureButton>
             <DisclosurePanel class="space-y-1">
-              <a v-for="subItem in item.children" :key="subItem.name" :href="subItem.href" class="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <DisclosureButton v-for="subItem in item.children" :key="subItem.name" as="a" :href="subItem.href" class="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                 {{ subItem.name }}
-              </a>
+              </DisclosureButton>
             </DisclosurePanel>
           </Disclosure>
         </template>
@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 
 const navigation = [
@@ -96,11 +95,8 @@ export default {
     DisclosurePanel,
   },
   setup() {
-    const open = ref(false)
-
     return {
       navigation,
-      open,
     }
   },
 }

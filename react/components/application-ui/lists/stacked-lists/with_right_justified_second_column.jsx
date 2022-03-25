@@ -34,7 +34,7 @@ const positions = [
 export default function Example() {
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-md">
-      <ul className="divide-y divide-gray-200">
+      <ul role="list" className="divide-y divide-gray-200">
         {positions.map((position) => (
           <li key={position.id}>
             <a href="#" className="block hover:bg-gray-50">

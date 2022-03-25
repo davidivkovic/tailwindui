@@ -8,9 +8,7 @@
     </div>
     <div>
       <h4 class="text-lg font-bold">Lorem ipsum</h4>
-      <p class="mt-1">
-        Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus quidem ipsam quia iusto.
-      </p>
+      <p class="mt-1">Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus quidem ipsam quia iusto.</p>
 
       <div class="mt-6 flex">
         <div class="mr-4 flex-shrink-0">
@@ -20,9 +18,7 @@
         </div>
         <div>
           <h4 class="text-lg font-bold">Lorem ipsum</h4>
-          <p class="mt-1">
-            Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus quidem ipsam quia iusto.
-          </p>
+          <p class="mt-1">Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus quidem ipsam quia iusto.</p>
         </div>
       </div>
       <div class="mt-6 flex">
@@ -33,9 +29,7 @@
         </div>
         <div>
           <h4 class="text-lg font-bold">Lorem ipsum</h4>
-          <p class="mt-1">
-            Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus quidem ipsam quia iusto.
-          </p>
+          <p class="mt-1">Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus quidem ipsam quia iusto.</p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <nav aria-label="Progress">
-    <ol class="space-y-4 md:flex md:space-y-0 md:space-x-8">
+    <ol role="list" class="space-y-4 md:flex md:space-y-0 md:space-x-8">
       <li v-for="step in steps" :key="step.name" class="md:flex-1">
         <a v-if="step.status === 'complete'" :href="step.href" class="group pl-4 py-2 flex flex-col border-l-4 border-indigo-600 hover:border-indigo-800 md:pl-0 md:pt-4 md:pb-0 md:border-l-0 md:border-t-4">
           <span class="text-xs text-indigo-600 font-semibold tracking-wide uppercase group-hover:text-indigo-800">{{ step.id }}</span>

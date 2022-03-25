@@ -12,9 +12,9 @@ export default function Example() {
           </a>
         </nav>
         <nav className="hidden sm:flex" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-4">
+          <ol role="list" className="flex items-center space-x-4">
             <li>
-              <div>
+              <div className="flex">
                 <a href="#" className="text-gray-400 hover:text-gray-500">
                   <a href="#" className="text-sm font-medium text-gray-400 hover:text-gray-200">
                     Jobs

@@ -61,7 +61,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <div className="flow-root">
-      <ul className="-mb-8">
+      <ul role="list" className="-mb-8">
         {timeline.map((event, eventIdx) => (
           <li key={event.id}>
             <div className="relative pb-8">

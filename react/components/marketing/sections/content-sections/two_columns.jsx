@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/typography'),
-    ]
+    ],
   }
   ```
 */
@@ -84,7 +84,7 @@ export default function Example() {
                   eget. Est augue <a href="#">maecenas</a> risus nulla ultrices congue nunc tortor. Eu leo risus porta
                   integer suspendisse sed sit ligula elit.
                 </p>
-                <ol>
+                <ol role="list">
                   <li>Integer varius imperdiet sed interdum felis cras in nec nunc.</li>
                   <li>Quam malesuada odio ut sit egestas. Elementum at porta vitae.</li>
                 </ol>

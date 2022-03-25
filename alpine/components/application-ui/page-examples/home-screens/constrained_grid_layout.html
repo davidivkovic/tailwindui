@@ -4,9 +4,17 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div class="max-h-[800px] overflow-y-auto">
+<div class="max-h-[800px] bg-gray-100 overflow-y-auto">
     
-  <div class="relative min-h-screen bg-gray-100">
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+  -->
+  <div class="min-h-full">
     <header class="pb-24 bg-gradient-to-r from-sky-800 to-cyan-600" x-data="Components.popover({ open: false, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
@@ -157,9 +165,9 @@
                     </div>
                     <div class="ml-3 min-w-0 flex-1">
                       <div class="text-base font-medium text-gray-800 truncate">Chelsea Hagon</div>
-                      <div class="text-sm font-medium text-gray-500 truncate">chelseahagon@example.com</div>
+                      <div class="text-sm font-medium text-gray-500 truncate">chelsea.hagon@example.com</div>
                     </div>
-                    <button class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+                    <button type="button" class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
                       <span class="sr-only">View notifications</span>
                       <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -417,7 +425,7 @@
                 <div class="p-6">
                   <h2 class="text-base font-medium text-gray-900" id="announcements-title">Announcements</h2>
                   <div class="flow-root mt-6">
-                    <ul class="-my-5 divide-y divide-gray-200">
+                    <ul role="list" class="-my-5 divide-y divide-gray-200">
                       
                         <li class="py-5">
                           <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
@@ -481,7 +489,7 @@
                 <div class="p-6">
                   <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Recent Hires</h2>
                   <div class="flow-root mt-6">
-                    <ul class="-my-5 divide-y divide-gray-200">
+                    <ul role="list" class="-my-5 divide-y divide-gray-200">
                       
                         <li class="py-4">
                           <div class="flex items-center space-x-4">

@@ -39,7 +39,7 @@ export default function Example() {
                     </h4>
                     <div className="flex-1 border-t-2 border-gray-200" />
                   </div>
-                  <ul className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                  <ul role="list" className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
                     {includedFeatures.map((feature) => (
                       <li key={feature} className="flex items-start lg:col-span-1">
                         <div className="flex-shrink-0">

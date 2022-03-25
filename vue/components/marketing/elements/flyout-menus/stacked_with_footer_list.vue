@@ -24,10 +24,8 @@
           </div>
           <div class="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
             <div>
-              <h3 class="text-sm tracking-wide font-medium text-gray-500 uppercase">
-                Recent Posts
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm tracking-wide font-medium text-gray-500 uppercase">Recent Posts</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li v-for="post in recentPosts" :key="post.id" class="text-base truncate">
                   <a :href="post.href" class="font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150">
                     {{ post.name }}

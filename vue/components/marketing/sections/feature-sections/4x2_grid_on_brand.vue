@@ -2,12 +2,8 @@
 <template>
   <div class="bg-indigo-700">
     <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-white tracking-tight">
-        Inbox support built for efficiency
-      </h2>
-      <p class="mt-4 max-w-3xl text-lg text-indigo-200">
-        Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.
-      </p>
+      <h2 class="text-3xl font-extrabold text-white tracking-tight">Inbox support built for efficiency</h2>
+      <p class="mt-4 max-w-3xl text-lg text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.</p>
       <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
         <div v-for="feature in features" :key="feature.name">
           <div>

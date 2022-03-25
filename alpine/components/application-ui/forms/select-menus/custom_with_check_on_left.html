@@ -7,14 +7,7 @@
 <div class="p-8 flex justify-center bg-gray-100" style="min-height: 600px;">
     <div class="w-full max-w-xs mx-auto">
       
-  <!--
-  Custom select controls like this require a considerable amount of JS to implement from scratch. We're planning
-  to build some low-level libraries to make this easier with popular frameworks like React, Vue, and even Alpine.js
-  in the near future, but in the mean time we recommend these reference guides when building your implementation:
-
-  https://www.w3.org/TR/wai-aria-practices/#Listbox
-  https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
---><div x-data="Components.listbox({ modelName: 'selected', open: true, selectedIndex: 3, activeIndex: 3, items: [{&quot;id&quot;:1,&quot;name&quot;:&quot;Wade Cooper&quot;},{&quot;id&quot;:2,&quot;name&quot;:&quot;Arlene Mccoy&quot;},{&quot;id&quot;:3,&quot;name&quot;:&quot;Devon Webb&quot;},{&quot;id&quot;:4,&quot;name&quot;:&quot;Tom Cook&quot;},{&quot;id&quot;:5,&quot;name&quot;:&quot;Tanya Fox&quot;},{&quot;id&quot;:6,&quot;name&quot;:&quot;Hellen Schmidt&quot;},{&quot;id&quot;:7,&quot;name&quot;:&quot;Caroline Schultz&quot;},{&quot;id&quot;:8,&quot;name&quot;:&quot;Mason Heaney&quot;},{&quot;id&quot;:9,&quot;name&quot;:&quot;Claudie Smitham&quot;},{&quot;id&quot;:10,&quot;name&quot;:&quot;Emil Schaefer&quot;}] })" x-init="init()">
+  <div x-data="Components.listbox({ modelName: 'selected', open: true, selectedIndex: 3, activeIndex: 3, items: [{&quot;id&quot;:1,&quot;name&quot;:&quot;Wade Cooper&quot;},{&quot;id&quot;:2,&quot;name&quot;:&quot;Arlene Mccoy&quot;},{&quot;id&quot;:3,&quot;name&quot;:&quot;Devon Webb&quot;},{&quot;id&quot;:4,&quot;name&quot;:&quot;Tom Cook&quot;},{&quot;id&quot;:5,&quot;name&quot;:&quot;Tanya Fox&quot;},{&quot;id&quot;:6,&quot;name&quot;:&quot;Hellen Schmidt&quot;},{&quot;id&quot;:7,&quot;name&quot;:&quot;Caroline Schultz&quot;},{&quot;id&quot;:8,&quot;name&quot;:&quot;Mason Heaney&quot;},{&quot;id&quot;:9,&quot;name&quot;:&quot;Claudie Smitham&quot;},{&quot;id&quot;:10,&quot;name&quot;:&quot;Emil Schaefer&quot;}] })" x-init="init()">
     <label id="listbox-label" class="block text-sm font-medium text-gray-700" @click="$refs.button.focus()">
       Assigned to
     </label>

@@ -13,17 +13,17 @@
       extend: {
         colors: {
           grape: colors.purple,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="min-h-screen bg-white">
+<div class="bg-white">
   <header class="relative z-10">
     <div class="bg-gray-50">
       <nav class="relative max-w-7xl mx-auto flex items-center justify-between pt-8 px-6 xl:px-8" aria-label="Global">
@@ -52,9 +52,7 @@
           <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-600">Blog</a>
         </div>
         <div class="hidden lg:flex lg:items-center lg:space-x-6">
-          <a href="#" class="py-2 px-6 bg-white border border-transparent rounded-md shadow-md text-base font-medium text-grape-600 hover:bg-gray-50">
-            Contact
-          </a>
+          <a href="#" class="py-2 px-6 bg-white border border-transparent rounded-md shadow-md text-base font-medium text-grape-600 hover:bg-gray-50"> Contact </a>
         </div>
       </nav>
     </div>
@@ -122,12 +120,8 @@
       <div class="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
         <div class="lg:pr-8">
           <div class="max-w-md mx-auto sm:max-w-lg lg:mx-0">
-            <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Let's work together
-            </h2>
-            <p class="mt-4 text-lg text-gray-500 sm:mt-3">
-              We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear from you! Send us a message using the form opposite, or email us.
-            </p>
+            <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Let's work together</h2>
+            <p class="mt-4 text-lg text-gray-500 sm:mt-3">We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear from you! Send us a message using the form opposite, or email us.</p>
             <form action="#" method="POST" class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
               <div>
                 <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
@@ -172,9 +166,7 @@
                 </div>
               </div>
               <fieldset class="sm:col-span-2">
-                <legend class="block text-sm font-medium text-gray-700">
-                  Expected budget
-                </legend>
+                <legend class="block text-sm font-medium text-gray-700">Expected budget</legend>
                 <div class="mt-4 grid grid-cols-1 gap-y-4">
                   <div class="flex items-center">
                     <input id="budget-under-25k" name="budget" value="under_25k" type="radio" class="focus:ring-grape-500 h-4 w-4 text-grape-600 border-gray-300">
@@ -209,9 +201,7 @@
                 </div>
               </div>
               <div class="text-right sm:col-span-2">
-                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-grape-600 hover:bg-grape-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-grape-500">
-                  Submit
-                </button>
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-grape-600 hover:bg-grape-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-grape-500">Submit</button>
               </div>
             </form>
           </div>
@@ -244,9 +234,7 @@
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="space-y-8 xl:col-span-1">
           <img class="h-10" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=gray&shade=400" alt="Company name">
-          <p class="text-gray-400 text-base">
-            Making the world a better place through constructing elegant hierarchies.
-          </p>
+          <p class="text-gray-400 text-base">Making the world a better place through constructing elegant hierarchies.</p>
           <div class="flex space-x-6">
             <a href="#" class="text-gray-400 hover:text-gray-300">
               <span class="sr-only">Facebook</span>
@@ -287,124 +275,84 @@
         <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">
-                Solutions
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Solutions</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Marketing
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Marketing </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Analytics
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Analytics </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Commerce
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Commerce </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Insights
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Insights </a>
                 </li>
               </ul>
             </div>
             <div class="mt-12 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">
-                Support
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Support</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Pricing
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Pricing </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Documentation
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Documentation </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Guides
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Guides </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    API Status
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> API Status </a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">
-                Company
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Company</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    About
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> About </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Blog
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Blog </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Jobs
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Jobs </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Press
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Press </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Partners
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Partners </a>
                 </li>
               </ul>
             </div>
             <div class="mt-12 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">
-                Legal
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Legal</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Claim
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Claim </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Privacy
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Privacy </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-                    Terms
-                  </a>
+                  <a href="#" class="text-base text-gray-400 hover:text-gray-300"> Terms </a>
                 </li>
               </ul>
             </div>
@@ -412,9 +360,7 @@
         </div>
       </div>
       <div class="mt-12 border-t border-gray-700 pt-8">
-        <p class="text-base text-gray-400 xl:text-center">
-          &copy; 2020 Workflow, Inc. All rights reserved.
-        </p>
+        <p class="text-base text-gray-400 xl:text-center">&copy; 2020 Workflow, Inc. All rights reserved.</p>
       </div>
     </div>
   </footer>

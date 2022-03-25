@@ -1,30 +1,26 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <TransitionRoot as="template" :show="open">
-    <Dialog as="div" static class="fixed inset-0 overflow-hidden" @close="open = false" :open="open">
+    <Dialog as="div" class="fixed inset-0 overflow-hidden" @close="open = false">
       <div class="absolute inset-0 overflow-hidden">
         <DialogOverlay class="absolute inset-0" />
 
-        <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+        <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
           <TransitionChild as="template" enter="transform transition ease-in-out duration-500 sm:duration-700" enter-from="translate-x-full" enter-to="translate-x-0" leave="transform transition ease-in-out duration-500 sm:duration-700" leave-from="translate-x-0" leave-to="translate-x-full">
-            <div class="w-screen max-w-md">
-              <div class="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
-                <div class="py-6 px-4 bg-indigo-700 sm:px-6">
+            <div class="pointer-events-auto w-screen max-w-md">
+              <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                <div class="bg-indigo-700 py-6 px-4 sm:px-6">
                   <div class="flex items-center justify-between">
-                    <DialogTitle class="text-lg font-medium text-white">
-                      Panel title
-                    </DialogTitle>
-                    <div class="ml-3 h-7 flex items-center">
-                      <button class="bg-indigo-700 rounded-md text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" @click="open = false">
+                    <DialogTitle class="text-lg font-medium text-white"> Panel title </DialogTitle>
+                    <div class="ml-3 flex h-7 items-center">
+                      <button type="button" class="rounded-md bg-indigo-700 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white" @click="open = false">
                         <span class="sr-only">Close panel</span>
                         <XIcon class="h-6 w-6" aria-hidden="true" />
                       </button>
                     </div>
                   </div>
                   <div class="mt-1">
-                    <p class="text-sm text-indigo-300">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit aliquam ad hic recusandae soluta.
-                    </p>
+                    <p class="text-sm text-indigo-300">Lorem, ipsum dolor sit amet consectetur adipisicing elit aliquam ad hic recusandae soluta.</p>
                   </div>
                 </div>
                 <div class="relative flex-1 py-6 px-4 sm:px-6">

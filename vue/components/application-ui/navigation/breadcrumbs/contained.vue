@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <nav class="flex" aria-label="Breadcrumb">
-    <ol class="bg-white rounded-md shadow px-6 flex space-x-4">
+    <ol role="list" class="bg-white rounded-md shadow px-6 flex space-x-4">
       <li class="flex">
         <div class="flex items-center">
           <a href="#" class="text-gray-400 hover:text-gray-500">

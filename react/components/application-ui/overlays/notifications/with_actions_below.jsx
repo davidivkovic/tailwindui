@@ -38,10 +38,16 @@ export default function Example() {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.
                     </p>
                     <div className="mt-3 flex space-x-7">
-                      <button className="bg-white rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <button
+                        type="button"
+                        className="bg-white rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
                         Undo
                       </button>
-                      <button className="bg-white rounded-md text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <button
+                        type="button"
+                        className="bg-white rounded-md text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
                         Dismiss
                       </button>
                     </div>

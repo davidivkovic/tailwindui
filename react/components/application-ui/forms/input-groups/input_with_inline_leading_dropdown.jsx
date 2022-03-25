@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -28,6 +28,7 @@ export default function Example() {
           <select
             id="country"
             name="country"
+            autoComplete="country"
             className="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md"
           >
             <option>US</option>

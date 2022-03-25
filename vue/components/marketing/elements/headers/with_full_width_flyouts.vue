@@ -1,6 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <Popover open="true" class="relative bg-white">
+  <Popover class="relative bg-white">
     <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true" />
     <div class="relative z-20">
       <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
@@ -61,12 +61,8 @@
                 </PopoverPanel>
               </transition>
             </Popover>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
-            </a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Docs
-            </a>
+            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Pricing </a>
+            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Docs </a>
             <Popover v-slot="{ open }">
               <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
                 <span>More</span>
@@ -82,10 +78,8 @@
                   <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
                     <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                       <div>
-                        <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                          Company
-                        </h3>
-                        <ul class="mt-5 space-y-6">
+                        <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
+                        <ul role="list" class="mt-5 space-y-6">
                           <li v-for="item in company" :key="item.name" class="flow-root">
                             <a :href="item.href" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                               <component :is="item.icon" class="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
@@ -95,10 +89,8 @@
                         </ul>
                       </div>
                       <div>
-                        <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                          Resources
-                        </h3>
-                        <ul class="mt-5 space-y-6">
+                        <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
+                        <ul role="list" class="mt-5 space-y-6">
                           <li v-for="item in resources" :key="item.name" class="flow-root">
                             <a :href="item.href" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                               <component :is="item.icon" class="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
@@ -110,10 +102,8 @@
                     </nav>
                     <div class="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                       <div>
-                        <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                          From the blog
-                        </h3>
-                        <ul class="mt-6 space-y-6">
+                        <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">From the blog</h3>
+                        <ul role="list" class="mt-6 space-y-6">
                           <li v-for="post in blogPosts" :key="post.id" class="flow-root">
                             <a :href="post.href" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
                               <div class="hidden sm:block flex-shrink-0">
@@ -141,12 +131,8 @@
             </Popover>
           </PopoverGroup>
           <div class="flex items-center md:ml-12">
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Sign in
-            </a>
-            <a href="#" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-              Sign up
-            </a>
+            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Sign in </a>
+            <a href="#" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
           </div>
         </div>
       </div>
@@ -187,40 +173,24 @@
           </div>
           <div class="py-6 px-5">
             <div class="grid grid-cols-2 gap-4">
-              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                Pricing
-              </a>
+              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"> Pricing </a>
 
-              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                Docs
-              </a>
+              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"> Docs </a>
 
-              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                Company
-              </a>
+              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"> Company </a>
 
-              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                Resources
-              </a>
+              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"> Resources </a>
 
-              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                Blog
-              </a>
+              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"> Blog </a>
 
-              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                Contact Sales
-              </a>
+              <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"> Contact Sales </a>
             </div>
             <div class="mt-6">
-              <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                Sign up
-              </a>
+              <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
               <p class="mt-6 text-center text-base font-medium text-gray-500">
                 Existing customer?
                 {{ ' ' }}
-                <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                  Sign in
-                </a>
+                <a href="#" class="text-indigo-600 hover:text-indigo-500"> Sign in </a>
               </p>
             </div>
           </div>
@@ -307,7 +277,7 @@ const blogPosts = [
     href: '#',
     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
     imageUrl:
-      'https://images.unsplash.com/1/apple-gear-looking-pretty.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
+      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
   },
 ]
 

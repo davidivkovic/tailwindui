@@ -31,9 +31,7 @@
           </svg>
           <blockquote class="relative">
             <div class="text-2xl leading-9 font-medium text-gray-900">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.
-              </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.</p>
             </div>
             <footer class="mt-8">
               <div class="flex">

@@ -123,10 +123,10 @@
 
           <div class="sm:col-span-3">
             <label for="country" class="block text-sm font-medium text-gray-700">
-              Country / Region
+              Country
             </label>
             <div class="mt-1">
-              <select id="country" name="country" autocomplete="country" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+              <select id="country" name="country" autocomplete="country-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 <option>United States</option>
                 <option>Canada</option>
                 <option>Mexico</option>
@@ -148,25 +148,25 @@
               City
             </label>
             <div class="mt-1">
-              <input type="text" name="city" id="city" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+              <input type="text" name="city" id="city" autocomplete="address-level2" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
             </div>
           </div>
 
           <div class="sm:col-span-2">
-            <label for="state" class="block text-sm font-medium text-gray-700">
+            <label for="region" class="block text-sm font-medium text-gray-700">
               State / Province
             </label>
             <div class="mt-1">
-              <input type="text" name="state" id="state" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+              <input type="text" name="region" id="region" autocomplete="address-level1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
             </div>
           </div>
 
           <div class="sm:col-span-2">
-            <label for="zip" class="block text-sm font-medium text-gray-700">
-              ZIP / Postal
+            <label for="postal-code" class="block text-sm font-medium text-gray-700">
+              ZIP / Postal code
             </label>
             <div class="mt-1">
-              <input type="text" name="zip" id="zip" autocomplete="postal-code" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+              <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
             </div>
           </div>
         </div>

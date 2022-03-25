@@ -2,7 +2,7 @@
 <template>
   <div class="py-12 px-4 sm:px-6 lg:px-8">
     <nav class="flex justify-center" aria-label="Progress">
-      <ol class="space-y-6">
+      <ol role="list" class="space-y-6">
         <li v-for="step in steps" :key="step.name">
           <a v-if="step.status === 'complete'" :href="step.href" class="group">
             <span class="flex items-start">

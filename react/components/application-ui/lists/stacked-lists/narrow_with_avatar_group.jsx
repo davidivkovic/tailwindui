@@ -22,7 +22,7 @@ const people = [
 
 export default function Example() {
   return (
-    <ul className="divide-y divide-gray-200">
+    <ul role="list" className="divide-y divide-gray-200">
       {people.map((person) => (
         <li key={person.email} className="py-4 flex">
           <img className="h-10 w-10 rounded-full" src={person.image} alt="" />

@@ -11,12 +11,20 @@
       // ...
       require('@tailwindcss/forms'),
       require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative h-screen bg-gray-50 flex overflow-hidden">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-50">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex">
     <!-- Narrow sidebar -->
     <div class="hidden w-28 bg-indigo-700 overflow-y-auto md:block">
       <div class="w-full py-6 flex flex-col items-center">
@@ -34,7 +42,7 @@
 
     <!-- Mobile menu -->
     <TransitionRoot as="template" :show="mobileMenuOpen">
-      <Dialog as="div" static class="fixed inset-0 z-40 flex md:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+      <Dialog as="div" class="fixed inset-0 z-40 flex md:hidden" @close="mobileMenuOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <DialogOverlay class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -80,13 +88,14 @@
           <div class="flex-1 flex justify-between px-4 sm:px-6">
             <div class="flex-1 flex">
               <form class="w-full flex md:ml-0" action="#" method="GET">
-                <label for="search-field" class="sr-only">Search all files</label>
+                <label for="desktop-search-field" class="sr-only">Search all files</label>
+                <label for="mobile-search-field" class="sr-only">Search all files</label>
                 <div class="relative w-full text-gray-400 focus-within:text-gray-600">
                   <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center">
                     <SearchIcon class="flex-shrink-0 h-5 w-5" aria-hidden="true" />
                   </div>
-                  <input name="search-field" id="search-field" class="h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:hidden" placeholder="Search" type="search" />
-                  <input name="search-field" id="search-field" class="hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:block" placeholder="Search all files" type="search" />
+                  <input name="mobile-search-field" id="mobile-search-field" class="h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:hidden" placeholder="Search" type="search" />
+                  <input name="desktop-search-field" id="desktop-search-field" class="hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:block" placeholder="Search all files" type="search" />
                 </div>
               </form>
             </div>
@@ -109,7 +118,7 @@
               </Menu>
 
               <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <PlusIconOutline class="h-6 w-6" aria-hidden="true" />
+                <PlusSmIconOutline class="h-6 w-6" aria-hidden="true" />
                 <span class="sr-only">Add file</span>
               </button>
             </div>
@@ -139,6 +148,7 @@
             <div class="mt-3 sm:mt-2">
               <div class="sm:hidden">
                 <label for="tabs" class="sr-only">Select a tab</label>
+                <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
                 <select id="tabs" name="tabs" class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                   <option selected="">Recently Viewed</option>
                   <option>Recently Added</option>
@@ -224,7 +234,7 @@
             </div>
             <div>
               <h3 class="font-medium text-gray-900">Shared with</h3>
-              <ul class="mt-2 border-t border-b border-gray-200 divide-y divide-gray-200">
+              <ul role="list" class="mt-2 border-t border-b border-gray-200 divide-y divide-gray-200">
                 <li v-for="person in currentFile.sharedWith" :key="person.id" class="py-3 flex justify-between items-center">
                   <div class="flex items-center">
                     <img :src="person.imageUrl" alt="" class="w-8 h-8 rounded-full" />
@@ -237,7 +247,7 @@
                 <li class="py-2 flex justify-between items-center">
                   <button type="button" class="group -ml-1 bg-white p-1 rounded-md flex items-center focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <span class="w-8 h-8 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400">
-                      <PlusIconSolid class="h-5 w-5" aria-hidden="true" />
+                      <PlusSmIconSolid class="h-5 w-5" aria-hidden="true" />
                     </span>
                     <span class="ml-4 text-sm font-medium text-indigo-600 group-hover:text-indigo-500">Share</span>
                   </button>
@@ -245,12 +255,8 @@
               </ul>
             </div>
             <div class="flex">
-              <button type="button" class="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Download
-              </button>
-              <button type="button" class="flex-1 ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Delete
-              </button>
+              <button type="button" class="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Download</button>
+              <button type="button" class="flex-1 ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Delete</button>
             </div>
           </div>
         </aside>
@@ -278,14 +284,14 @@ import {
   HomeIcon,
   MenuAlt2Icon,
   PhotographIcon,
-  PlusIcon as PlusIconOutline,
+  PlusSmIcon as PlusSmIconOutline,
   UserGroupIcon,
   ViewGridIcon as ViewGridIconOutline,
   XIcon,
 } from '@heroicons/vue/outline'
 import {
   PencilIcon,
-  PlusIcon as PlusIconSolid,
+  PlusSmIcon as PlusSmIconSolid,
   SearchIcon,
   ViewGridIcon as ViewGridIconSolid,
   ViewListIcon,
@@ -359,8 +365,8 @@ export default {
     HeartIcon,
     MenuAlt2Icon,
     PencilIcon,
-    PlusIconOutline,
-    PlusIconSolid,
+    PlusSmIconOutline,
+    PlusSmIconSolid,
     SearchIcon,
     ViewGridIconSolid,
     ViewListIcon,

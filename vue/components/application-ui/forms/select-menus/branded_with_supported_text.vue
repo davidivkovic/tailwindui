@@ -1,9 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <Listbox as="div" v-model="selected">
-    <ListboxLabel class="sr-only">
-      Change published status
-    </ListboxLabel>
+    <ListboxLabel class="sr-only"> Change published status </ListboxLabel>
     <div class="relative">
       <div class="inline-flex shadow-sm rounded-md divide-x divide-indigo-600">
         <div class="relative z-0 inline-flex shadow-sm rounded-md divide-x divide-indigo-600">

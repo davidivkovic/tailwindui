@@ -4,9 +4,17 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div style="max-height: 800px;" class="overflow-y-auto">
+<div class="max-h-[800px] bg-gray-100 overflow-y-auto">
     
-  <div class="relative min-h-screen bg-gray-100">
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+  -->
+  <div class="min-h-full">
     <!-- When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars -->
     <header class="bg-white shadow-sm lg:static lg:overflow-y-visible" x-state:on="Menu open" x-state:off="Menu closed" :class="{ 'fixed inset-0 z-40 overflow-y-auto': open }" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,23 +99,23 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
       <nav x-description="Mobile menu, show/hide based on menu state." class="lg:hidden" aria-label="Global" x-ref="panel" x-show="open" @click.away="open = false">
         <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
           
-            <a href="#" aria-current="page" class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;hover:bg-gray-50&quot;">Home</a>
+            <a href="#" aria-current="page" class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;hover:bg-gray-50&quot;">Home</a>
           
-            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Popular</a>
+            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Popular</a>
           
-            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Communities</a>
+            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Communities</a>
           
-            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Trending</a>
+            <a href="#" class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;hover:bg-gray-50&quot;">Trending</a>
           
         </div>
-        <div class="border-t border-gray-200 pt-4 pb-3">
+        <div class="border-t border-gray-200 pt-4">
           <div class="max-w-3xl mx-auto px-4 flex items-center sm:px-6">
             <div class="flex-shrink-0">
               <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
             </div>
             <div class="ml-3">
               <div class="text-base font-medium text-gray-800">Chelsea Hagon</div>
-              <div class="text-sm font-medium text-gray-500">chelseahagon@example.com</div>
+              <div class="text-sm font-medium text-gray-500">chelsea.hagon@example.com</div>
             </div>
             <button type="button" class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
               <span class="sr-only">View notifications</span>
@@ -124,6 +132,18 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
             
               <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Sign out</a>
             
+          </div>
+        </div>
+
+        <div class="mt-6 max-w-3xl mx-auto px-4 sm:px-6">
+          <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700">
+            New Post
+          </a>
+
+          <div class="mt-6 flex justify-center">
+            <a href="#" class="text-base font-medium text-gray-900 hover:underline">
+              Go Premium
+            </a>
           </div>
         </div>
       </nav>
@@ -268,7 +288,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
           </div>
           <div class="mt-4">
             <h1 class="sr-only">Recent questions</h1>
-            <ul class="space-y-4">
+            <ul role="list" class="space-y-4">
               
                 <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
                   <article aria-labelledby="question-title-81614">
@@ -338,7 +358,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     <div class="mt-6 flex justify-between space-x-8">
                       <div class="flex space-x-6">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
 </svg>
@@ -347,7 +367,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -356,7 +376,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -368,7 +388,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       </div>
                       <div class="flex text-sm">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/share" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
 </svg>
@@ -448,7 +468,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     <div class="mt-6 flex justify-between space-x-8">
                       <div class="flex space-x-6">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
 </svg>
@@ -457,7 +477,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -466,7 +486,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -478,7 +498,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       </div>
                       <div class="flex text-sm">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/share" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
 </svg>
@@ -558,7 +578,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     <div class="mt-6 flex justify-between space-x-8">
                       <div class="flex space-x-6">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
 </svg>
@@ -567,7 +587,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -576,7 +596,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -588,7 +608,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       </div>
                       <div class="flex text-sm">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/share" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
 </svg>
@@ -668,7 +688,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     <div class="mt-6 flex justify-between space-x-8">
                       <div class="flex space-x-6">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
 </svg>
@@ -677,7 +697,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -686,7 +706,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -698,7 +718,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       </div>
                       <div class="flex text-sm">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/share" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
 </svg>
@@ -778,7 +798,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     <div class="mt-6 flex justify-between space-x-8">
                       <div class="flex space-x-6">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
 </svg>
@@ -787,7 +807,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -796,7 +816,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -808,7 +828,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       </div>
                       <div class="flex text-sm">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/share" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
 </svg>
@@ -888,7 +908,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     <div class="mt-6 flex justify-between space-x-8">
                       <div class="flex space-x-6">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
 </svg>
@@ -897,7 +917,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -906,7 +926,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </button>
                         </span>
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
   <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -918,7 +938,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       </div>
                       <div class="flex text-sm">
                         <span class="inline-flex items-center text-sm">
-                          <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                          <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                             <svg class="h-5 w-5" x-description="Heroicon name: solid/share" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
 </svg>
@@ -942,7 +962,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     Who to follow
                   </h2>
                   <div class="mt-6 flow-root">
-                    <ul class="-my-4 divide-y divide-gray-200">
+                    <ul role="list" class="-my-4 divide-y divide-gray-200">
                       
                         <li class="flex items-center py-4 space-x-3">
                           <div class="flex-shrink-0">
@@ -958,8 +978,8 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </div>
                           <div class="flex-shrink-0">
                             <button type="button" class="inline-flex items-center px-3 py-0.5 rounded-full bg-rose-50 text-sm font-medium text-rose-700 hover:bg-rose-100">
-                              <svg class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" x-description="Heroicon name: solid/plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path>
+                              <svg class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" x-description="Heroicon name: solid/plus-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
 </svg>
                               <span>
                                 Follow
@@ -982,8 +1002,8 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </div>
                           <div class="flex-shrink-0">
                             <button type="button" class="inline-flex items-center px-3 py-0.5 rounded-full bg-rose-50 text-sm font-medium text-rose-700 hover:bg-rose-100">
-                              <svg class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" x-description="Heroicon name: solid/plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path>
+                              <svg class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" x-description="Heroicon name: solid/plus-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
 </svg>
                               <span>
                                 Follow
@@ -1006,8 +1026,8 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                           </div>
                           <div class="flex-shrink-0">
                             <button type="button" class="inline-flex items-center px-3 py-0.5 rounded-full bg-rose-50 text-sm font-medium text-rose-700 hover:bg-rose-100">
-                              <svg class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" x-description="Heroicon name: solid/plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path>
+                              <svg class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" x-description="Heroicon name: solid/plus-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
 </svg>
                               <span>
                                 Follow
@@ -1033,7 +1053,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     Trending
                   </h2>
                   <div class="mt-6 flow-root">
-                    <ul class="-my-4 divide-y divide-gray-200">
+                    <ul role="list" class="-my-4 divide-y divide-gray-200">
                       
                         <li class="flex py-4 space-x-3">
                           <div class="flex-shrink-0">
@@ -1043,7 +1063,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                             <p class="text-sm text-gray-800">What books do you have on your bookshelf just to look smarter than you actually are?</p>
                             <div class="mt-2 flex">
                               <span class="inline-flex items-center text-sm">
-                                <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                                <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                   <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -1062,7 +1082,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                             <p class="text-sm text-gray-800">Have you ever lied about your age to buy a kid's meal at a restaurant?</p>
                             <div class="mt-2 flex">
                               <span class="inline-flex items-center text-sm">
-                                <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                                <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                   <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>
@@ -1081,7 +1101,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                             <p class="text-sm text-gray-800">Does Santa Claus pay property taxes for his workshop at the North Pole?</p>
                             <div class="mt-2 flex">
                               <span class="inline-flex items-center text-sm">
-                                <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                                <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                   <svg class="h-5 w-5" x-description="Heroicon name: solid/chat-alt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
 </svg>

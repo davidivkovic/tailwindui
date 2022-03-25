@@ -2,7 +2,7 @@
 <template>
   <div class="lg:border-t lg:border-b lg:border-gray-200">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Progress">
-      <ol class="rounded-md overflow-hidden lg:flex lg:border-l lg:border-r lg:border-gray-200 lg:rounded-none">
+      <ol role="list" class="rounded-md overflow-hidden lg:flex lg:border-l lg:border-r lg:border-gray-200 lg:rounded-none">
         <li v-for="(step, stepIdx) in steps" :key="step.id" class="relative overflow-hidden lg:flex-1">
           <div :class="[stepIdx === 0 ? 'border-b-0 rounded-t-md' : '', stepIdx === steps.length - 1 ? 'border-t-0 rounded-b-md' : '', 'border border-gray-200 overflow-hidden lg:border-0']">
             <a v-if="step.status === 'complete'" :href="step.href" class="group">
@@ -47,7 +47,7 @@
                 </span>
               </span>
             </a>
-            <template v-if="(stepIdx !== 0)">
+            <template v-if="stepIdx !== 0">
               <!-- Separator -->
               <div class="hidden absolute top-0 left-0 w-3 inset-0 lg:block" aria-hidden="true">
                 <svg class="h-full w-full text-gray-300" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">

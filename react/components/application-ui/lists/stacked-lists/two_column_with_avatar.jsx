@@ -43,7 +43,7 @@ const applications = [
 export default function Example() {
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-md">
-      <ul className="divide-y divide-gray-200">
+      <ul role="list" className="divide-y divide-gray-200">
         {applications.map((application) => (
           <li key={application.applicant.email}>
             <a href={application.href} className="block hover:bg-gray-50">

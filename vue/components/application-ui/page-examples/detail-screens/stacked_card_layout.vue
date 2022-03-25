@@ -10,12 +10,20 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative min-h-screen bg-gray-100">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full">
+    ```
+  -->
+  <div class="min-h-full">
     <header class="bg-white shadow">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         <Popover class="flex justify-between h-16" v-slot="{ open }">
@@ -52,11 +60,11 @@
           <TransitionRoot as="template" :show="open">
             <div class="lg:hidden">
               <TransitionChild as="template" enter="duration-150 ease-out" enter-from="opacity-0" enter-to="opacity-100" leave="duration-150 ease-in" leave-from="opacity-100" leave-to="opacity-0">
-                <PopoverOverlay static class="z-20 fixed inset-0 bg-black bg-opacity-25" aria-hidden="true" />
+                <PopoverOverlay class="z-20 fixed inset-0 bg-black bg-opacity-25" aria-hidden="true" />
               </TransitionChild>
 
               <TransitionChild as="template" enter="duration-150 ease-out" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="duration-150 ease-in" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
-                <PopoverPanel focus static class="z-30 absolute top-0 right-0 max-w-none w-full p-2 transition transform origin-top">
+                <PopoverPanel focus class="z-30 absolute top-0 right-0 max-w-none w-full p-2 transition transform origin-top">
                   <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y divide-gray-200">
                     <div class="pt-3 pb-2">
                       <div class="flex items-center justify-between px-4">
@@ -83,7 +91,7 @@
                           <div class="text-base font-medium text-gray-800">{{ user.name }}</div>
                           <div class="text-sm font-medium text-gray-500">{{ user.email }}</div>
                         </div>
-                        <button class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <button type="button" class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                           <span class="sr-only">View notifications</span>
                           <BellIcon class="h-6 w-6" aria-hidden="true" />
                         </button>
@@ -133,7 +141,7 @@
               </a>
             </div>
             <div class="hidden sm:block">
-              <ol class="flex items-center space-x-4">
+              <ol role="list" class="flex items-center space-x-4">
                 <li>
                   <div>
                     <a href="#" class="text-gray-400 hover:text-gray-500">
@@ -173,12 +181,8 @@
           </div>
         </div>
         <div class="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
-          <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">
-            Disqualify
-          </button>
-          <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">
-            Advance to offer
-          </button>
+          <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">Disqualify</button>
+          <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">Advance to offer</button>
         </div>
       </div>
 
@@ -188,61 +192,35 @@
           <section aria-labelledby="applicant-information-title">
             <div class="bg-white shadow sm:rounded-lg">
               <div class="px-4 py-5 sm:px-6">
-                <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
-                  Applicant Information
-                </h2>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                  Personal details and application.
-                </p>
+                <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">Applicant Information</h2>
+                <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
               </div>
               <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
                 <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      Application for
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      Backend Developer
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">Application for</dt>
+                    <dd class="mt-1 text-sm text-gray-900">Backend Developer</dd>
                   </div>
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      Email address
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      ricardocooper@example.com
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">Email address</dt>
+                    <dd class="mt-1 text-sm text-gray-900">ricardocooper@example.com</dd>
                   </div>
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      Salary expectation
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      $120,000
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">Salary expectation</dt>
+                    <dd class="mt-1 text-sm text-gray-900">$120,000</dd>
                   </div>
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      Phone
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      +1 555-555-5555
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">Phone</dt>
+                    <dd class="mt-1 text-sm text-gray-900">+1 555-555-5555</dd>
                   </div>
                   <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500">
-                      About
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">About</dt>
+                    <dd class="mt-1 text-sm text-gray-900">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
                   </div>
                   <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500">
-                      Attachments
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">Attachments</dt>
                     <dd class="mt-1 text-sm text-gray-900">
-                      <ul class="border border-gray-200 rounded-md divide-y divide-gray-200">
+                      <ul role="list" class="border border-gray-200 rounded-md divide-y divide-gray-200">
                         <li v-for="attachment in attachments" :key="attachment.name" class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
                           <div class="w-0 flex-1 flex items-center">
                             <PaperClipIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -251,9 +229,7 @@
                             </span>
                           </div>
                           <div class="ml-4 flex-shrink-0">
-                            <a :href="attachment.href" class="font-medium text-blue-600 hover:text-blue-500">
-                              Download
-                            </a>
+                            <a :href="attachment.href" class="font-medium text-blue-600 hover:text-blue-500"> Download </a>
                           </div>
                         </li>
                       </ul>
@@ -275,7 +251,7 @@
                   <h2 id="notes-title" class="text-lg font-medium text-gray-900">Notes</h2>
                 </div>
                 <div class="px-4 py-6 sm:px-6">
-                  <ul class="space-y-8">
+                  <ul role="list" class="space-y-8">
                     <li v-for="comment in comments" :key="comment.id">
                       <div class="flex space-x-3">
                         <div class="flex-shrink-0">
@@ -315,13 +291,9 @@
                       <div class="mt-3 flex items-center justify-between">
                         <a href="#" class="group inline-flex items-start text-sm space-x-2 text-gray-500 hover:text-gray-900">
                           <QuestionMarkCircleIcon class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
-                          <span>
-                            Some HTML is okay.
-                          </span>
+                          <span> Some HTML is okay. </span>
                         </a>
-                        <button type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                          Comment
-                        </button>
+                        <button type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Comment</button>
                       </div>
                     </form>
                   </div>
@@ -337,10 +309,10 @@
 
             <!-- Activity Feed -->
             <div class="mt-6 flow-root">
-              <ul class="-mb-8">
+              <ul role="list" class="-mb-8">
                 <li v-for="(item, itemIdx) in timeline" :key="item.id">
                   <div class="relative pb-8">
-                    <span v-if="(itemIdx !== timeline.length - 1)" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+                    <span v-if="itemIdx !== timeline.length - 1" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
                     <div class="relative flex space-x-3">
                       <div>
                         <span :class="[item.type.bgColorClass, 'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white']">
@@ -363,9 +335,7 @@
               </ul>
             </div>
             <div class="mt-6 flex flex-col justify-stretch">
-              <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                Advance to offer
-              </button>
+              <button type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Advance to offer</button>
             </div>
           </div>
         </section>
@@ -478,24 +448,21 @@ const comments = [
     name: 'Leslie Alexander',
     date: '4d ago',
     imageId: '1494790108377-be9c29b29330',
-    body:
-      'Ducimus quas delectus ad maxime totam doloribus reiciendis ex. Tempore dolorem maiores. Similique voluptatibus tempore non ut.',
+    body: 'Ducimus quas delectus ad maxime totam doloribus reiciendis ex. Tempore dolorem maiores. Similique voluptatibus tempore non ut.',
   },
   {
     id: 2,
     name: 'Michael Foster',
     date: '4d ago',
     imageId: '1519244703995-f4e0f30006d5',
-    body:
-      'Et ut autem. Voluptatem eum dolores sint necessitatibus quos. Quis eum qui dolorem accusantium voluptas voluptatem ipsum. Quo facere iusto quia accusamus veniam id explicabo et aut.',
+    body: 'Et ut autem. Voluptatem eum dolores sint necessitatibus quos. Quis eum qui dolorem accusantium voluptas voluptatem ipsum. Quo facere iusto quia accusamus veniam id explicabo et aut.',
   },
   {
     id: 3,
     name: 'Dries Vincent',
     date: '4d ago',
     imageId: '1506794778202-cad84cf45f1d',
-    body:
-      'Expedita consequatur sit ea voluptas quo ipsam recusandae. Ab sint et voluptatem repudiandae voluptatem et eveniet. Nihil quas consequatur autem. Perferendis rerum et.',
+    body: 'Expedita consequatur sit ea voluptas quo ipsam recusandae. Ab sint et voluptatem repudiandae voluptatem et eveniet. Nihil quas consequatur autem. Perferendis rerum et.',
   },
 ]
 

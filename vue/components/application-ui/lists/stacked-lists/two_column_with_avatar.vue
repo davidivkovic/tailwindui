@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="bg-white shadow overflow-hidden sm:rounded-md">
-    <ul class="divide-y divide-gray-200">
+    <ul role="list" class="divide-y divide-gray-200">
       <li v-for="application in applications" :key="application.applicant.email">
         <a :href="application.href" class="block hover:bg-gray-50">
           <div class="flex items-center px-4 py-4 sm:px-6">

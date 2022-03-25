@@ -3,9 +3,7 @@
   <div class="bg-white">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
       <div class="max-w-2xl lg:mx-auto lg:text-center">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          Frequently asked questions
-        </h2>
+        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Frequently asked questions</h2>
         <p class="mt-4 text-gray-500">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec. Urna, sed a lectus elementum blandit et.</p>
       </div>
       <div class="mt-20">

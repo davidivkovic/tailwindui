@@ -12,7 +12,7 @@ export default function Example() {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
       <nav className="flex justify-center" aria-label="Progress">
-        <ol className="space-y-6">
+        <ol role="list" className="space-y-6">
           {steps.map((step) => (
             <li key={step.name}>
               {step.status === 'complete' ? (

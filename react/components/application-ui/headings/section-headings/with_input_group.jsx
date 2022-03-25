@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -21,7 +21,10 @@ export default function Example() {
     <div className="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between">
       <h3 className="text-lg leading-6 font-medium text-gray-900">Job Postings</h3>
       <div className="mt-3 sm:mt-0 sm:ml-4">
-        <label htmlFor="search-candidate" className="sr-only">
+        <label htmlFor="mobile-search-candidate" className="sr-only">
+          Search
+        </label>
+        <label htmlFor="desktop-search-candidate" className="sr-only">
           Search
         </label>
         <div className="flex rounded-md shadow-sm">
@@ -31,15 +34,15 @@ export default function Example() {
             </div>
             <input
               type="text"
-              name="search-candidate"
-              id="search-candidate"
+              name="mobile-search-candidate"
+              id="mobile-search-candidate"
               className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:hidden border-gray-300"
               placeholder="Search"
             />
             <input
               type="text"
-              name="search-candidate"
-              id="search-candidate"
+              name="desktop-search-candidate"
+              id="desktop-search-candidate"
               className="hidden focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-none rounded-l-md pl-10 sm:block sm:text-sm border-gray-300"
               placeholder="Search candidates"
             />

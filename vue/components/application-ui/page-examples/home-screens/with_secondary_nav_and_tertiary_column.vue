@@ -13,18 +13,26 @@
       extend: {
         colors: {
           rose: colors.rose,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative min-h-screen bg-gray-100">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full">
+    ```
+  -->
+  <div class="min-h-full">
     <!-- When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars -->
     <Popover as="template" v-slot="{ open }">
       <header :class="[open ? 'fixed inset-0 z-40 overflow-y-auto' : '', 'bg-white shadow-sm lg:static lg:overflow-y-visible']">
@@ -59,9 +67,7 @@
               </PopoverButton>
             </div>
             <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
-              <a href="#" class="text-sm font-medium text-gray-900 hover:underline">
-                Go Premium
-              </a>
+              <a href="#" class="text-sm font-medium text-gray-900 hover:underline"> Go Premium </a>
               <a href="#" class="ml-5 flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="h-6 w-6" aria-hidden="true" />
@@ -84,9 +90,7 @@
                 </transition>
               </Menu>
 
-              <a href="#" class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
-                New Post
-              </a>
+              <a href="#" class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"> New Post </a>
             </div>
           </div>
         </div>
@@ -95,7 +99,7 @@
           <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
             <a v-for="item in navigation" :key="item.name" :href="item.href" :aria-current="item.current ? 'page' : undefined" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-50', 'block rounded-md py-2 px-3 text-base font-medium']">{{ item.name }}</a>
           </div>
-          <div class="border-t border-gray-200 pt-4 pb-3">
+          <div class="border-t border-gray-200 pt-4">
             <div class="max-w-3xl mx-auto px-4 flex items-center sm:px-6">
               <div class="flex-shrink-0">
                 <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" />
@@ -111,6 +115,14 @@
             </div>
             <div class="mt-3 max-w-3xl mx-auto px-2 space-y-1 sm:px-4">
               <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">{{ item.name }}</a>
+            </div>
+          </div>
+
+          <div class="mt-6 max-w-3xl mx-auto px-4 sm:px-6">
+            <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700"> New Post </a>
+
+            <div class="mt-6 flex justify-center">
+              <a href="#" class="text-base font-medium text-gray-900 hover:underline"> Go Premium </a>
             </div>
           </div>
         </PopoverPanel>
@@ -130,9 +142,7 @@
               </a>
             </div>
             <div class="pt-10">
-              <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="communities-headline">
-                My communities
-              </p>
+              <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="communities-headline">My communities</p>
               <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
                 <a v-for="community in communities" :key="community.name" :href="community.href" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                   <span class="truncate">
@@ -162,7 +172,7 @@
           </div>
           <div class="mt-4">
             <h1 class="sr-only">Recent questions</h1>
-            <ul class="space-y-4">
+            <ul role="list" class="space-y-4">
               <li v-for="question in questions" :key="question.id" class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
                 <article :aria-labelledby="'question-title-' + question.id">
                   <div>
@@ -224,21 +234,21 @@
                   <div class="mt-6 flex justify-between space-x-8">
                     <div class="flex space-x-6">
                       <span class="inline-flex items-center text-sm">
-                        <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                           <ThumbUpIcon class="h-5 w-5" aria-hidden="true" />
                           <span class="font-medium text-gray-900">{{ question.likes }}</span>
                           <span class="sr-only">likes</span>
                         </button>
                       </span>
                       <span class="inline-flex items-center text-sm">
-                        <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                           <ChatAltIcon class="h-5 w-5" aria-hidden="true" />
                           <span class="font-medium text-gray-900">{{ question.replies }}</span>
                           <span class="sr-only">replies</span>
                         </button>
                       </span>
                       <span class="inline-flex items-center text-sm">
-                        <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                           <EyeIcon class="h-5 w-5" aria-hidden="true" />
                           <span class="font-medium text-gray-900">{{ question.views }}</span>
                           <span class="sr-only">views</span>
@@ -247,7 +257,7 @@
                     </div>
                     <div class="flex text-sm">
                       <span class="inline-flex items-center text-sm">
-                        <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                           <ShareIcon class="h-5 w-5" aria-hidden="true" />
                           <span class="font-medium text-gray-900">Share</span>
                         </button>
@@ -264,11 +274,9 @@
             <section aria-labelledby="who-to-follow-heading">
               <div class="bg-white rounded-lg shadow">
                 <div class="p-6">
-                  <h2 id="who-to-follow-heading" class="text-base font-medium text-gray-900">
-                    Who to follow
-                  </h2>
+                  <h2 id="who-to-follow-heading" class="text-base font-medium text-gray-900">Who to follow</h2>
                   <div class="mt-6 flow-root">
-                    <ul class="-my-4 divide-y divide-gray-200">
+                    <ul role="list" class="-my-4 divide-y divide-gray-200">
                       <li v-for="user in whoToFollow" :key="user.handle" class="flex items-center py-4 space-x-3">
                         <div class="flex-shrink-0">
                           <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt="" />
@@ -283,19 +291,15 @@
                         </div>
                         <div class="flex-shrink-0">
                           <button type="button" class="inline-flex items-center px-3 py-0.5 rounded-full bg-rose-50 text-sm font-medium text-rose-700 hover:bg-rose-100">
-                            <PlusIcon class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" aria-hidden="true" />
-                            <span>
-                              Follow
-                            </span>
+                            <PlusSmIcon class="-ml-1 mr-0.5 h-5 w-5 text-rose-400" aria-hidden="true" />
+                            <span> Follow </span>
                           </button>
                         </div>
                       </li>
                     </ul>
                   </div>
                   <div class="mt-6">
-                    <a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                      View all
-                    </a>
+                    <a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
                   </div>
                 </div>
               </div>
@@ -303,11 +307,9 @@
             <section aria-labelledby="trending-heading">
               <div class="bg-white rounded-lg shadow">
                 <div class="p-6">
-                  <h2 id="trending-heading" class="text-base font-medium text-gray-900">
-                    Trending
-                  </h2>
+                  <h2 id="trending-heading" class="text-base font-medium text-gray-900">Trending</h2>
                   <div class="mt-6 flow-root">
-                    <ul class="-my-4 divide-y divide-gray-200">
+                    <ul role="list" class="-my-4 divide-y divide-gray-200">
                       <li v-for="post in trendingPosts" :key="post.id" class="flex py-4 space-x-3">
                         <div class="flex-shrink-0">
                           <img class="h-8 w-8 rounded-full" :src="post.user.imageUrl" :alt="post.user.name" />
@@ -316,7 +318,7 @@
                           <p class="text-sm text-gray-800">{{ post.body }}</p>
                           <div class="mt-2 flex">
                             <span class="inline-flex items-center text-sm">
-                              <button class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                              <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                 <ChatAltIcon class="h-5 w-5" aria-hidden="true" />
                                 <span class="font-medium text-gray-900">{{ post.comments }}</span>
                               </button>
@@ -327,9 +329,7 @@
                     </ul>
                   </div>
                   <div class="mt-6">
-                    <a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                      View all
-                    </a>
+                    <a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
                   </div>
                 </div>
               </div>
@@ -349,7 +349,7 @@ import {
   DotsVerticalIcon,
   EyeIcon,
   FlagIcon,
-  PlusIcon,
+  PlusSmIcon,
   SearchIcon,
   ShareIcon,
   StarIcon,
@@ -359,7 +359,7 @@ import { BellIcon, FireIcon, HomeIcon, MenuIcon, TrendingUpIcon, UserGroupIcon, 
 
 const user = {
   name: 'Chelsea Hagon',
-  email: 'chelseahagon@example.com',
+  email: 'chelsea.hagon@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
@@ -452,7 +452,7 @@ export default {
     EyeIcon,
     FlagIcon,
     MenuIcon,
-    PlusIcon,
+    PlusSmIcon,
     SearchIcon,
     ShareIcon,
     StarIcon,

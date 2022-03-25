@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -143,7 +143,7 @@ export default function Example() {
                   <span className="ml-3">support@workcation.com</span>
                 </dd>
               </dl>
-              <ul className="mt-8 flex space-x-12" role="list">
+              <ul role="list" className="mt-8 flex space-x-12">
                 <li>
                   <a className="text-indigo-200 hover:text-indigo-100" href="#">
                     <span className="sr-only">Facebook</span>

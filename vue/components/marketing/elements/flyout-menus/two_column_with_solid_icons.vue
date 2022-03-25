@@ -27,16 +27,10 @@
           <div class="p-5 bg-gray-50 sm:p-8">
             <a href="#" class="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 transition ease-in-out duration-150">
               <span class="flex items-center">
-                <span class="text-base font-medium text-gray-900">
-                  Enterprise
-                </span>
-                <span class="ml-3 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-indigo-100 text-indigo-800">
-                  New
-                </span>
+                <span class="text-base font-medium text-gray-900"> Enterprise </span>
+                <span class="ml-3 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-indigo-100 text-indigo-800"> New </span>
               </span>
-              <span class="mt-1 block text-sm text-gray-500">
-                Empower your entire team with even more advanced tools.
-              </span>
+              <span class="mt-1 block text-sm text-gray-500"> Empower your entire team with even more advanced tools. </span>
             </a>
           </div>
         </div>

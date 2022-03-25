@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div>
-    <ul class="divide-y divide-gray-200">
+    <ul role="list" class="divide-y divide-gray-200">
       <li v-for="activityItem in activityItems" :key="activityItem.id" class="py-4">
         <div class="flex space-x-3">
           <img class="h-6 w-6 rounded-full" :src="activityItem.person.imageUrl" alt="" />

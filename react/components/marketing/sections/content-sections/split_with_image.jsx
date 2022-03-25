@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/typography'),
-    ]
+    ],
   }
   ```
 */
@@ -49,7 +49,7 @@ export default function Example() {
               <p>
                 Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus. In.
               </p>
-              <ul>
+              <ul role="list">
                 <li>Quis elit egestas venenatis mattis dignissim.</li>
                 <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
                 <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>

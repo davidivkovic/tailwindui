@@ -13,19 +13,27 @@
       extend: {
         colors: {
           cyan: colors.cyan,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
       require('@tailwindcss/line-clamp'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative h-screen overflow-hidden bg-gray-100 flex flex-col">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex flex-col">
     <!-- Top nav-->
     <header class="flex-shrink-0 relative h-16 bg-white flex items-center">
       <!-- Logo area -->
@@ -66,8 +74,8 @@
       <div class="hidden lg:min-w-0 lg:flex-1 lg:flex lg:items-center lg:justify-between">
         <div class="min-w-0 flex-1">
           <div class="max-w-2xl relative text-gray-400 focus-within:text-gray-500">
-            <label for="search" class="sr-only">Search all inboxes</label>
-            <input id="search" type="search" placeholder="Search all inboxes" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0" />
+            <label for="desktop-search" class="sr-only">Search all inboxes</label>
+            <input id="desktop-search" type="search" placeholder="Search all inboxes" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0" />
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-4">
               <SearchIcon class="h-5 w-5" aria-hidden="true" />
             </div>
@@ -76,7 +84,7 @@
         <div class="ml-10 pr-4 flex-shrink-0 flex items-center space-x-10">
           <nav aria-label="Global" class="flex space-x-10">
             <template v-for="item in navigation" :key="item.name">
-              <Menu v-if="item.children.length" as="div" class="relative text-left">
+              <Menu as="div" v-if="item.children.length" class="relative text-left">
                 <MenuButton class="flex items-center text-sm font-medium text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
                   <span>{{ item.name }}</span>
                   <ChevronDownIcon class="ml-1 h-5 w-5 text-gray-500" aria-hidden="true" />
@@ -115,14 +123,10 @@
                 <MenuItems class="origin-top-right absolute z-30 right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div class="py-1">
                     <MenuItem v-slot="{ active }">
-                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        Your Profile
-                      </a>
+                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"> Your Profile </a>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
-                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        Sign Out
-                      </a>
+                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"> Sign Out </a>
                     </MenuItem>
                   </div>
                 </MenuItems>
@@ -134,7 +138,7 @@
 
       <!-- Mobile menu, show/hide this `div` based on menu open/closed state -->
       <TransitionRoot as="template" :show="open">
-        <Dialog as="div" static class="fixed inset-0 z-40 lg:hidden" @close="open = false" :open="open">
+        <Dialog as="div" class="fixed inset-0 z-40 lg:hidden" @close="open = false">
           <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
             <DialogOverlay class="hidden sm:block sm:fixed sm:inset-0 sm:bg-gray-600 sm:bg-opacity-75" />
           </TransitionChild>
@@ -152,8 +156,8 @@
               </div>
               <div class="mt-2 max-w-8xl mx-auto px-4 sm:px-6">
                 <div class="relative text-gray-400 focus-within:text-gray-500">
-                  <label for="search" class="sr-only">Search all inboxes</label>
-                  <input id="search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-blue-600 focus:ring-blue-600" />
+                  <label for="mobile-search" class="sr-only">Search all inboxes</label>
+                  <input id="mobile-search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-blue-600 focus:ring-blue-600" />
                   <div class="absolute inset-y-0 left-0 flex items-center justify-center pl-3">
                     <SearchIcon class="h-5 w-5" aria-hidden="true" />
                   </div>
@@ -252,24 +256,16 @@
                           <MenuItems class="origin-top-right absolute right-0 mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div class="py-1">
                               <MenuItem v-slot="{ active }">
-                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block sm:hidden px-4 py-2 text-sm']">
-                                  Note
-                                </a>
+                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block sm:hidden px-4 py-2 text-sm']"> Note </a>
                               </MenuItem>
                               <MenuItem v-slot="{ active }">
-                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block sm:hidden px-4 py-2 text-sm']">
-                                  Assign
-                                </a>
+                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block sm:hidden px-4 py-2 text-sm']"> Assign </a>
                               </MenuItem>
                               <MenuItem v-slot="{ active }">
-                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
-                                  Archive
-                                </a>
+                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']"> Archive </a>
                               </MenuItem>
                               <MenuItem v-slot="{ active }">
-                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
-                                  Move
-                                </a>
+                                <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']"> Move </a>
                               </MenuItem>
                             </div>
                           </MenuItems>
@@ -347,7 +343,7 @@
               </div>
             </div>
             <!-- Thread section-->
-            <ul class="py-4 space-y-2 sm:px-6 sm:space-y-4 lg:px-8">
+            <ul role="list" class="py-4 space-y-2 sm:px-6 sm:space-y-4 lg:px-8">
               <li v-for="item in message.items" :key="item.id" class="bg-white px-4 py-6 shadow sm:rounded-lg sm:px-6">
                 <div class="sm:flex sm:justify-between sm:items-baseline">
                   <h3 class="text-base font-medium">
@@ -375,12 +371,10 @@
                   <p class="text-sm font-medium text-gray-500">{{ messages.length }} messages</p>
                 </div>
               </div>
-              <div class="border-t border-b border-gray-200 bg-gray-50 px-6 py-2 text-sm font-medium text-gray-500">
-                Sorted by date
-              </div>
+              <div class="border-t border-b border-gray-200 bg-gray-50 px-6 py-2 text-sm font-medium text-gray-500">Sorted by date</div>
             </div>
             <nav aria-label="Message list" class="min-h-0 flex-1 overflow-y-auto">
-              <ul class="border-b border-gray-200 divide-y divide-gray-200">
+              <ul role="list" class="border-b border-gray-200 divide-y divide-gray-200">
                 <li v-for="message in messages" :key="message.id" class="relative bg-white py-5 px-6 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600">
                   <div class="flex justify-between space-x-3">
                     <div class="min-w-0 flex-1">
@@ -444,7 +438,7 @@ import {
 
 const user = {
   name: 'Whitney Francis',
-  email: 'whitneyfrancis@example.com',
+  email: 'whitney.francis@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }

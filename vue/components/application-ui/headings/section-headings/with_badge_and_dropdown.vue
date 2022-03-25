@@ -3,18 +3,12 @@
   <div class="pb-5 border-b border-gray-200">
     <div class="sm:flex sm:justify-between sm:items-baseline">
       <div class="sm:w-0 sm:flex-1">
-        <h1 id="message-heading" class="text-lg font-medium text-gray-900">
-          Full-Stack Developer
-        </h1>
-        <p class="mt-1 text-sm text-gray-500 overflow-hidden overflow-ellipsis">
-          Checkout and Payments Team
-        </p>
+        <h1 id="message-heading" class="text-lg font-medium text-gray-900">Full-Stack Developer</h1>
+        <p class="mt-1 text-sm text-gray-500 truncate">Checkout and Payments Team</p>
       </div>
 
       <div class="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
-        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-          Open
-        </span>
+        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800"> Open </span>
         <Menu as="div" class="ml-3 relative inline-block text-left">
           <div>
             <MenuButton class="-my-2 p-2 rounded-full bg-white flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">

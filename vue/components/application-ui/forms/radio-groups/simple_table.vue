@@ -10,15 +10,13 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
   <RadioGroup v-model="selected">
-    <RadioGroupLabel class="sr-only">
-      Pricing plans
-    </RadioGroupLabel>
+    <RadioGroupLabel class="sr-only"> Pricing plans </RadioGroupLabel>
     <div class="relative bg-white rounded-md -space-y-px">
       <RadioGroupOption as="template" v-for="(plan, planIdx) in plans" :key="plan.name" :value="plan" v-slot="{ checked, active }">
         <div :class="[planIdx === 0 ? 'rounded-tl-md rounded-tr-md' : '', planIdx === plans.length - 1 ? 'rounded-bl-md rounded-br-md' : '', checked ? 'bg-indigo-50 border-indigo-200 z-10' : 'border-gray-200', 'relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none']">

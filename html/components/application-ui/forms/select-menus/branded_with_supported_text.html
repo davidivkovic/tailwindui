@@ -1,16 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<!--
-  Custom select controls like this require a considerable amount of JS to implement from scratch. We're planning
-  to build some low-level libraries to make this easier with popular frameworks like React, Vue, and even Alpine.js
-  in the near future, but in the mean time we recommend these reference guides when building your implementation:
-
-  https://www.w3.org/TR/wai-aria-practices/#Listbox
-  https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
--->
 <div>
-  <label id="listbox-label" class="sr-only">
-    Change published status
-  </label>
+  <label id="listbox-label" class="sr-only"> Change published status </label>
   <div class="relative">
     <div class="inline-flex shadow-sm rounded-md divide-x divide-indigo-600">
       <div class="relative z-0 inline-flex shadow-sm rounded-md divide-x divide-indigo-600">
@@ -19,9 +9,7 @@
           <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          <p class="ml-2.5 text-sm font-medium">
-            Published
-          </p>
+          <p class="ml-2.5 text-sm font-medium">Published</p>
         </div>
         <button type="button" class="relative inline-flex items-center bg-indigo-500 p-2 rounded-l-none rounded-r-md text-sm font-medium text-white hover:bg-indigo-600 focus:outline-none focus:z-10 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
           <span class="sr-only">Change published status</span>
@@ -53,9 +41,7 @@
         <div class="flex flex-col">
           <div class="flex justify-between">
             <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-            <p class="font-normal">
-              Published
-            </p>
+            <p class="font-normal">Published</p>
             <!--
               Checkmark, only display for selected option.
 
@@ -69,9 +55,7 @@
             </span>
           </div>
           <!-- Highlighted: "text-indigo-200", Not Highlighted: "text-gray-500" -->
-          <p class="text-gray-500 mt-2">
-            This job posting can be viewed by anyone who has the link.
-          </p>
+          <p class="text-gray-500 mt-2">This job posting can be viewed by anyone who has the link.</p>
         </div>
       </li>
 

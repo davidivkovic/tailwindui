@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -221,12 +221,12 @@ export default function Example() {
 
                 <div className="col-span-6 sm:col-span-3">
                   <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                    Country / Region
+                    Country
                   </label>
                   <select
                     id="country"
                     name="country"
-                    autoComplete="country"
+                    autoComplete="country-name"
                     className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option>United States</option>
@@ -256,25 +256,27 @@ export default function Example() {
                     type="text"
                     name="city"
                     id="city"
+                    autoComplete="address-level2"
                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </div>
 
                 <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                  <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="region" className="block text-sm font-medium text-gray-700">
                     State / Province
                   </label>
                   <input
                     type="text"
-                    name="state"
-                    id="state"
+                    name="region"
+                    id="region"
+                    autoComplete="address-level1"
                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </div>
 
                 <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                   <label htmlFor="postal-code" className="block text-sm font-medium text-gray-700">
-                    ZIP / Postal
+                    ZIP / Postal code
                   </label>
                   <input
                     type="text"

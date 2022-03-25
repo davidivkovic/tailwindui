@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="bg-white shadow overflow-hidden sm:rounded-md">
-    <ul class="divide-y divide-gray-200">
+    <ul role="list" class="divide-y divide-gray-200">
       <li v-for="position in positions" :key="position.id">
         <a href="#" class="block hover:bg-gray-50">
           <div class="px-4 py-4 sm:px-6">

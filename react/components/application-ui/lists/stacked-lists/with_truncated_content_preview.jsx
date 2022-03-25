@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/line-clamp'),
-    ]
+    ],
   }
   ```
 */
@@ -29,7 +29,7 @@ const messages = [
 
 export default function Example() {
   return (
-    <ul className="divide-y divide-gray-200">
+    <ul role="list" className="divide-y divide-gray-200">
       {messages.map((message) => (
         <li
           key={message.id}

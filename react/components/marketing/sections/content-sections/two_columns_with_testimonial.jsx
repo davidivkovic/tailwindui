@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/typography'),
-    ]
+    ],
   }
   ```
 */
@@ -38,7 +38,7 @@ export default function Example() {
                 Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
                 pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
               </p>
-              <ul>
+              <ul role="list">
                 <li>Quis elit egestas venenatis mattis dignissim.</li>
                 <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
                 <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>

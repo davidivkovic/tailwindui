@@ -19,9 +19,9 @@
           <p class="mt-4 text-lg text-gray-500">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec. Urna, sed a lectus elementum blandit et.</p>
         </div>
         <div class="mt-4 sm:mt-8 md:mt-10 md:grid md:grid-cols-2 md:gap-x-8 xl:mt-0 xl:col-span-2">
-          <ul class="divide-y divide-gray-200">
+          <ul role="list" class="divide-y divide-gray-200">
             <template v-for="(feature, featureIdx) in features.slice(0, 5)" :key="feature">
-              <li v-if="(featureIdx === 0)" class="py-4 flex md:py-0 md:pb-4">
+              <li v-if="featureIdx === 0" class="py-4 flex md:py-0 md:pb-4">
                 <CheckIcon class="flex-shrink-0 h-6 w-6 text-green-500" aria-hidden="true" />
                 <span class="ml-3 text-base text-gray-500">{{ feature }}</span>
               </li>
@@ -31,9 +31,9 @@
               </li>
             </template>
           </ul>
-          <ul class="border-t border-gray-200 divide-y divide-gray-200 md:border-t-0">
+          <ul role="list" class="border-t border-gray-200 divide-y divide-gray-200 md:border-t-0">
             <template v-for="(feature, featureIdx) in features.slice(5)" :key="feature">
-              <li v-if="(featureIdx === 0)" class="py-4 flex md:border-t-0 md:py-0 md:pb-4">
+              <li v-if="featureIdx === 0" class="py-4 flex md:border-t-0 md:py-0 md:pb-4">
                 <CheckIcon class="flex-shrink-0 h-6 w-6 text-green-500" aria-hidden="true" />
                 <span class="ml-3 text-base text-gray-500">{{ feature }}</span>
               </li>

@@ -4,15 +4,9 @@
     <div class="pt-12 sm:pt-16 lg:pt-24">
       <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto space-y-2 lg:max-w-none">
-          <h2 class="text-lg leading-6 font-semibold text-gray-300 uppercase tracking-wider">
-            Pricing
-          </h2>
-          <p class="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
-            The right price for you, whoever you are
-          </p>
-          <p class="text-xl text-gray-300">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi unde repudiandae natus.
-          </p>
+          <h2 class="text-lg leading-6 font-semibold text-gray-300 uppercase tracking-wider">Pricing</h2>
+          <p class="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">The right price for you, whoever you are</p>
+          <p class="text-xl text-gray-300">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi unde repudiandae natus.</p>
         </div>
       </div>
     </div>
@@ -30,16 +24,14 @@
                 </div>
                 <div class="mt-4 flex items-baseline text-6xl font-extrabold">
                   ${{ tier.priceMonthly }}
-                  <span class="ml-1 text-2xl font-medium text-gray-500">
-                    /mo
-                  </span>
+                  <span class="ml-1 text-2xl font-medium text-gray-500"> /mo </span>
                 </div>
                 <p class="mt-5 text-lg text-gray-500">
                   {{ tier.description }}
                 </p>
               </div>
               <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
-                <ul class="space-y-4">
+                <ul role="list" class="space-y-4">
                   <li v-for="feature in tier.features" :key="feature" class="flex items-start">
                     <div class="flex-shrink-0">
                       <CheckIcon class="h-6 w-6 text-green-500" aria-hidden="true" />
@@ -50,9 +42,7 @@
                   </li>
                 </ul>
                 <div class="rounded-md shadow">
-                  <a :href="tier.href" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900" aria-describedby="tier-standard">
-                    Get started
-                  </a>
+                  <a :href="tier.href" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900" aria-describedby="tier-standard"> Get started </a>
                 </div>
               </div>
             </div>
@@ -64,16 +54,12 @@
           <div class="rounded-lg bg-gray-100 px-6 py-8 sm:p-10 lg:flex lg:items-center">
             <div class="flex-1">
               <div>
-                <h3 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-white text-gray-800">
-                  Discounted
-                </h3>
+                <h3 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-white text-gray-800">Discounted</h3>
               </div>
               <div class="mt-4 text-lg text-gray-600">Get full access to all of standard license features for solo projects that make less than $20k gross revenue for <span class="font-semibold text-gray-900">$29</span>.</div>
             </div>
             <div class="mt-6 rounded-md shadow lg:mt-0 lg:ml-10 lg:flex-shrink-0">
-              <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
-                Buy Discounted License
-              </a>
+              <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"> Buy Discounted License </a>
             </div>
           </div>
         </div>

@@ -7,9 +7,7 @@
     <div class="relative max-w-7xl mx-auto lg:px-8 lg:grid lg:grid-cols-2">
       <div class="bg-white py-16 px-4 sm:py-24 sm:px-6 lg:px-0 lg:pr-8">
         <div class="max-w-lg mx-auto lg:mx-0">
-          <h2 class="text-base font-semibold tracking-wide text-indigo-600 uppercase">
-            Full-featured
-          </h2>
+          <h2 class="text-base font-semibold tracking-wide text-indigo-600 uppercase">Full-featured</h2>
           <p class="mt-2 text-2xl font-extrabold text-gray-900 sm:text-3xl">Everything you need to talk with your customers</p>
           <dl class="mt-12 space-y-10">
             <div v-for="feature in features" :key="feature.name" class="relative">
@@ -47,18 +45,14 @@
               </span>
             </p>
           </div>
-          <ul class="rounded overflow-hidden grid gap-px sm:grid-cols-2">
+          <ul role="list" class="rounded overflow-hidden grid gap-px sm:grid-cols-2">
             <li v-for="item in checklist" :key="item" class="bg-indigo-800 bg-opacity-50 py-4 px-4 flex items-center space-x-3 text-base text-white">
               <CheckIcon class="h-6 w-6 text-indigo-300" aria-hidden="true" />
               <span>{{ item }}</span>
             </li>
           </ul>
-          <a href="#" class="bg-white border border-transparent rounded-md w-full px-8 py-4 flex items-center justify-center text-lg leading-6 font-medium text-indigo-600 hover:bg-indigo-50 md:px-10">
-            Get started today
-          </a>
-          <a href="#" class="block text-center text-base font-medium text-indigo-200 hover:text-white">
-            Try Workflow Lite for free
-          </a>
+          <a href="#" class="bg-white border border-transparent rounded-md w-full px-8 py-4 flex items-center justify-center text-lg leading-6 font-medium text-indigo-600 hover:bg-indigo-50 md:px-10"> Get started today </a>
+          <a href="#" class="block text-center text-base font-medium text-indigo-200 hover:text-white"> Try Workflow Lite for free </a>
         </div>
       </div>
     </div>

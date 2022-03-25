@@ -10,11 +10,19 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="h-screen overflow-hidden bg-gray-100 flex flex-col">
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full overflow-hidden">
+  ```
+-->
+<div class="h-full flex flex-col">
   <!-- Top nav-->
   <header class="flex-shrink-0 relative h-16 bg-white flex items-center">
     <!-- Logo area -->
@@ -66,8 +74,8 @@
     <div class="hidden md:min-w-0 md:flex-1 md:flex md:items-center md:justify-between">
       <div class="min-w-0 flex-1">
         <div class="max-w-2xl relative text-gray-400 focus-within:text-gray-500">
-          <label for="search" class="sr-only">Search</label>
-          <input id="search" type="search" placeholder="Search" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0">
+          <label for="desktop-search" class="sr-only">Search</label>
+          <input id="desktop-search" type="search" placeholder="Search" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0">
           <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-4">
             <!-- Heroicon name: solid/search -->
             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -112,12 +120,8 @@
             <div class="origin-top-right absolute z-30 right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-0-button" tabindex="-1">
               <div class="py-1" role="none">
                 <!-- Active: "bg-gray-100", Not Active: "" -->
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-0-item-0">
-                  Your Profile
-                </a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-0-item-1">
-                  Sign Out
-                </a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-0-item-0"> Your Profile </a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-0-item-1"> Sign Out </a>
               </div>
             </div>
           </div>
@@ -165,8 +169,8 @@
         </div>
         <div class="mt-2 max-w-8xl mx-auto px-4 sm:px-6">
           <div class="relative text-gray-400 focus-within:text-gray-500">
-            <label for="search" class="sr-only">Search all inboxes</label>
-            <input id="search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-indigo-600 focus:ring-indigo-600">
+            <label for="mobile-search" class="sr-only">Search all inboxes</label>
+            <input id="mobile-search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-indigo-600 focus:ring-indigo-600">
             <div class="absolute inset-y-0 left-0 flex items-center justify-center pl-3">
               <!-- Heroicon name: solid/search -->
               <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -195,7 +199,7 @@
             </div>
             <div class="ml-3 min-w-0 flex-1">
               <div class="text-base font-medium text-gray-800 truncate">Whitney Francis</div>
-              <div class="text-sm font-medium text-gray-500 truncate">whitneyfrancis@example.com</div>
+              <div class="text-sm font-medium text-gray-500 truncate">whitney.francis@example.com</div>
             </div>
             <a href="#" class="ml-auto flex-shrink-0 bg-white p-2 text-gray-400 hover:text-gray-500">
               <span class="sr-only">View notifications</span>
@@ -273,14 +277,14 @@
     <!-- Main area -->
     <main class="min-w-0 flex-1 border-t border-gray-200 lg:flex">
       <!-- Primary column -->
-      <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
+      <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-y-auto lg:order-last">
         <h1 id="primary-heading" class="sr-only">Home</h1>
         <!-- Your content -->
       </section>
 
       <!-- Secondary column (hidden on smaller screens) -->
       <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-        <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-gray-100">
+        <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-gray-100 overflow-y-auto">
           <!-- Your content -->
         </div>
       </aside>

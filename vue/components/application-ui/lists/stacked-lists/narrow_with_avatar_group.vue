@@ -1,6 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <ul class="divide-y divide-gray-200">
+  <ul role="list" class="divide-y divide-gray-200">
     <li v-for="person in people" :key="person.email" class="py-4 flex">
       <img class="h-10 w-10 rounded-full" :src="person.image" alt="" />
       <div class="ml-3">

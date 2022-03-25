@@ -15,7 +15,7 @@ const activityItems = [
 export default function Example() {
   return (
     <div>
-      <ul className="divide-y divide-gray-200">
+      <ul role="list" className="divide-y divide-gray-200">
         {activityItems.map((activityItem) => (
           <li key={activityItem.id} className="py-4">
             <div className="flex space-x-3">

@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <nav aria-label="Progress">
-    <ol class="flex items-center">
+    <ol role="list" class="flex items-center">
       <li v-for="(step, stepIdx) in steps" :key="step.name" :class="[stepIdx !== steps.length - 1 ? 'pr-8 sm:pr-20' : '', 'relative']">
         <template v-if="step.status === 'complete'">
           <div class="absolute inset-0 flex items-center" aria-hidden="true">

@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
@@ -25,9 +25,7 @@
           <div class="mt-20">
             <div>
               <a href="#" class="inline-flex space-x-4">
-                <span class="rounded bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600 tracking-wide uppercase">
-                  What's new
-                </span>
+                <span class="rounded bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600 tracking-wide uppercase"> What's new </span>
                 <span class="inline-flex items-center text-sm font-medium text-indigo-600 space-x-1">
                   <span>Just shipped version 0.1.0</span>
                   <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
@@ -35,12 +33,8 @@
               </a>
             </div>
             <div class="mt-6 sm:max-w-xl">
-              <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-                Server management for growing teams
-              </h1>
-              <p class="mt-6 text-xl text-gray-500">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-              </p>
+              <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Server management for growing teams</h1>
+              <p class="mt-6 text-xl text-gray-500">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</p>
             </div>
             <form action="#" class="mt-12 sm:max-w-lg sm:w-full sm:flex">
               <div class="min-w-0 flex-1">

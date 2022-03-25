@@ -14,13 +14,13 @@
         colors: {
           sky: colors.sky,
           teal: colors.teal,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
@@ -61,7 +61,7 @@
             </div>
             <div class="hidden lg:block lg:ml-4">
               <div class="flex items-center">
-                <button class="flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+                <button type="button" class="flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
                   <span class="sr-only">View notifications</span>
                   <BellIcon class="h-6 w-6" aria-hidden="true" />
                 </button>
@@ -89,7 +89,7 @@
 
         <DisclosurePanel class="bg-sky-900 lg:hidden">
           <div class="pt-2 pb-3 px-2 space-y-1">
-            <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-black bg-opacity-25' : 'hover:bg-sky-800', 'block rounded-md py-2 px-3 text-base font-medium text-white']">{{ item.name }}</a>
+            <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-black bg-opacity-25' : 'hover:bg-sky-800', 'block rounded-md py-2 px-3 text-base font-medium text-white']">{{ item.name }}</DisclosureButton>
           </div>
           <div class="pt-4 pb-3 border-t border-sky-800">
             <div class="flex items-center px-4">
@@ -100,30 +100,34 @@
                 <div class="text-base font-medium text-white">{{ user.name }}</div>
                 <div class="text-sm font-medium text-sky-200">{{ user.email }}</div>
               </div>
-              <button class="ml-auto flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+              <button type="button" class="ml-auto flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
             <div class="mt-3 px-2">
-              <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-800">{{ item.name }}</a>
+              <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-800">{{ item.name }}</DisclosureButton>
             </div>
           </div>
         </DisclosurePanel>
       </nav>
-      <div :class="[open ? 'bottom-0' : 'inset-y-0', 'absolute flex justify-center inset-x-0 left-1/2 transform -translate-x-1/2 w-full overflow-hidden lg:inset-y-0']" aria-hidden="true">
-        <div class="flex-grow bg-sky-900 bg-opacity-75" />
-        <svg class="flex-shrink-0" width="1750" height="308" viewBox="0 0 1750 308" xmlns="http://www.w3.org/2000/svg">
-          <path opacity=".75" d="M1465.84 308L16.816 0H1750v308h-284.16z" fill="#075985" />
-          <path opacity=".75" d="M1733.19 0L284.161 308H0V0h1733.19z" fill="#0c4a6e" />
-        </svg>
-        <div class="flex-grow bg-sky-800 bg-opacity-75" />
+      <div aria-hidden="true" :class="[open ? 'bottom-0' : 'inset-y-0', 'absolute inset-x-0 left-1/2 transform -translate-x-1/2 w-full overflow-hidden lg:inset-y-0']">
+        <div class="absolute inset-0 flex">
+          <div class="h-full w-1/2" style="background-color: #0a527b" />
+          <div class="h-full w-1/2" style="background-color: #065d8c" />
+        </div>
+        <div class="relative flex justify-center">
+          <svg class="flex-shrink-0" width="1750" height="308" viewBox="0 0 1750 308" xmlns="http://www.w3.org/2000/svg">
+            <path d="M284.161 308H1465.84L875.001 182.413 284.161 308z" fill="#0369a1" />
+            <path d="M1465.84 308L16.816 0H1750v308h-284.16z" fill="#065d8c" />
+            <path d="M1733.19 0L284.161 308H0V0h1733.19z" fill="#0a527b" />
+            <path d="M875.001 182.413L1733.19 0H16.816l858.185 182.413z" fill="#0a4f76" />
+          </svg>
+        </div>
       </div>
       <header class="relative py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold text-white">
-            Settings
-          </h1>
+          <h1 class="text-3xl font-bold text-white">Settings</h1>
         </div>
       </header>
     </Disclosure>
@@ -148,42 +152,30 @@
               <div class="py-6 px-4 sm:p-6 lg:pb-8">
                 <div>
                   <h2 class="text-lg leading-6 font-medium text-gray-900">Profile</h2>
-                  <p class="mt-1 text-sm text-gray-500">
-                    This information will be displayed publicly so be careful what you share.
-                  </p>
+                  <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
                 </div>
 
                 <div class="mt-6 flex flex-col lg:flex-row">
                   <div class="flex-grow space-y-6">
                     <div>
-                      <label for="username" class="block text-sm font-medium text-gray-700">
-                        Username
-                      </label>
+                      <label for="username" class="block text-sm font-medium text-gray-700"> Username </label>
                       <div class="mt-1 rounded-md shadow-sm flex">
-                        <span class="bg-gray-50 border border-r-0 border-gray-300 rounded-l-md px-3 inline-flex items-center text-gray-500 sm:text-sm">
-                          workcation.com/
-                        </span>
+                        <span class="bg-gray-50 border border-r-0 border-gray-300 rounded-l-md px-3 inline-flex items-center text-gray-500 sm:text-sm"> workcation.com/ </span>
                         <input type="text" name="username" id="username" autocomplete="username" class="focus:ring-sky-500 focus:border-sky-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300" :value="user.handle" />
                       </div>
                     </div>
 
                     <div>
-                      <label for="about" class="block text-sm font-medium text-gray-700">
-                        About
-                      </label>
+                      <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
                       <div class="mt-1">
                         <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-sky-500 focus:border-sky-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" />
                       </div>
-                      <p class="mt-2 text-sm text-gray-500">
-                        Brief description for your profile. URLs are hyperlinked.
-                      </p>
+                      <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
                     </div>
                   </div>
 
                   <div class="mt-6 flex-grow lg:mt-0 lg:ml-6 lg:flex-grow-0 lg:flex-shrink-0">
-                    <p class="text-sm font-medium text-gray-700" aria-hidden="true">
-                      Photo
-                    </p>
+                    <p class="text-sm font-medium text-gray-700" aria-hidden="true">Photo</p>
                     <div class="mt-1 lg:hidden">
                       <div class="flex items-center">
                         <div class="flex-shrink-0 inline-block rounded-full overflow-hidden h-12 w-12" aria-hidden="true">
@@ -191,11 +183,11 @@
                         </div>
                         <div class="ml-5 rounded-md shadow-sm">
                           <div class="group relative border border-gray-300 rounded-md py-2 px-3 flex items-center justify-center hover:bg-gray-50 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-sky-500">
-                            <label for="user-photo" class="relative text-sm leading-4 font-medium text-gray-700 pointer-events-none">
+                            <label for="mobile-user-photo" class="relative text-sm leading-4 font-medium text-gray-700 pointer-events-none">
                               <span>Change</span>
                               <span class="sr-only"> user photo</span>
                             </label>
-                            <input id="user-photo" name="user-photo" type="file" class="absolute w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md" />
+                            <input id="mobile-user-photo" name="user-photo" type="file" class="absolute w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md" />
                           </div>
                         </div>
                       </div>
@@ -203,10 +195,10 @@
 
                     <div class="hidden relative rounded-full overflow-hidden lg:block">
                       <img class="relative rounded-full w-40 h-40" :src="user.imageUrl" alt="" />
-                      <label for="user-photo" class="absolute inset-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center text-sm font-medium text-white opacity-0 hover:opacity-100 focus-within:opacity-100">
+                      <label for="desktop-user-photo" class="absolute inset-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center text-sm font-medium text-white opacity-0 hover:opacity-100 focus-within:opacity-100">
                         <span>Change</span>
                         <span class="sr-only"> user photo</span>
-                        <input type="file" id="user-photo" name="user-photo" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md" />
+                        <input type="file" id="desktop-user-photo" name="user-photo" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md" />
                       </label>
                     </div>
                   </div>
@@ -240,19 +232,13 @@
                 <div class="px-4 sm:px-6">
                   <div>
                     <h2 class="text-lg leading-6 font-medium text-gray-900">Privacy</h2>
-                    <p class="mt-1 text-sm text-gray-500">
-                      Ornare eu a volutpat eget vulputate. Fringilla commodo amet.
-                    </p>
+                    <p class="mt-1 text-sm text-gray-500">Ornare eu a volutpat eget vulputate. Fringilla commodo amet.</p>
                   </div>
-                  <ul class="mt-2 divide-y divide-gray-200">
+                  <ul role="list" class="mt-2 divide-y divide-gray-200">
                     <SwitchGroup as="li" class="py-4 flex items-center justify-between">
                       <div class="flex flex-col">
-                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive>
-                          Available to hire
-                        </SwitchLabel>
-                        <SwitchDescription class="text-sm text-gray-500">
-                          Nulla amet tempus sit accumsan. Aliquet turpis sed sit lacinia.
-                        </SwitchDescription>
+                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive> Available to hire </SwitchLabel>
+                        <SwitchDescription class="text-sm text-gray-500"> Nulla amet tempus sit accumsan. Aliquet turpis sed sit lacinia. </SwitchDescription>
                       </div>
                       <Switch v-model="availableToHire" :class="[availableToHire ? 'bg-teal-500' : 'bg-gray-200', 'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500']">
                         <span aria-hidden="true" :class="[availableToHire ? 'translate-x-5' : 'translate-x-0', 'inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
@@ -260,12 +246,8 @@
                     </SwitchGroup>
                     <SwitchGroup as="li" class="py-4 flex items-center justify-between">
                       <div class="flex flex-col">
-                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive>
-                          Make account private
-                        </SwitchLabel>
-                        <SwitchDescription class="text-sm text-gray-500">
-                          Pharetra morbi dui mi mattis tellus sollicitudin cursus pharetra.
-                        </SwitchDescription>
+                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive> Make account private </SwitchLabel>
+                        <SwitchDescription class="text-sm text-gray-500"> Pharetra morbi dui mi mattis tellus sollicitudin cursus pharetra. </SwitchDescription>
                       </div>
                       <Switch v-model="privateAccount" :class="[privateAccount ? 'bg-teal-500' : 'bg-gray-200', 'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500']">
                         <span aria-hidden="true" :class="[privateAccount ? 'translate-x-5' : 'translate-x-0', 'inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
@@ -273,12 +255,8 @@
                     </SwitchGroup>
                     <SwitchGroup as="li" class="py-4 flex items-center justify-between">
                       <div class="flex flex-col">
-                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive>
-                          Allow commenting
-                        </SwitchLabel>
-                        <SwitchDescription class="text-sm text-gray-500">
-                          Integer amet, nunc hendrerit adipiscing nam. Elementum ame
-                        </SwitchDescription>
+                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive> Allow commenting </SwitchLabel>
+                        <SwitchDescription class="text-sm text-gray-500"> Integer amet, nunc hendrerit adipiscing nam. Elementum ame </SwitchDescription>
                       </div>
                       <Switch v-model="allowCommenting" :class="[allowCommenting ? 'bg-teal-500' : 'bg-gray-200', 'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500']">
                         <span aria-hidden="true" :class="[allowCommenting ? 'translate-x-5' : 'translate-x-0', 'inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
@@ -286,12 +264,8 @@
                     </SwitchGroup>
                     <SwitchGroup as="li" class="py-4 flex items-center justify-between">
                       <div class="flex flex-col">
-                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive>
-                          Allow mentions
-                        </SwitchLabel>
-                        <SwitchDescription class="text-sm text-gray-500">
-                          Adipiscing est venenatis enim molestie commodo eu gravid
-                        </SwitchDescription>
+                        <SwitchLabel as="p" class="text-sm font-medium text-gray-900" passive> Allow mentions </SwitchLabel>
+                        <SwitchDescription class="text-sm text-gray-500"> Adipiscing est venenatis enim molestie commodo eu gravid </SwitchDescription>
                       </div>
                       <Switch v-model="allowMentions" :class="[allowMentions ? 'bg-teal-500' : 'bg-gray-200', 'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500']">
                         <span aria-hidden="true" :class="[allowMentions ? 'translate-x-5' : 'translate-x-0', 'inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
@@ -300,12 +274,8 @@
                   </ul>
                 </div>
                 <div class="mt-4 py-4 px-4 flex justify-end sm:px-6">
-                  <button type="button" class="bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-                    Cancel
-                  </button>
-                  <button type="submit" class="ml-5 bg-sky-700 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-                    Save
-                  </button>
+                  <button type="button" class="bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">Cancel</button>
+                  <button type="submit" class="ml-5 bg-sky-700 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">Save</button>
                 </div>
               </div>
             </form>
@@ -389,7 +359,6 @@ export default {
     XIcon,
   },
   setup() {
-    const open = ref(false)
     const availableToHire = ref(true)
     const privateAccount = ref(false)
     const allowCommenting = ref(true)
@@ -400,7 +369,6 @@ export default {
       navigation,
       subNavigation,
       userNavigation,
-      open,
       availableToHire,
       privateAccount,
       allowCommenting,

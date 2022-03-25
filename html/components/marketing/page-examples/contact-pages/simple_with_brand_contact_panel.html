@@ -14,17 +14,17 @@
         colors: {
           'warm-gray': colors.warmGray,
           teal: colors.teal,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="min-h-screen bg-white">
+<div class="bg-white">
   <header class="relative">
     <div class="bg-warm-gray-50">
       <nav class="relative max-w-7xl mx-auto flex items-center justify-between pt-6 px-6 xl:px-8" aria-label="Global">
@@ -55,9 +55,7 @@
           </div>
         </div>
         <div class="hidden lg:flex lg:items-center lg:space-x-6">
-          <a href="#" class="py-2 px-6 bg-warm-gray-100 border border-transparent rounded-md text-base font-medium text-warm-gray-900 hover:bg-warm-gray-200">
-            Login
-          </a>
+          <a href="#" class="py-2 px-6 bg-warm-gray-100 border border-transparent rounded-md text-base font-medium text-warm-gray-900 hover:bg-warm-gray-200"> Login </a>
         </div>
       </nav>
     </div>
@@ -192,7 +190,7 @@
                   <span class="ml-3">support@workcation.com</span>
                 </dd>
               </dl>
-              <ul class="mt-8 flex space-x-12" role="list">
+              <ul role="list" class="mt-8 flex space-x-12">
                 <li>
                   <a class="text-teal-200 hover:text-teal-100" href="#">
                     <span class="sr-only">Facebook</span>
@@ -267,9 +265,7 @@
                   </div>
                 </div>
                 <div class="sm:col-span-2 sm:flex sm:justify-end">
-                  <button type="submit" class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:w-auto">
-                    Submit
-                  </button>
+                  <button type="submit" class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:w-auto">Submit</button>
                 </div>
               </form>
             </div>
@@ -330,9 +326,7 @@
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="space-y-8 xl:col-span-1">
           <img class="h-10" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=warmGray&shade=400" alt="Company name">
-          <p class="text-warm-gray-400 text-base">
-            Making the world a better place through constructing elegant hierarchies.
-          </p>
+          <p class="text-warm-gray-400 text-base">Making the world a better place through constructing elegant hierarchies.</p>
           <div class="flex space-x-6">
             <a href="#" class="text-warm-gray-400 hover:text-warm-gray-300">
               <span class="sr-only">Facebook</span>
@@ -373,124 +367,84 @@
         <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                Solutions
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">Solutions</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Marketing
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Marketing </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Analytics
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Analytics </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Commerce
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Commerce </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Insights
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Insights </a>
                 </li>
               </ul>
             </div>
             <div class="mt-12 md:mt-0">
-              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                Support
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">Support</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Pricing
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Pricing </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Documentation
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Documentation </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Guides
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Guides </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    API Status
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> API Status </a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                Company
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">Company</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    About
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> About </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Blog
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Blog </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Jobs
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Jobs </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Press
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Press </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Partners
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Partners </a>
                 </li>
               </ul>
             </div>
             <div class="mt-12 md:mt-0">
-              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                Legal
-              </h3>
-              <ul class="mt-4 space-y-4">
+              <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">Legal</h3>
+              <ul role="list" class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Claim
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Claim </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Privacy
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Privacy </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
-                    Terms
-                  </a>
+                  <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300"> Terms </a>
                 </li>
               </ul>
             </div>
@@ -498,9 +452,7 @@
         </div>
       </div>
       <div class="mt-12 border-t border-warm-gray-700 pt-8">
-        <p class="text-base text-warm-gray-400 xl:text-center">
-          &copy; 2020 Workflow, Inc. All rights reserved.
-        </p>
+        <p class="text-base text-warm-gray-400 xl:text-center">&copy; 2020 Workflow, Inc. All rights reserved.</p>
       </div>
     </div>
   </footer>

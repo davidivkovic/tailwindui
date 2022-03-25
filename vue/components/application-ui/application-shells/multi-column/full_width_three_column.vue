@@ -1,8 +1,16 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="h-screen flex overflow-hidden bg-white">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-white">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex">
     <TransitionRoot as="template" :show="sidebarOpen">
-      <Dialog as="div" static class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false" :open="sidebarOpen">
+      <Dialog as="div" class="fixed inset-0 flex z-40 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
           <DialogOverlay class="fixed inset-0 bg-gray-600 bg-opacity-75" />
         </TransitionChild>
@@ -36,12 +44,8 @@
                     <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" />
                   </div>
                   <div class="ml-3">
-                    <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">
-                      Whitney Francis
-                    </p>
-                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
-                      View profile
-                    </p>
+                    <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">Whitney Francis</p>
+                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
                   </div>
                 </div>
               </a>
@@ -58,7 +62,7 @@
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-gray-100">
+        <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-900-text.svg" alt="Workflow" />
@@ -79,12 +83,8 @@
                   <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" />
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                    Whitney Francis
-                  </p>
-                  <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
-                    View profile
-                  </p>
+                  <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Whitney Francis</p>
+                  <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
                 </div>
               </div>
             </a>
@@ -114,7 +114,7 @@
           </div>
           <!-- End main area -->
         </main>
-        <aside class="hidden relative xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200">
+        <aside class="hidden relative xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200 overflow-y-auto">
           <!-- Start secondary column (hidden on smaller screens) -->
           <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
             <div class="h-full border-2 border-gray-200 border-dashed rounded-lg" />

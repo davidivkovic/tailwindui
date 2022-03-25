@@ -4,7 +4,17 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div x-data="{ open: false }" @keydown.window.escape="open = false" class="h-screen flex bg-gray-50 overflow-hidden">
+<div class="h-0 min-h-[768px] bg-gray-50">
+    
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-50">
+  <body class="h-full overflow-hidden">
+  ```
+  -->
+  <div x-data="{ open: false }" @keydown.window.escape="open = false" class="h-full flex">
     
       <div x-show="open" class="fixed inset-0 flex z-40 lg:hidden" x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state." x-ref="dialog" aria-modal="true">
         
@@ -96,9 +106,9 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-20">
-        <div class="flex flex-col h-0 flex-1 overflow-y-auto bg-indigo-600">
-          <div class="flex-1 flex flex-col">
-            <div class="flex-shrink-0 bg-indigo-700 py-4 flex items-center justify-center">
+        <div class="flex-1 flex flex-col min-h-0 overflow-y-auto bg-indigo-600">
+          <div class="flex-1">
+            <div class="bg-indigo-700 py-4 flex items-center justify-center">
               <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="Workflow">
             </div>
             <nav aria-label="Sidebar" class="py-6 flex flex-col items-center space-y-3">
@@ -177,28 +187,28 @@
       </div>
 
       <main class="flex-1 flex overflow-hidden">
-        <div class="flex-1 flex xl:overflow-hidden">
-          <!-- Primary column -->
-          <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
-            <h1 id="primary-heading" class="sr-only">Account</h1>
+        <!-- Primary column -->
+        <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-y-auto lg:order-last">
+          <h1 id="primary-heading" class="sr-only">Account</h1>
+          <x-placeholder class="h-full">
+            <div class="p-6 h-full">
+              <div class="block border-2 border-dashed border-gray-300 rounded h-full w-full text-gray-200"></div>
+            </div>
+          </x-placeholder>
+        </section>
+
+        <!-- Secondary column (hidden on smaller screens) -->
+        <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
+          <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-white overflow-y-auto">
             <x-placeholder class="h-full">
               <div class="p-6 h-full">
                 <div class="block border-2 border-dashed border-gray-300 rounded h-full w-full text-gray-200"></div>
               </div>
             </x-placeholder>
-          </section>
-
-          <!-- Secondary column (hidden on smaller screens) -->
-          <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-            <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-white">
-              <x-placeholder class="h-full">
-                <div class="p-6 h-full">
-                  <div class="block border-2 border-dashed border-gray-300 rounded h-full w-full text-gray-200"></div>
-                </div>
-              </x-placeholder>
-            </div>
-          </aside>
-        </div>
+          </div>
+        </aside>
       </main>
     </div>
+  </div>
+
   </div>

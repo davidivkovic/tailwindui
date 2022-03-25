@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
@@ -39,14 +39,15 @@
     <div class="mt-1 rounded-md shadow-sm -space-y-px">
       <div>
         <label for="country" class="sr-only">Country</label>
-        <select id="country" name="country" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 sm:text-sm border-gray-300">
-          <option>USA</option>
+        <select id="country" name="country" autocomplete="country-name" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 sm:text-sm border-gray-300">
+          <option>United States</option>
           <option>Canada</option>
+          <option>Mexico</option>
         </select>
       </div>
       <div>
-        <label for="postal-code" class="sr-only">Postal code</label>
-        <input type="text" name="postal-code" id="postal-code" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-b-md bg-transparent focus:z-10 sm:text-sm border-gray-300" placeholder="Postal code">
+        <label for="postal-code" class="sr-only">ZIP / Postal code</label>
+        <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-b-md bg-transparent focus:z-10 sm:text-sm border-gray-300" placeholder="ZIP / Postal code">
       </div>
     </div>
   </fieldset>

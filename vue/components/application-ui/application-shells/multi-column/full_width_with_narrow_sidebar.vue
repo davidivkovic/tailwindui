@@ -10,12 +10,20 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="h-screen overflow-hidden bg-gray-100 flex flex-col">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full overflow-hidden">
+    ```
+  -->
+  <div class="h-full flex flex-col">
     <!-- Top nav-->
     <header class="flex-shrink-0 relative h-16 bg-white flex items-center">
       <!-- Logo area -->
@@ -51,8 +59,8 @@
       <div class="hidden md:min-w-0 md:flex-1 md:flex md:items-center md:justify-between">
         <div class="min-w-0 flex-1">
           <div class="max-w-2xl relative text-gray-400 focus-within:text-gray-500">
-            <label for="search" class="sr-only">Search</label>
-            <input id="search" type="search" placeholder="Search" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0" />
+            <label for="desktop-search" class="sr-only">Search</label>
+            <input id="desktop-search" type="search" placeholder="Search" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0" />
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-4">
               <SearchIcon class="h-5 w-5" aria-hidden="true" />
             </div>
@@ -82,14 +90,10 @@
                 <MenuItems class="origin-top-right absolute z-30 right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div class="py-1">
                     <MenuItem v-slot="{ active }">
-                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        Your Profile
-                      </a>
+                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"> Your Profile </a>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
-                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
-                        Sign Out
-                      </a>
+                      <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"> Sign Out </a>
                     </MenuItem>
                   </div>
                 </MenuItems>
@@ -101,7 +105,7 @@
 
       <!-- Mobile menu, show/hide this `div` based on menu open/closed state -->
       <TransitionRoot as="template" :show="mobileMenuOpen">
-        <Dialog as="div" static class="fixed inset-0 z-40 md:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+        <Dialog as="div" class="fixed inset-0 z-40 md:hidden" @close="mobileMenuOpen = false">
           <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
             <DialogOverlay class="hidden sm:block sm:fixed sm:inset-0 sm:bg-gray-600 sm:bg-opacity-75" />
           </TransitionChild>
@@ -119,8 +123,8 @@
               </div>
               <div class="mt-2 max-w-8xl mx-auto px-4 sm:px-6">
                 <div class="relative text-gray-400 focus-within:text-gray-500">
-                  <label for="search" class="sr-only">Search all inboxes</label>
-                  <input id="search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-indigo-600 focus:ring-indigo-600" />
+                  <label for="mobile-search" class="sr-only">Search all inboxes</label>
+                  <input id="mobile-search" type="search" placeholder="Search all inboxes" class="block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-indigo-600 focus:ring-indigo-600" />
                   <div class="absolute inset-y-0 left-0 flex items-center justify-center pl-3">
                     <SearchIcon class="h-5 w-5" aria-hidden="true" />
                   </div>
@@ -171,14 +175,14 @@
       <!-- Main area -->
       <main class="min-w-0 flex-1 border-t border-gray-200 lg:flex">
         <!-- Primary column -->
-        <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
+        <section aria-labelledby="primary-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-y-auto lg:order-last">
           <h1 id="primary-heading" class="sr-only">Home</h1>
           <!-- Your content -->
         </section>
 
         <!-- Secondary column (hidden on smaller screens) -->
         <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-          <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-gray-100">
+          <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-gray-100 overflow-y-auto">
             <!-- Your content -->
           </div>
         </aside>
@@ -214,7 +218,7 @@ import {
 
 const user = {
   name: 'Whitney Francis',
-  email: 'whitneyfrancis@example.com',
+  email: 'whitney.francis@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }

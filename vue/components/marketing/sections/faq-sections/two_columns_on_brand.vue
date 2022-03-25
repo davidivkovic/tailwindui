@@ -2,9 +2,7 @@
 <template>
   <div class="bg-indigo-700">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-white">
-        Frequently asked questions
-      </h2>
+      <h2 class="text-3xl font-extrabold text-white">Frequently asked questions</h2>
       <div class="mt-6 border-t border-indigo-300 border-opacity-25 pt-10">
         <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
           <div v-for="faq in faqs" :key="faq.id">

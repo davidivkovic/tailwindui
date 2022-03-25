@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
@@ -86,14 +86,14 @@
 
       <DisclosurePanel class="lg:hidden">
         <div class="px-2 pt-2 pb-3">
-          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</a>
-          <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</a>
+          <DisclosureButton as="a" href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</DisclosureButton>
+          <DisclosureButton as="a" href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</DisclosureButton>
         </div>
         <div class="pt-4 pb-3 border-t border-indigo-800">
           <div class="px-2">
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</a>
-            <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</a>
-            <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</a>
+            <DisclosureButton as="a" href="#" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</DisclosureButton>
+            <DisclosureButton as="a" href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</DisclosureButton>
+            <DisclosureButton as="a" href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</DisclosureButton>
           </div>
         </div>
       </DisclosurePanel>
@@ -106,7 +106,7 @@
         <div class="border-b border-gray-200 xl:border-b-0 xl:flex-shrink-0 xl:w-64 xl:border-r xl:border-gray-200 bg-white">
           <div class="h-full pl-4 pr-6 py-6 sm:pl-6 lg:pl-8 xl:pl-0">
             <!-- Start left column area -->
-            <div class="h-full relative" style="min-height: 12rem;">
+            <div class="h-full relative" style="min-height: 12rem">
               <div class="absolute inset-0 border-2 border-gray-200 border-dashed rounded-lg" />
             </div>
             <!-- End left column area -->
@@ -116,7 +116,7 @@
         <div class="bg-white lg:min-w-0 lg:flex-1">
           <div class="h-full py-6 px-4 sm:px-6 lg:px-8">
             <!-- Start main area-->
-            <div class="relative h-full" style="min-height: 36rem;">
+            <div class="relative h-full" style="min-height: 36rem">
               <div class="absolute inset-0 border-2 border-gray-200 border-dashed rounded-lg" />
             </div>
             <!-- End main area -->
@@ -127,7 +127,7 @@
       <div class="bg-gray-50 pr-4 sm:pr-6 lg:pr-8 lg:flex-shrink-0 lg:border-l lg:border-gray-200 xl:pr-0">
         <div class="h-full pl-6 py-6 lg:w-80">
           <!-- Start right column area -->
-          <div class="h-full relative" style="min-height: 16rem;">
+          <div class="h-full relative" style="min-height: 16rem">
             <div class="absolute inset-0 border-2 border-gray-200 border-dashed rounded-lg" />
           </div>
           <!-- End right column area -->
@@ -138,7 +138,6 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { SearchIcon } from '@heroicons/vue/solid'
 import { MenuAlt1Icon, XIcon } from '@heroicons/vue/outline'
@@ -155,13 +154,6 @@ export default {
     MenuAlt1Icon,
     SearchIcon,
     XIcon,
-  },
-  setup() {
-    const open = ref(false)
-
-    return {
-      open,
-    }
   },
 }
 </script>

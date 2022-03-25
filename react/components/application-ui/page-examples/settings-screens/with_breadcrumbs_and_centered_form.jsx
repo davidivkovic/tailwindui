@@ -13,13 +13,13 @@
       extend: {
         colors: {
           sky: colors.sky,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -30,7 +30,7 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const user = {
   name: 'Floyd Miles',
-  email: 'floydmiles@example.com',
+  email: 'floy.dmiles@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
@@ -140,54 +140,49 @@ export default function Example() {
                   </Disclosure.Button>
                 </div>
                 <div className="hidden lg:ml-4 lg:flex lg:items-center">
-                  <button className="flex-shrink-0 bg-sky-500 p-1 text-sky-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+                  <button
+                    type="button"
+                    className="flex-shrink-0 bg-sky-500 p-1 text-sky-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white"
+                  >
                     <span className="sr-only">Notificaitons</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-4 relative flex-shrink-0">
-                    {({ open }) => (
-                      <>
-                        <div>
-                          <Menu.Button className="bg-sky-500 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
-                            <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
-                          </Menu.Button>
-                        </div>
-                        <Transition
-                          show={open}
-                          as={Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                          <Menu.Items
-                            static
-                            className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                          >
-                            {userNavigation.map((item) => (
-                              <Menu.Item key={item.name}>
-                                {({ active }) => (
-                                  <a
-                                    href={item.href}
-                                    className={classNames(
-                                      active ? 'bg-gray-100' : '',
-                                      'block px-4 py-2 text-sm text-gray-700'
-                                    )}
-                                  >
-                                    {item.name}
-                                  </a>
+                    <div>
+                      <Menu.Button className="bg-sky-500 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+                        <span className="sr-only">Open user menu</span>
+                        <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                      </Menu.Button>
+                    </div>
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        {userNavigation.map((item) => (
+                          <Menu.Item key={item.name}>
+                            {({ active }) => (
+                              <a
+                                href={item.href}
+                                className={classNames(
+                                  active ? 'bg-gray-100' : '',
+                                  'block px-4 py-2 text-sm text-gray-700'
                                 )}
-                              </Menu.Item>
-                            ))}
-                          </Menu.Items>
-                        </Transition>
-                      </>
-                    )}
+                              >
+                                {item.name}
+                              </a>
+                            )}
+                          </Menu.Item>
+                        ))}
+                      </Menu.Items>
+                    </Transition>
                   </Menu>
                 </div>
               </div>
@@ -196,13 +191,14 @@ export default function Example() {
             <Disclosure.Panel className="lg:hidden">
               <div className="pt-2 pb-3 px-2 space-y-1">
                 {navigation.map((item) => (
-                  <a
+                  <Disclosure.Button
                     key={item.name}
+                    as="a"
                     href={item.href}
                     className="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400"
                   >
                     {item.name}
-                  </a>
+                  </Disclosure.Button>
                 ))}
               </div>
               <div className="pt-4 pb-3 border-t border-sky-500">
@@ -214,20 +210,24 @@ export default function Example() {
                     <div className="text-base font-medium text-white">{user.name}</div>
                     <div className="text-sm font-medium text-sky-200">{user.email}</div>
                   </div>
-                  <button className="ml-auto flex-shrink-0 bg-sky-500 rounded-full p-1 text-sky-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+                  <button
+                    type="button"
+                    className="ml-auto flex-shrink-0 bg-sky-500 rounded-full p-1 text-sky-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white"
+                  >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="mt-3 px-2">
                   {userNavigation.map((item) => (
-                    <a
+                    <Disclosure.Button
                       key={item.name}
+                      as="a"
                       href={item.href}
                       className="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-400"
                     >
                       {item.name}
-                    </a>
+                    </Disclosure.Button>
                   ))}
                 </div>
               </div>
@@ -238,7 +238,7 @@ export default function Example() {
 
       {/* Breadcrumb */}
       <nav className="hidden bg-white border-b border-gray-200 lg:flex" aria-label="Breadcrumb">
-        <ol className="max-w-screen-xl w-full mx-auto px-4 flex space-x-4 sm:px-6 lg:px-8">
+        <ol role="list" className="max-w-screen-xl w-full mx-auto px-4 flex space-x-4 sm:px-6 lg:px-8">
           <li className="flex">
             <div className="flex items-center">
               <a href="#" className="text-gray-400 hover:text-gray-500">
@@ -345,7 +345,7 @@ export default function Example() {
               </div>
 
               <div className="border-b border-gray-200">
-                <ul className="divide-y divide-gray-200">
+                <ul role="list" className="divide-y divide-gray-200">
                   {team.map((person) => (
                     <li key={person.email} className="py-4 flex">
                       <img className="h-10 w-10 rounded-full" src={person.imageUrl} alt="" />

@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
   }
   ```
 -->
@@ -22,7 +22,7 @@
           <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Our Team</h2>
           <p class="text-xl text-gray-500">Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus quis et.</p>
         </div>
-        <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
+        <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
           <li v-for="person in people" :key="person.name">
             <div class="space-y-4">
               <div class="aspect-w-3 aspect-h-2">
@@ -34,7 +34,7 @@
                   <h3>{{ person.name }}</h3>
                   <p class="text-indigo-600">{{ person.role }}</p>
                 </div>
-                <ul class="flex space-x-5">
+                <ul role="list" class="flex space-x-5">
                   <li>
                     <a :href="person.twitterUrl" class="text-gray-400 hover:text-gray-500">
                       <span class="sr-only">Twitter</span>

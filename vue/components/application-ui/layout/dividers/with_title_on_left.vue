@@ -5,9 +5,7 @@
       <div class="w-full border-t border-gray-300" />
     </div>
     <div class="relative flex justify-start">
-      <span class="pr-3 bg-white text-lg font-medium text-gray-900">
-        Projects
-      </span>
+      <span class="pr-3 bg-white text-lg font-medium text-gray-900"> Projects </span>
     </div>
   </div>
 </template>

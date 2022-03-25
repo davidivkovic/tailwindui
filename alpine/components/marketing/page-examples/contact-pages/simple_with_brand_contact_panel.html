@@ -4,7 +4,7 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
-<div class="min-h-screen bg-white">
+<div class="bg-white">
     <header class="relative" x-data="Components.popover({ open: false, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
       <div class="bg-warm-gray-50">
         <nav class="relative max-w-7xl mx-auto flex items-center justify-between pt-6 px-6 xl:px-8" aria-label="Global">
@@ -164,7 +164,7 @@
                     <span class="ml-3">support@workcation.com</span>
                   </dd>
                 </dl>
-                <ul class="mt-8 flex space-x-12" role="list">
+                <ul role="list" class="mt-8 flex space-x-12">
                   <li>
                     <a class="text-teal-200 hover:text-teal-100" href="#">
                       <span class="sr-only">Facebook</span>
@@ -360,7 +360,7 @@
                 <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
                   Solutions
                 </h3>
-                <ul class="mt-4 space-y-4">
+                <ul role="list" class="mt-4 space-y-4">
                   
                     <li>
                       <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
@@ -392,7 +392,7 @@
                 <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
                   Support
                 </h3>
-                <ul class="mt-4 space-y-4">
+                <ul role="list" class="mt-4 space-y-4">
                   
                     <li>
                       <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
@@ -426,7 +426,7 @@
                 <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
                   Company
                 </h3>
-                <ul class="mt-4 space-y-4">
+                <ul role="list" class="mt-4 space-y-4">
                   
                     <li>
                       <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">
@@ -464,7 +464,7 @@
                 <h3 class="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
                   Legal
                 </h3>
-                <ul class="mt-4 space-y-4">
+                <ul role="list" class="mt-4 space-y-4">
                   
                     <li>
                       <a href="#" class="text-base text-warm-gray-400 hover:text-warm-gray-300">

@@ -13,13 +13,13 @@
       extend: {
         colors: {
           sky: colors.sky,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
@@ -57,7 +57,7 @@
           </DisclosureButton>
         </div>
         <div class="hidden lg:ml-4 lg:flex lg:items-center">
-          <button class="flex-shrink-0 bg-sky-500 p-1 text-sky-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+          <button type="button" class="flex-shrink-0 bg-sky-500 p-1 text-sky-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
             <span class="sr-only">Notificaitons</span>
             <BellIcon class="h-6 w-6" aria-hidden="true" />
           </button>
@@ -84,7 +84,7 @@
 
     <DisclosurePanel class="lg:hidden">
       <div class="pt-2 pb-3 px-2 space-y-1">
-        <a v-for="item in navigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400">{{ item.name }}</a>
+        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400">{{ item.name }}</DisclosureButton>
       </div>
       <div class="pt-4 pb-3 border-t border-sky-500">
         <div class="flex items-center px-4">
@@ -95,13 +95,13 @@
             <div class="text-base font-medium text-white">{{ user.name }}</div>
             <div class="text-sm font-medium text-sky-200">{{ user.email }}</div>
           </div>
-          <button class="ml-auto flex-shrink-0 bg-sky-500 rounded-full p-1 text-sky-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+          <button type="button" class="ml-auto flex-shrink-0 bg-sky-500 rounded-full p-1 text-sky-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
         <div class="mt-3 px-2">
-          <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-400">{{ item.name }}</a>
+          <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-400">{{ item.name }}</DisclosureButton>
         </div>
       </div>
     </DisclosurePanel>
@@ -109,7 +109,7 @@
 
   <!-- Breadcrumb -->
   <nav class="hidden bg-white border-b border-gray-200 lg:flex" aria-label="Breadcrumb">
-    <ol class="max-w-screen-xl w-full mx-auto px-4 flex space-x-4 sm:px-6 lg:px-8">
+    <ol role="list" class="max-w-screen-xl w-full mx-auto px-4 flex space-x-4 sm:px-6 lg:px-8">
       <li class="flex">
         <div class="flex items-center">
           <a href="#" class="text-gray-400 hover:text-gray-500">
@@ -133,27 +133,19 @@
     <form>
       <div class="space-y-6">
         <div>
-          <h1 class="text-lg leading-6 font-medium text-gray-900">
-            Project Settings
-          </h1>
-          <p class="mt-1 text-sm text-gray-500">
-            Let’s get started by filling in the information below to create your new project.
-          </p>
+          <h1 class="text-lg leading-6 font-medium text-gray-900">Project Settings</h1>
+          <p class="mt-1 text-sm text-gray-500">Let’s get started by filling in the information below to create your new project.</p>
         </div>
 
         <div>
-          <label for="project-name" class="block text-sm font-medium text-gray-700">
-            Project Name
-          </label>
+          <label for="project-name" class="block text-sm font-medium text-gray-700"> Project Name </label>
           <div class="mt-1">
             <input type="text" name="project-name" id="project-name" class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border-gray-300 rounded-md" value="Project Nero" />
           </div>
         </div>
 
         <div>
-          <label for="description" class="block text-sm font-medium text-gray-700">
-            Description
-          </label>
+          <label for="description" class="block text-sm font-medium text-gray-700"> Description </label>
           <div class="mt-1">
             <textarea id="description" name="description" rows="3" class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md" />
           </div>
@@ -161,9 +153,7 @@
 
         <div class="space-y-2">
           <div class="space-y-1">
-            <label for="add-team-members" class="block text-sm font-medium text-gray-700">
-              Add Team Members
-            </label>
+            <label for="add-team-members" class="block text-sm font-medium text-gray-700"> Add Team Members </label>
             <p id="add-team-members-helper" class="sr-only">Search by email address</p>
             <div class="flex">
               <div class="flex-grow">
@@ -179,7 +169,7 @@
           </div>
 
           <div class="border-b border-gray-200">
-            <ul class="divide-y divide-gray-200">
+            <ul role="list" class="divide-y divide-gray-200">
               <li v-for="person in team" :key="person.email" class="py-4 flex">
                 <img class="h-10 w-10 rounded-full" :src="person.imageUrl" alt="" />
                 <div class="ml-3 flex flex-col">
@@ -192,9 +182,7 @@
         </div>
 
         <RadioGroup v-model="selected">
-          <RadioGroupLabel class="text-sm font-medium text-gray-900">
-            Privacy
-          </RadioGroupLabel>
+          <RadioGroupLabel class="text-sm font-medium text-gray-900"> Privacy </RadioGroupLabel>
 
           <div class="mt-1 bg-white rounded-md shadow-sm -space-y-px">
             <RadioGroupOption as="template" v-for="(setting, settingIdx) in settings" :key="setting.name" :value="setting" v-slot="{ checked, active }">
@@ -216,19 +204,13 @@
         </RadioGroup>
 
         <div>
-          <label for="tags" class="block text-sm font-medium text-gray-700">
-            Tags
-          </label>
+          <label for="tags" class="block text-sm font-medium text-gray-700"> Tags </label>
           <input type="text" name="tags" id="tags" class="mt-1 block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border-gray-300 rounded-md" />
         </div>
 
         <div class="flex justify-end">
-          <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-            Cancel
-          </button>
-          <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-            Create this project
-          </button>
+          <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">Cancel</button>
+          <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">Create this project</button>
         </div>
       </div>
     </form>
@@ -255,7 +237,7 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 const user = {
   name: 'Floyd Miles',
-  email: 'floydmiles@example.com',
+  email: 'floy.dmiles@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
@@ -321,7 +303,6 @@ export default {
     XIcon,
   },
   setup() {
-    const open = ref(false)
     const selected = ref(settings[0])
 
     return {
@@ -331,7 +312,6 @@ export default {
       userNavigation,
       team,
       settings,
-      open,
       selected,
     }
   },

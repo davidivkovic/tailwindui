@@ -20,10 +20,8 @@
           <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12" aria-labelledby="solutions-heading">
             <h2 id="solutions-heading" class="sr-only">Solutions menu</h2>
             <div>
-              <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                Company
-              </h3>
-              <ul class="mt-5 space-y-6">
+              <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
+              <ul role="list" class="mt-5 space-y-6">
                 <li v-for="item in company" :key="item.name" class="flow-root">
                   <a :href="item.href" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 transition ease-in-out duration-150">
                     <component :is="item.icon" class="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
@@ -33,10 +31,8 @@
               </ul>
             </div>
             <div>
-              <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                Resources
-              </h3>
-              <ul class="mt-5 space-y-6">
+              <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
+              <ul role="list" class="mt-5 space-y-6">
                 <li v-for="item in resources" :key="item.name" class="flow-root">
                   <a :href="item.href" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 transition ease-in-out duration-150">
                     <component :is="item.icon" class="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
@@ -48,10 +44,8 @@
           </nav>
           <div class="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
             <div>
-              <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                From the blog
-              </h3>
-              <ul class="mt-6 space-y-6">
+              <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">From the blog</h3>
+              <ul role="list" class="mt-6 space-y-6">
                 <li v-for="post in blogPosts" :key="post.id" class="flow-root">
                   <a :href="post.href" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100 transition ease-in-out duration-150">
                     <div class="hidden sm:block flex-shrink-0">
@@ -122,7 +116,7 @@ const blogPosts = [
     href: '#',
     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
     imageUrl:
-      'https://images.unsplash.com/1/apple-gear-looking-pretty.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
+      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
   },
 ]
 

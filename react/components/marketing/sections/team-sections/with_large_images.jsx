@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
   }
   ```
 */
@@ -38,7 +38,10 @@ export default function Example() {
               quis et.
             </p>
           </div>
-          <ul className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
+          <ul
+            role="list"
+            className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
+          >
             {people.map((person) => (
               <li key={person.name}>
                 <div className="space-y-4">
@@ -51,7 +54,7 @@ export default function Example() {
                       <h3>{person.name}</h3>
                       <p className="text-indigo-600">{person.role}</p>
                     </div>
-                    <ul className="flex space-x-5">
+                    <ul role="list" className="flex space-x-5">
                       <li>
                         <a href={person.twitterUrl} className="text-gray-400 hover:text-gray-500">
                           <span className="sr-only">Twitter</span>

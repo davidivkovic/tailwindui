@@ -16,7 +16,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <nav aria-label="Progress">
-      <ol className="flex items-center">
+      <ol role="list" className="flex items-center">
         {steps.map((step, stepIdx) => (
           <li key={step.name} className={classNames(stepIdx !== steps.length - 1 ? 'pr-8 sm:pr-20' : '', 'relative')}>
             {step.status === 'complete' ? (

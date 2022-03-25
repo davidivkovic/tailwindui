@@ -14,13 +14,13 @@
         colors: {
           sky: colors.sky,
           teal: colors.teal,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -145,54 +145,49 @@ export default function Example() {
                   </div>
                   <div className="hidden lg:block lg:ml-4">
                     <div className="flex items-center">
-                      <button className="flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+                      <button
+                        type="button"
+                        className="flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white"
+                      >
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
                       </button>
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative flex-shrink-0 ml-4">
-                        {({ open }) => (
-                          <>
-                            <div>
-                              <Menu.Button className="rounded-full flex text-sm text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
-                                <span className="sr-only">Open user menu</span>
-                                <img className="rounded-full h-8 w-8" src={user.imageUrl} alt="" />
-                              </Menu.Button>
-                            </div>
-                            <Transition
-                              show={open}
-                              as={Fragment}
-                              enter="transition ease-out duration-100"
-                              enterFrom="transform opacity-0 scale-95"
-                              enterTo="transform opacity-100 scale-100"
-                              leave="transition ease-in duration-75"
-                              leaveFrom="transform opacity-100 scale-100"
-                              leaveTo="transform opacity-0 scale-95"
-                            >
-                              <Menu.Items
-                                static
-                                className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                              >
-                                {userNavigation.map((item) => (
-                                  <Menu.Item key={item.name}>
-                                    {({ active }) => (
-                                      <a
-                                        href={item.href}
-                                        className={classNames(
-                                          active ? 'bg-gray-100' : '',
-                                          'block py-2 px-4 text-sm text-gray-700'
-                                        )}
-                                      >
-                                        {item.name}
-                                      </a>
+                        <div>
+                          <Menu.Button className="rounded-full flex text-sm text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+                            <span className="sr-only">Open user menu</span>
+                            <img className="rounded-full h-8 w-8" src={user.imageUrl} alt="" />
+                          </Menu.Button>
+                        </div>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            {userNavigation.map((item) => (
+                              <Menu.Item key={item.name}>
+                                {({ active }) => (
+                                  <a
+                                    href={item.href}
+                                    className={classNames(
+                                      active ? 'bg-gray-100' : '',
+                                      'block py-2 px-4 text-sm text-gray-700'
                                     )}
-                                  </Menu.Item>
-                                ))}
-                              </Menu.Items>
-                            </Transition>
-                          </>
-                        )}
+                                  >
+                                    {item.name}
+                                  </a>
+                                )}
+                              </Menu.Item>
+                            ))}
+                          </Menu.Items>
+                        </Transition>
                       </Menu>
                     </div>
                   </div>
@@ -202,8 +197,9 @@ export default function Example() {
               <Disclosure.Panel className="bg-sky-900 lg:hidden">
                 <div className="pt-2 pb-3 px-2 space-y-1">
                   {navigation.map((item) => (
-                    <a
+                    <Disclosure.Button
                       key={item.name}
+                      as="a"
                       href={item.href}
                       className={classNames(
                         item.current ? 'bg-black bg-opacity-25' : 'hover:bg-sky-800',
@@ -211,7 +207,7 @@ export default function Example() {
                       )}
                     >
                       {item.name}
-                    </a>
+                    </Disclosure.Button>
                   ))}
                 </div>
                 <div className="pt-4 pb-3 border-t border-sky-800">
@@ -223,44 +219,54 @@ export default function Example() {
                       <div className="text-base font-medium text-white">{user.name}</div>
                       <div className="text-sm font-medium text-sky-200">{user.email}</div>
                     </div>
-                    <button className="ml-auto flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+                    <button
+                      type="button"
+                      className="ml-auto flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white"
+                    >
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
                   <div className="mt-3 px-2">
                     {userNavigation.map((item) => (
-                      <a
+                      <Disclosure.Button
                         key={item.name}
+                        as="a"
                         href={item.href}
                         className="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-800"
                       >
                         {item.name}
-                      </a>
+                      </Disclosure.Button>
                     ))}
                   </div>
                 </div>
               </Disclosure.Panel>
             </nav>
             <div
+              aria-hidden="true"
               className={classNames(
                 open ? 'bottom-0' : 'inset-y-0',
-                'absolute flex justify-center inset-x-0 left-1/2 transform -translate-x-1/2 w-full overflow-hidden lg:inset-y-0'
+                'absolute inset-x-0 left-1/2 transform -translate-x-1/2 w-full overflow-hidden lg:inset-y-0'
               )}
-              aria-hidden="true"
             >
-              <div className="flex-grow bg-sky-900 bg-opacity-75" />
-              <svg
-                className="flex-shrink-0"
-                width={1750}
-                height={308}
-                viewBox="0 0 1750 308"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path opacity=".75" d="M1465.84 308L16.816 0H1750v308h-284.16z" fill="#075985" />
-                <path opacity=".75" d="M1733.19 0L284.161 308H0V0h1733.19z" fill="#0c4a6e" />
-              </svg>
-              <div className="flex-grow bg-sky-800 bg-opacity-75" />
+              <div className="absolute inset-0 flex">
+                <div className="h-full w-1/2" style={{ backgroundColor: '#0a527b' }} />
+                <div className="h-full w-1/2" style={{ backgroundColor: '#065d8c' }} />
+              </div>
+              <div className="relative flex justify-center">
+                <svg
+                  className="flex-shrink-0"
+                  width={1750}
+                  height={308}
+                  viewBox="0 0 1750 308"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M284.161 308H1465.84L875.001 182.413 284.161 308z" fill="#0369a1" />
+                  <path d="M1465.84 308L16.816 0H1750v308h-284.16z" fill="#065d8c" />
+                  <path d="M1733.19 0L284.161 308H0V0h1733.19z" fill="#0a527b" />
+                  <path d="M875.001 182.413L1733.19 0H16.816l858.185 182.413z" fill="#0a4f76" />
+                </svg>
+              </div>
             </div>
             <header className="relative py-10">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -369,14 +375,14 @@ export default function Example() {
                           <div className="ml-5 rounded-md shadow-sm">
                             <div className="group relative border border-gray-300 rounded-md py-2 px-3 flex items-center justify-center hover:bg-gray-50 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-sky-500">
                               <label
-                                htmlFor="user-photo"
+                                htmlFor="mobile-user-photo"
                                 className="relative text-sm leading-4 font-medium text-gray-700 pointer-events-none"
                               >
                                 <span>Change</span>
                                 <span className="sr-only"> user photo</span>
                               </label>
                               <input
-                                id="user-photo"
+                                id="mobile-user-photo"
                                 name="user-photo"
                                 type="file"
                                 className="absolute w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md"
@@ -389,14 +395,14 @@ export default function Example() {
                       <div className="hidden relative rounded-full overflow-hidden lg:block">
                         <img className="relative rounded-full w-40 h-40" src={user.imageUrl} alt="" />
                         <label
-                          htmlFor="user-photo"
+                          htmlFor="desktop-user-photo"
                           className="absolute inset-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center text-sm font-medium text-white opacity-0 hover:opacity-100 focus-within:opacity-100"
                         >
                           <span>Change</span>
                           <span className="sr-only"> user photo</span>
                           <input
                             type="file"
-                            id="user-photo"
+                            id="desktop-user-photo"
                             name="user-photo"
                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md"
                           />
@@ -468,7 +474,7 @@ export default function Example() {
                         Ornare eu a volutpat eget vulputate. Fringilla commodo amet.
                       </p>
                     </div>
-                    <ul className="mt-2 divide-y divide-gray-200">
+                    <ul role="list" className="mt-2 divide-y divide-gray-200">
                       <Switch.Group as="li" className="py-4 flex items-center justify-between">
                         <div className="flex flex-col">
                           <Switch.Label as="p" className="text-sm font-medium text-gray-900" passive>

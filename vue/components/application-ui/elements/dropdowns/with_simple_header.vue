@@ -11,12 +11,8 @@
     <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
       <MenuItems class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
         <div class="px-4 py-3">
-          <p class="text-sm">
-            Signed in as
-          </p>
-          <p class="text-sm font-medium text-gray-900 truncate">
-            tom@example.com
-          </p>
+          <p class="text-sm">Signed in as</p>
+          <p class="text-sm font-medium text-gray-900 truncate">tom@example.com</p>
         </div>
         <div class="py-1">
           <MenuItem v-slot="{ active }">
@@ -32,9 +28,7 @@
         <div class="py-1">
           <form method="POST" action="#">
             <MenuItem v-slot="{ active }">
-              <button type="submit" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block w-full text-left px-4 py-2 text-sm']">
-                Sign out
-              </button>
+              <button type="submit" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block w-full text-left px-4 py-2 text-sm']">Sign out</button>
             </MenuItem>
           </form>
         </div>

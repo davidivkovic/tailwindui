@@ -60,7 +60,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
             </div>
             <div class="hidden lg:block lg:ml-4">
               <div class="flex items-center">
-                <button class="flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+                <button type="button" class="flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
                   <span class="sr-only">View notifications</span>
                   <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -113,7 +113,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                 <div class="text-base font-medium text-white">Debbie Lewis</div>
                 <div class="text-sm font-medium text-sky-200">debbielewis@example.com</div>
               </div>
-              <button class="ml-auto flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
+              <button type="button" class="ml-auto flex-shrink-0 rounded-full p-1 text-sky-200 hover:bg-sky-800 hover:text-white focus:outline-none focus:bg-sky-900 focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-900 focus:ring-white">
                 <span class="sr-only">View notifications</span>
                 <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -132,13 +132,19 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
           </div>
         </div>
       </nav>
-      <div class="inset-y-0 absolute flex justify-center inset-x-0 left-1/2 transform -translate-x-1/2 w-full overflow-hidden lg:inset-y-0" x-state:on="Menu open" x-state:off="Menu closed" aria-hidden="true" :class="{ 'bottom-0': open, 'inset-y-0': !(open) }">
-        <div class="flex-grow bg-sky-900 bg-opacity-75"></div>
-        <svg class="flex-shrink-0" width="1750" height="308" viewBox="0 0 1750 308" xmlns="http://www.w3.org/2000/svg">
-          <path opacity=".75" d="M1465.84 308L16.816 0H1750v308h-284.16z" fill="#075985"></path>
-          <path opacity=".75" d="M1733.19 0L284.161 308H0V0h1733.19z" fill="#0c4a6e"></path>
-        </svg>
-        <div class="flex-grow bg-sky-800 bg-opacity-75"></div>
+      <div aria-hidden="true" x-state:on="Menu open" x-state:off="Menu closed" class="inset-y-0 absolute inset-x-0 left-1/2 transform -translate-x-1/2 w-full overflow-hidden lg:inset-y-0" :class="{ 'bottom-0': open, 'inset-y-0': !(open) }">
+        <div class="absolute inset-0 flex">
+          <div class="h-full w-1/2" style="background-color: #0a527b;"></div>
+          <div class="h-full w-1/2" style="background-color: #065d8c;"></div>
+        </div>
+        <div class="relative flex justify-center">
+          <svg class="flex-shrink-0" width="1750" height="308" viewBox="0 0 1750 308" xmlns="http://www.w3.org/2000/svg">
+            <path d="M284.161 308H1465.84L875.001 182.413 284.161 308z" fill="#0369a1"></path>
+            <path d="M1465.84 308L16.816 0H1750v308h-284.16z" fill="#065d8c"></path>
+            <path d="M1733.19 0L284.161 308H0V0h1733.19z" fill="#0a527b"></path>
+            <path d="M875.001 182.413L1733.19 0H16.816l858.185 182.413z" fill="#0a4f76"></path>
+          </svg>
+        </div>
       </div>
       <header class="relative py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -262,11 +268,11 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                         </div>
                         <div class="ml-5 rounded-md shadow-sm">
                           <div class="group relative border border-gray-300 rounded-md py-2 px-3 flex items-center justify-center hover:bg-gray-50 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-sky-500">
-                            <label for="user-photo" class="relative text-sm leading-4 font-medium text-gray-700 pointer-events-none">
+                            <label for="mobile-user-photo" class="relative text-sm leading-4 font-medium text-gray-700 pointer-events-none">
                               <span>Change</span>
                               <span class="sr-only"> user photo</span>
                             </label>
-                            <input id="user-photo" name="user-photo" type="file" class="absolute w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md">
+                            <input id="mobile-user-photo" name="user-photo" type="file" class="absolute w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md">
                           </div>
                         </div>
                       </div>
@@ -274,10 +280,10 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
 
                     <div class="hidden relative rounded-full overflow-hidden lg:block">
                       <img class="relative rounded-full w-40 h-40" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=320&amp;h=320&amp;q=80" alt="">
-                      <label for="user-photo" class="absolute inset-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center text-sm font-medium text-white opacity-0 hover:opacity-100 focus-within:opacity-100">
+                      <label for="desktop-user-photo" class="absolute inset-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center text-sm font-medium text-white opacity-0 hover:opacity-100 focus-within:opacity-100">
                         <span>Change</span>
                         <span class="sr-only"> user photo</span>
-                        <input type="file" id="user-photo" name="user-photo" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md">
+                        <input type="file" id="desktop-user-photo" name="user-photo" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer border-gray-300 rounded-md">
                       </label>
                     </div>
                   </div>
@@ -315,7 +321,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                       Ornare eu a volutpat eget vulputate. Fringilla commodo amet.
                     </p>
                   </div>
-                  <ul class="mt-2 divide-y divide-gray-200">
+                  <ul role="list" class="mt-2 divide-y divide-gray-200">
                     <li class="py-4 flex items-center justify-between" x-data="{ on: true }">
                       <div class="flex flex-col">
                         <p class="text-sm font-medium text-gray-900" id="privacy-option-1-label">

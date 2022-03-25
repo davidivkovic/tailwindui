@@ -10,12 +10,20 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative min-h-screen bg-white">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-white">
+    <body class="h-full">
+    ```
+  -->
+  <div class="min-h-full">
     <!-- Navbar -->
     <Disclosure as="nav" class="bg-gray-50" v-slot="{ open }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +65,7 @@
           <!-- Actions section -->
           <div class="hidden lg:block lg:ml-4">
             <div class="flex items-center">
-              <button class="bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
+              <button type="button" class="bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="h-6 w-6" aria-hidden="true" />
               </button>
@@ -87,7 +95,7 @@
 
       <DisclosurePanel class="bg-gray-50 border-b border-gray-200 lg:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-100' : 'hover:bg-gray-100', 'block px-3 py-2 rounded-md font-medium text-gray-900']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+          <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-gray-100' : 'hover:bg-gray-100', 'block px-3 py-2 rounded-md font-medium text-gray-900']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
         </div>
         <div class="pt-4 pb-3 border-t border-gray-200">
           <div class="px-5 flex items-center">
@@ -98,13 +106,13 @@
               <div class="text-base font-medium text-gray-800">{{ user.name }}</div>
               <div class="text-sm font-medium text-gray-500">{{ user.email }}</div>
             </div>
-            <button class="ml-auto bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
+            <button type="button" class="ml-auto bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
               <span class="sr-only">View notifications</span>
               <BellIcon class="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <div class="mt-3 px-2 space-y-1">
-            <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-900 hover:bg-gray-100">{{ item.name }}</a>
+            <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-900 hover:bg-gray-100">{{ item.name }}</DisclosureButton>
           </div>
         </div>
       </DisclosurePanel>
@@ -115,7 +123,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:flex xl:items-center xl:justify-between">
         <div class="flex-1 min-w-0">
           <nav class="flex" aria-label="Breadcrumb">
-            <ol class="flex items-center space-x-4" role="list">
+            <ol role="list" class="flex items-center space-x-4">
               <li>
                 <div>
                   <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-700">Jobs</a>
@@ -129,9 +137,7 @@
               </li>
             </ol>
           </nav>
-          <h1 class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-            Back End Developer
-          </h1>
+          <h1 class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Back End Developer</h1>
           <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-8">
             <div class="mt-2 flex items-center text-sm text-gray-500">
               <BriefcaseIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -168,9 +174,7 @@
 
           <span class="sm:ml-3 relative z-0">
             <Listbox as="div" v-model="selected">
-              <ListboxLabel class="sr-only">
-                Change published status
-              </ListboxLabel>
+              <ListboxLabel class="sr-only"> Change published status </ListboxLabel>
               <div class="relative">
                 <div class="inline-flex shadow-sm rounded-md divide-x divide-purple-600">
                   <div class="relative z-0 inline-flex shadow-sm rounded-md divide-x divide-purple-600">
@@ -240,6 +244,7 @@
           <!-- Tabs -->
           <div class="sm:hidden">
             <label for="tabs" class="sr-only">Select a tab</label>
+            <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
             <select id="tabs" name="tabs" class="mt-4 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md">
               <option v-for="tab in tabs" :key="tab.name" :selected="tab.current">{{ tab.name }}</option>
             </select>
@@ -257,7 +262,7 @@
         </div>
 
         <!-- Stacked list -->
-        <ul class="mt-5 border-t border-gray-200 divide-y divide-gray-200 sm:mt-0 sm:border-t-0" role="list">
+        <ul role="list" class="mt-5 border-t border-gray-200 divide-y divide-gray-200 sm:mt-0 sm:border-t-0">
           <li v-for="candidate in candidates" :key="candidate.email">
             <a href="#" class="group block">
               <div class="flex items-center py-5 px-4 sm:py-6 sm:px-0">
@@ -305,25 +310,13 @@
             </a>
           </div>
           <div class="hidden md:-mt-px md:flex">
-            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-              1
-            </a>
+            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 1 </a>
             <!-- Current: "border-purple-500 text-purple-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200" -->
-            <a href="#" class="border-purple-500 text-purple-600 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium" aria-current="page">
-              2
-            </a>
-            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-              3
-            </a>
-            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-              4
-            </a>
-            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-              5
-            </a>
-            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-              6
-            </a>
+            <a href="#" class="border-purple-500 text-purple-600 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium" aria-current="page"> 2 </a>
+            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 3 </a>
+            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 4 </a>
+            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 5 </a>
+            <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 6 </a>
           </div>
           <div class="-mt-px w-0 flex-1 flex justify-end">
             <a href="#" class="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-200">
@@ -373,7 +366,7 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 const user = {
   name: 'Whitney Francis',
-  email: 'whitneyfrancis@example.com',
+  email: 'whitney.francis@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
@@ -398,7 +391,7 @@ const tabs = [
 const candidates = [
   {
     name: 'Emily Selman',
-    email: 'emilyselman@example.com',
+    email: 'emily.selman@example.com',
     imageUrl:
       'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     applied: 'January 7, 2020',
@@ -445,7 +438,6 @@ export default {
     XIcon,
   },
   setup() {
-    const open = ref(false)
     const selected = ref(publishingOptions[0])
 
     return {
@@ -455,7 +447,6 @@ export default {
       tabs,
       candidates,
       publishingOptions,
-      open,
       selected,
     }
   },

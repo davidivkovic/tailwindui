@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -27,7 +27,7 @@ export default function Example() {
           <MailIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
         </div>
         <input
-          type="text"
+          type="email"
           name="email"
           id="email"
           className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"

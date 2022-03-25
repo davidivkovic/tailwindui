@@ -16,9 +16,7 @@
         <img class="mx-auto h-8" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600-mark-gray-800-and-indigo-600-text.svg" alt="Workcation" />
         <blockquote class="mt-10">
           <div class="max-w-3xl mx-auto text-center text-2xl leading-9 font-medium text-gray-900">
-            <p>
-              &ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.&rdquo;
-            </p>
+            <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.&rdquo;</p>
           </div>
           <footer class="mt-8">
             <div class="md:flex md:items-center md:justify-center">

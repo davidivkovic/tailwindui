@@ -10,11 +10,19 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="relative h-screen flex overflow-hidden bg-white">
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full overflow-hidden">
+  ```
+-->
+<div class="h-full flex">
   <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
   <div class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
     <!--
@@ -67,13 +75,13 @@
         <nav aria-label="Sidebar" class="mt-5">
           <div class="px-2 space-y-1">
             <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-            <a href="#" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" aria-current="page">
+            <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
               <!--
                 Heroicon name: outline/home
 
                 Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
               -->
-              <svg class="text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               Dashboard
@@ -95,9 +103,9 @@
               Teams
             </a>
 
-            <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+            <a href="#" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" aria-current="page">
               <!-- Heroicon name: outline/search-circle -->
-              <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Directory
@@ -147,12 +155,8 @@
               <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
             </div>
             <div class="ml-3">
-              <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">
-                Tom Cook
-              </p>
-              <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">
-                View profile
-              </p>
+              <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">Tom Cook</p>
+              <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
             </div>
           </div>
         </a>
@@ -168,7 +172,7 @@
   <div class="hidden lg:flex lg:flex-shrink-0">
     <div class="flex flex-col w-64">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-gray-100">
+      <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
         <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
           <div class="flex items-center flex-shrink-0 px-4">
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-pink-500-mark-gray-900-text.svg" alt="Workflow">
@@ -176,13 +180,13 @@
           <nav class="mt-5 flex-1" aria-label="Sidebar">
             <div class="px-2 space-y-1">
               <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-              <a href="#" class="bg-gray-200 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" aria-current="page">
+              <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                 <!--
                   Heroicon name: outline/home
 
                   Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
                 -->
-                <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 Dashboard
@@ -204,9 +208,9 @@
                 Teams
               </a>
 
-              <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+              <a href="#" class="bg-gray-200 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" aria-current="page">
                 <!-- Heroicon name: outline/search-circle -->
-                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Directory
@@ -256,12 +260,8 @@
                 <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
               </div>
               <div class="ml-3">
-                <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                  Tom Cook
-                </p>
-                <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
-                  View profile
-                </p>
+                <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Tom Cook</p>
+                <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
               </div>
             </div>
           </a>
@@ -312,9 +312,7 @@
                 </div>
                 <div class="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
                   <div class="sm:hidden 2xl:block mt-6 min-w-0 flex-1">
-                    <h1 class="text-2xl font-bold text-gray-900 truncate">
-                      Ricardo Cooper
-                    </h1>
+                    <h1 class="text-2xl font-bold text-gray-900 truncate">Ricardo Cooper</h1>
                   </div>
                   <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
                     <button type="button" class="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
@@ -336,9 +334,7 @@
                 </div>
               </div>
               <div class="hidden sm:block 2xl:hidden mt-6 min-w-0 flex-1">
-                <h1 class="text-2xl font-bold text-gray-900 truncate">
-                  Ricardo Cooper
-                </h1>
+                <h1 class="text-2xl font-bold text-gray-900 truncate">Ricardo Cooper</h1>
               </div>
             </div>
           </div>
@@ -349,17 +345,11 @@
               <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <nav class="-mb-px flex space-x-8" aria-label="Tabs">
                   <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
-                  <a href="#" class="border-pink-500 text-gray-900 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page">
-                    Profile
-                  </a>
+                  <a href="#" class="border-pink-500 text-gray-900 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page"> Profile </a>
 
-                  <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                    Calendar
-                  </a>
+                  <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Calendar </a>
 
-                  <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                    Recognition
-                  </a>
+                  <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Recognition </a>
                 </nav>
               </div>
             </div>
@@ -369,81 +359,47 @@
           <div class="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Phone
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  (555) 123-4567
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Phone</dt>
+                <dd class="mt-1 text-sm text-gray-900">(555) 123-4567</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Email
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  ricardocooper@example.com
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Email</dt>
+                <dd class="mt-1 text-sm text-gray-900">ricardocooper@example.com</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Title
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  Senior Front-End Developer
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Title</dt>
+                <dd class="mt-1 text-sm text-gray-900">Senior Front-End Developer</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Team
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  Product Development
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Team</dt>
+                <dd class="mt-1 text-sm text-gray-900">Product Development</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Location
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  San Francisco
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Location</dt>
+                <dd class="mt-1 text-sm text-gray-900">San Francisco</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Sits
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  Oasis, 4th floor
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Sits</dt>
+                <dd class="mt-1 text-sm text-gray-900">Oasis, 4th floor</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Salary
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  $145,000
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Salary</dt>
+                <dd class="mt-1 text-sm text-gray-900">$145,000</dd>
               </div>
 
               <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">
-                  Birthday
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900">
-                  June 8, 1990
-                </dd>
+                <dt class="text-sm font-medium text-gray-500">Birthday</dt>
+                <dd class="mt-1 text-sm text-gray-900">June 8, 1990</dd>
               </div>
 
               <div class="sm:col-span-2">
-                <dt class="text-sm font-medium text-gray-500">
-                  About
-                </dt>
+                <dt class="text-sm font-medium text-gray-500">About</dt>
                 <dd class="mt-1 max-w-prose text-sm text-gray-900 space-y-5">
                   <p>Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna, dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.</p>
                   <p>Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet. Urna, sem pretium sit pretium urna, senectus vitae. Scelerisque fermentum, cursus felis dui suspendisse velit pharetra. Augue et duis cursus maecenas eget quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum risus suspendisse.</p>
@@ -463,12 +419,8 @@
                 <div class="flex-1 min-w-0">
                   <a href="#" class="focus:outline-none">
                     <span class="absolute inset-0" aria-hidden="true"></span>
-                    <p class="text-sm font-medium text-gray-900">
-                      Leslie Alexander
-                    </p>
-                    <p class="text-sm text-gray-500 truncate">
-                      Co-Founder / CEO
-                    </p>
+                    <p class="text-sm font-medium text-gray-900">Leslie Alexander</p>
+                    <p class="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
                   </a>
                 </div>
               </div>
@@ -480,12 +432,8 @@
                 <div class="flex-1 min-w-0">
                   <a href="#" class="focus:outline-none">
                     <span class="absolute inset-0" aria-hidden="true"></span>
-                    <p class="text-sm font-medium text-gray-900">
-                      Michael Foster
-                    </p>
-                    <p class="text-sm text-gray-500 truncate">
-                      Co-Founder / CTO
-                    </p>
+                    <p class="text-sm font-medium text-gray-900">Michael Foster</p>
+                    <p class="text-sm text-gray-500 truncate">Co-Founder / CTO</p>
                   </a>
                 </div>
               </div>
@@ -497,12 +445,8 @@
                 <div class="flex-1 min-w-0">
                   <a href="#" class="focus:outline-none">
                     <span class="absolute inset-0" aria-hidden="true"></span>
-                    <p class="text-sm font-medium text-gray-900">
-                      Dries Vincent
-                    </p>
-                    <p class="text-sm text-gray-500 truncate">
-                      Manager, Business Relations
-                    </p>
+                    <p class="text-sm font-medium text-gray-900">Dries Vincent</p>
+                    <p class="text-sm text-gray-500 truncate">Manager, Business Relations</p>
                   </a>
                 </div>
               </div>
@@ -514,12 +458,8 @@
                 <div class="flex-1 min-w-0">
                   <a href="#" class="focus:outline-none">
                     <span class="absolute inset-0" aria-hidden="true"></span>
-                    <p class="text-sm font-medium text-gray-900">
-                      Lindsay Walton
-                    </p>
-                    <p class="text-sm text-gray-500 truncate">
-                      Front-end Developer
-                    </p>
+                    <p class="text-sm font-medium text-gray-900">Lindsay Walton</p>
+                    <p class="text-sm text-gray-500 truncate">Front-end Developer</p>
                   </a>
                 </div>
               </div>
@@ -530,9 +470,7 @@
       <aside class="hidden xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200">
         <div class="px-6 pt-6 pb-4">
           <h2 class="text-lg font-medium text-gray-900">Directory</h2>
-          <p class="mt-1 text-sm text-gray-600">
-            Search directory of 3,018 employees
-          </p>
+          <p class="mt-1 text-sm text-gray-600">Search directory of 3,018 employees</p>
           <form class="mt-6 flex space-x-4" action="#">
             <div class="flex-1 min-w-0">
               <label for="search" class="sr-only">Search</label>
@@ -561,7 +499,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>A</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -571,12 +509,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Leslie Abbott
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Co-Founder / CEO
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Leslie Abbott</p>
+                      <p class="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
                     </a>
                   </div>
                 </div>
@@ -591,12 +525,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Hector Adams
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        VP, Marketing
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Hector Adams</p>
+                      <p class="text-sm text-gray-500 truncate">VP, Marketing</p>
                     </a>
                   </div>
                 </div>
@@ -611,12 +541,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Blake Alexander
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Account Coordinator
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Blake Alexander</p>
+                      <p class="text-sm text-gray-500 truncate">Account Coordinator</p>
                     </a>
                   </div>
                 </div>
@@ -631,12 +557,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Fabricio Andrews
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Senior Art Director
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Fabricio Andrews</p>
+                      <p class="text-sm text-gray-500 truncate">Senior Art Director</p>
                     </a>
                   </div>
                 </div>
@@ -648,7 +570,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>B</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -658,12 +580,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Angela Beaver
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Chief Strategy Officer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Angela Beaver</p>
+                      <p class="text-sm text-gray-500 truncate">Chief Strategy Officer</p>
                     </a>
                   </div>
                 </div>
@@ -678,12 +596,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Yvette Blanchard
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Studio Artist
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Yvette Blanchard</p>
+                      <p class="text-sm text-gray-500 truncate">Studio Artist</p>
                     </a>
                   </div>
                 </div>
@@ -698,12 +612,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Lawrence Brooks
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Content Specialist
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Lawrence Brooks</p>
+                      <p class="text-sm text-gray-500 truncate">Content Specialist</p>
                     </a>
                   </div>
                 </div>
@@ -715,7 +625,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>C</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -725,12 +635,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Jeffrey Clark
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Senior Art Director
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Jeffrey Clark</p>
+                      <p class="text-sm text-gray-500 truncate">Senior Art Director</p>
                     </a>
                   </div>
                 </div>
@@ -745,12 +651,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Kathryn Cooper
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Associate Creative Director
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Kathryn Cooper</p>
+                      <p class="text-sm text-gray-500 truncate">Associate Creative Director</p>
                     </a>
                   </div>
                 </div>
@@ -762,7 +664,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>E</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -772,12 +674,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Alicia Edwards
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Junior Copywriter
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Alicia Edwards</p>
+                      <p class="text-sm text-gray-500 truncate">Junior Copywriter</p>
                     </a>
                   </div>
                 </div>
@@ -792,12 +690,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Benjamin Emerson
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Director, Print Operations
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Benjamin Emerson</p>
+                      <p class="text-sm text-gray-500 truncate">Director, Print Operations</p>
                     </a>
                   </div>
                 </div>
@@ -812,12 +706,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Jillian Erics
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Designer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Jillian Erics</p>
+                      <p class="text-sm text-gray-500 truncate">Designer</p>
                     </a>
                   </div>
                 </div>
@@ -832,12 +722,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Chelsea Evans
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Human Resources Manager
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Chelsea Evans</p>
+                      <p class="text-sm text-gray-500 truncate">Human Resources Manager</p>
                     </a>
                   </div>
                 </div>
@@ -849,7 +735,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>G</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -859,12 +745,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Michael Gillard
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Co-Founder / CTO
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Michael Gillard</p>
+                      <p class="text-sm text-gray-500 truncate">Co-Founder / CTO</p>
                     </a>
                   </div>
                 </div>
@@ -879,12 +761,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Dries Giuessepe
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Manager, Business Relations
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Dries Giuessepe</p>
+                      <p class="text-sm text-gray-500 truncate">Manager, Business Relations</p>
                     </a>
                   </div>
                 </div>
@@ -896,7 +774,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>M</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -906,12 +784,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Jenny Harrison
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Studio Artist
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Jenny Harrison</p>
+                      <p class="text-sm text-gray-500 truncate">Studio Artist</p>
                     </a>
                   </div>
                 </div>
@@ -926,12 +800,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Lindsay Hatley
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Front-end Developer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Lindsay Hatley</p>
+                      <p class="text-sm text-gray-500 truncate">Front-end Developer</p>
                     </a>
                   </div>
                 </div>
@@ -946,12 +816,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Anna Hill
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Partner, Creative
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Anna Hill</p>
+                      <p class="text-sm text-gray-500 truncate">Partner, Creative</p>
                     </a>
                   </div>
                 </div>
@@ -963,7 +829,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>S</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -973,12 +839,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Courtney Samuels
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Designer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Courtney Samuels</p>
+                      <p class="text-sm text-gray-500 truncate">Designer</p>
                     </a>
                   </div>
                 </div>
@@ -993,12 +855,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Tom Simpson
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Director, Product Development
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Tom Simpson</p>
+                      <p class="text-sm text-gray-500 truncate">Director, Product Development</p>
                     </a>
                   </div>
                 </div>
@@ -1010,7 +868,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>T</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -1020,12 +878,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Floyd Thompson
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Principal Designer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Floyd Thompson</p>
+                      <p class="text-sm text-gray-500 truncate">Principal Designer</p>
                     </a>
                   </div>
                 </div>
@@ -1040,12 +894,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Leonard Timmons
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Senior Designer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Leonard Timmons</p>
+                      <p class="text-sm text-gray-500 truncate">Senior Designer</p>
                     </a>
                   </div>
                 </div>
@@ -1060,12 +910,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Whitney Trudeau
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Copywriter
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Whitney Trudeau</p>
+                      <p class="text-sm text-gray-500 truncate">Copywriter</p>
                     </a>
                   </div>
                 </div>
@@ -1077,7 +923,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>W</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -1087,12 +933,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Kristin Watson
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        VP, Human Resources
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Kristin Watson</p>
+                      <p class="text-sm text-gray-500 truncate">VP, Human Resources</p>
                     </a>
                   </div>
                 </div>
@@ -1107,12 +949,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Emily Wilson
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        VP, User Experience
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Emily Wilson</p>
+                      <p class="text-sm text-gray-500 truncate">VP, User Experience</p>
                     </a>
                   </div>
                 </div>
@@ -1124,7 +962,7 @@
             <div class="z-10 sticky top-0 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
               <h3>Y</h3>
             </div>
-            <ul class="relative z-0 divide-y divide-gray-200">
+            <ul role="list" class="relative z-0 divide-y divide-gray-200">
               <li>
                 <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500">
                   <div class="flex-shrink-0">
@@ -1134,12 +972,8 @@
                     <a href="#" class="focus:outline-none">
                       <!-- Extend touch target to entire panel -->
                       <span class="absolute inset-0" aria-hidden="true"></span>
-                      <p class="text-sm font-medium text-gray-900">
-                        Emma Young
-                      </p>
-                      <p class="text-sm text-gray-500 truncate">
-                        Senior Front-end Developer
-                      </p>
+                      <p class="text-sm font-medium text-gray-900">Emma Young</p>
+                      <p class="text-sm text-gray-500 truncate">Senior Front-end Developer</p>
                     </a>
                   </div>
                 </div>

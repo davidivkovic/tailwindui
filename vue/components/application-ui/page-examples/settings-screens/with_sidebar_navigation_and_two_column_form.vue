@@ -13,18 +13,26 @@
       extend: {
         colors: {
           orange: colors.orange,
-        }
-      }
+        },
+      },
     },
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="relative min-h-screen">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full">
+    ```
+  -->
+  <div class="h-full">
     <Disclosure as="header" class="bg-white shadow" v-slot="{ open }">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
         <div class="relative h-16 flex justify-between">
@@ -53,7 +61,7 @@
             </DisclosureButton>
           </div>
           <div class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
-            <button class="flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+            <button type="button" class="flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
               <span class="sr-only">View notifications</span>
               <BellIcon class="h-6 w-6" aria-hidden="true" />
             </button>
@@ -85,7 +93,7 @@
 
       <DisclosurePanel as="nav" class="lg:hidden" aria-label="Global">
         <div class="pt-2 pb-3 px-2 space-y-1">
-          <a v-for="item in navigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-gray-900">{{ item.name }}</a>
+          <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-gray-900">{{ item.name }}</DisclosureButton>
         </div>
         <div class="border-t border-gray-200 pt-4 pb-3">
           <div class="px-4 flex items-center">
@@ -96,13 +104,13 @@
               <div class="text-base font-medium text-gray-800">{{ user.name }}</div>
               <div class="text-sm font-medium text-gray-500">{{ user.email }}</div>
             </div>
-            <button class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+            <button type="button" class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
               <span class="sr-only">View notifications</span>
               <BellIcon class="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <div class="mt-3 px-2 space-y-1">
-            <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">{{ item.name }}</a>
+            <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">{{ item.name }}</DisclosureButton>
           </div>
         </div>
       </DisclosurePanel>
@@ -162,8 +170,8 @@
                     </div>
 
                     <div class="col-span-4 sm:col-span-2">
-                      <label for="country" class="block text-sm font-medium text-gray-700">Country / Region</label>
-                      <select id="country" name="country" autocomplete="country" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
+                      <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+                      <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
                         <option>United States</option>
                         <option>Canada</option>
                         <option>Mexico</option>
@@ -171,15 +179,13 @@
                     </div>
 
                     <div class="col-span-4 sm:col-span-2">
-                      <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
+                      <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
                       <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm" />
                     </div>
                   </div>
                 </div>
                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                  <button type="submit" class="bg-gray-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                    Save
-                  </button>
+                  <button type="submit" class="bg-gray-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Save</button>
                 </div>
               </div>
             </form>
@@ -195,9 +201,7 @@
                   </div>
 
                   <RadioGroup v-model="selectedPlan">
-                    <RadioGroupLabel class="sr-only">
-                      Pricing plans
-                    </RadioGroupLabel>
+                    <RadioGroupLabel class="sr-only"> Pricing plans </RadioGroupLabel>
                     <div class="relative bg-white rounded-md -space-y-px">
                       <RadioGroupOption as="template" v-for="(plan, planIdx) in plans" :key="plan.name" :value="plan" v-slot="{ checked, active }">
                         <div :class="[planIdx === 0 ? 'rounded-tl-md rounded-tr-md' : '', planIdx === plans.length - 1 ? 'rounded-bl-md rounded-br-md' : '', checked ? 'bg-orange-50 border-orange-200 z-10' : 'border-gray-200', 'relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none']">
@@ -229,9 +233,7 @@
                   </SwitchGroup>
                 </div>
                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                  <button type="submit" class="bg-gray-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                    Save
-                  </button>
+                  <button type="submit" class="bg-gray-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Save</button>
                 </div>
               </div>
             </form>
@@ -250,15 +252,9 @@
                       <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                           <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                              Date
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                              Description
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                              Amount
-                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
                             <!--
                               `relative` is added here due to a weird bug in Safari that causes `sr-only` headings to introduce overflow on the body on mobile.
                             -->
@@ -391,7 +387,6 @@ export default {
     XIcon,
   },
   setup() {
-    const open = ref(false)
     const selectedPlan = ref(plans[1])
     const annualBillingEnabled = ref(true)
 
@@ -402,7 +397,6 @@ export default {
       subNavigation,
       plans,
       payments,
-      open,
       selectedPlan,
       annualBillingEnabled,
     }

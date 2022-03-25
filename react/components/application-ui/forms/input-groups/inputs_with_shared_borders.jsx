@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -70,22 +70,25 @@ export default function Example() {
             <select
               id="country"
               name="country"
+              autoComplete="country-name"
               className="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 sm:text-sm border-gray-300"
             >
-              <option>USA</option>
+              <option>United States</option>
               <option>Canada</option>
+              <option>Mexico</option>
             </select>
           </div>
           <div>
             <label htmlFor="postal-code" className="sr-only">
-              Postal code
+              ZIP / Postal code
             </label>
             <input
               type="text"
               name="postal-code"
               id="postal-code"
+              autoComplete="postal-code"
               className="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-b-md bg-transparent focus:z-10 sm:text-sm border-gray-300"
-              placeholder="Postal code"
+              placeholder="ZIP / Postal code"
             />
           </div>
         </div>

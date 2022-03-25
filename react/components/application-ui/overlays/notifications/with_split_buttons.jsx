@@ -28,7 +28,7 @@ export default function Example() {
               <div className="w-0 flex-1 flex items-center p-4">
                 <div className="w-full">
                   <p className="text-sm font-medium text-gray-900">Receive notifications</p>
-                  <p className="mt-1 text-sm text-gray-500">Notications may include alerts, sounds, and badges.</p>
+                  <p className="mt-1 text-sm text-gray-500">Notifications may include alerts, sounds, and badges.</p>
                 </div>
               </div>
               <div className="flex">

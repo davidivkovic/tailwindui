@@ -10,12 +10,20 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
 <template>
-  <div class="min-h-screen bg-gray-100">
+  <!--
+    This example requires updating your template:
+
+    ```
+    <html class="h-full bg-gray-100">
+    <body class="h-full">
+    ```
+  -->
+  <div class="min-h-full">
     <Popover as="header" class="pb-24 bg-indigo-600" v-slot="{ open }">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="relative py-5 flex items-center justify-center lg:justify-between">
@@ -44,14 +52,8 @@
               </div>
               <transition leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                 <MenuItems class="origin-top-right z-40 absolute -right-2 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <MenuItem v-slot="{ active }">
-                    <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Your Profile</a>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Settings</a>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign out</a>
+                  <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
+                    <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</a>
                   </MenuItem>
                 </MenuItems>
               </transition>
@@ -61,12 +63,12 @@
           <!-- Search -->
           <div class="flex-1 min-w-0 px-12 lg:hidden">
             <div class="max-w-xs w-full mx-auto">
-              <label for="search" class="sr-only">Search</label>
+              <label for="desktop-search" class="sr-only">Search</label>
               <div class="relative text-white focus-within:text-gray-600">
                 <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
                   <SearchIcon class="h-5 w-5" aria-hidden="true" />
                 </div>
-                <input id="search" class="block w-full bg-white bg-opacity-20 py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-gray-900 placeholder-white focus:outline-none focus:bg-opacity-100 focus:border-transparent focus:placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Search" type="search" name="search" />
+                <input id="desktop-search" class="block w-full bg-white bg-opacity-20 py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-gray-900 placeholder-white focus:outline-none focus:bg-opacity-100 focus:border-transparent focus:placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Search" type="search" name="search" />
               </div>
             </div>
           </div>
@@ -85,19 +87,19 @@
           <div class="grid grid-cols-3 gap-8 items-center">
             <div class="col-span-2">
               <nav class="flex space-x-4">
-                <a v-for="link in navLinks" :key="link.title" href="#" :class="[link.active ? 'text-white' : 'text-indigo-100', 'text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10']" :aria-current="link.active ? 'page' : 'false'">
-                  {{ link.title }}
+                <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'text-white' : 'text-indigo-100', 'text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10']" :aria-current="item.current ? 'page' : undefined">
+                  {{ item.name }}
                 </a>
               </nav>
             </div>
             <div>
               <div class="max-w-md w-full mx-auto">
-                <label for="search" class="sr-only">Search</label>
+                <label for="mobile-search" class="sr-only">Search</label>
                 <div class="relative text-white focus-within:text-gray-600">
                   <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
                     <SearchIcon class="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <input id="search" class="block w-full bg-white bg-opacity-20 py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-gray-900 placeholder-white focus:outline-none focus:bg-opacity-100 focus:border-transparent focus:placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Search" type="search" name="search" />
+                  <input id="mobile-search" class="block w-full bg-white bg-opacity-20 py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-gray-900 placeholder-white focus:outline-none focus:bg-opacity-100 focus:border-transparent focus:placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Search" type="search" name="search" />
                 </div>
               </div>
             </div>
@@ -108,11 +110,11 @@
       <TransitionRoot as="template" :show="open">
         <div class="lg:hidden">
           <TransitionChild as="template" enter="duration-150 ease-out" enter-from="opacity-0" enter-to="opacity-100" leave="duration-150 ease-in" leave-from="opacity-100" leave-to="opacity-0">
-            <PopoverOverlay static class="z-20 fixed inset-0 bg-black bg-opacity-25" />
+            <PopoverOverlay class="z-20 fixed inset-0 bg-black bg-opacity-25" />
           </TransitionChild>
 
           <TransitionChild as="template" enter="duration-150 ease-out" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="duration-150 ease-in" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
-            <PopoverPanel focus static class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top">
+            <PopoverPanel focus class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top">
               <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y divide-gray-200">
                 <div class="pt-3 pb-2">
                   <div class="flex items-center justify-between px-4">
@@ -140,18 +142,16 @@
                       <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" />
                     </div>
                     <div class="ml-3 min-w-0 flex-1">
-                      <div class="text-base font-medium text-gray-800 truncate">Rebecca Nicholas</div>
-                      <div class="text-sm font-medium text-gray-500 truncate">rebecca.nicholas@example.com</div>
+                      <div class="text-base font-medium text-gray-800 truncate">{{ user.name }}</div>
+                      <div class="text-sm font-medium text-gray-500 truncate">{{ user.email }}</div>
                     </div>
-                    <button class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button type="button" class="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                       <span class="sr-only">View notifications</span>
                       <BellIcon class="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
                   <div class="mt-3 px-2 space-y-1">
-                    <a href="#" class="block rounded-md px-3 py-2 text-base text-gray-900 font-medium hover:bg-gray-100 hover:text-gray-800">Your Profile</a>
-                    <a href="#" class="block rounded-md px-3 py-2 text-base text-gray-900 font-medium hover:bg-gray-100 hover:text-gray-800">Settings</a>
-                    <a href="#" class="block rounded-md px-3 py-2 text-base text-gray-900 font-medium hover:bg-gray-100 hover:text-gray-800">Sign out</a>
+                    <a v-for="item in userNavigation" :key="item.name" :href="item.href" class="block rounded-md px-3 py-2 text-base text-gray-900 font-medium hover:bg-gray-100 hover:text-gray-800">{{ item.name }}</a>
                   </div>
                 </div>
               </div>
@@ -216,20 +216,22 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 import { SearchIcon } from '@heroicons/vue/solid'
 
 const user = {
-  name: 'Chelsea Hagon',
-  handle: 'chelseahagon',
-  email: 'chelseahagon@example.com',
-  role: 'Human Resources Manager',
-  imageId: '1550525811-e5869dd03032',
+  name: 'Tom Cook',
+  email: 'tom@example.com',
   imageUrl:
-    'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
-const navLinks = [
-  { title: 'Home', active: true },
-  { title: 'Profile', active: false },
-  { title: 'Resources', active: false },
-  { title: 'Company Directory', active: false },
-  { title: 'Openings', active: false },
+const navigation = [
+  { name: 'Home', href: '#', current: true },
+  { name: 'Profile', href: '#', current: false },
+  { name: 'Resources', href: '#', current: false },
+  { name: 'Company Directory', href: '#', current: false },
+  { name: 'Openings', href: '#', current: false },
+]
+const userNavigation = [
+  { name: 'Your Profile', href: '#' },
+  { name: 'Settings', href: '#' },
+  { name: 'Sign out', href: '#' },
 ]
 
 export default {
@@ -252,7 +254,8 @@ export default {
   setup() {
     return {
       user,
-      navLinks,
+      navigation,
+      userNavigation,
     }
   },
 }

@@ -6,7 +6,7 @@ const items = [
 
 export default function Example() {
   return (
-    <ul className="space-y-3">
+    <ul role="list" className="space-y-3">
       {items.map((item) => (
         <li key={item.id} className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
           {/* Your content */}

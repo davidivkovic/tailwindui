@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/line-clamp'),
-    ]
+    ],
   }
   ```
 */
@@ -39,7 +39,7 @@ export default function Example() {
   return (
     <div>
       <div className="flow-root mt-6">
-        <ul className="-my-5 divide-y divide-gray-200">
+        <ul role="list" className="-my-5 divide-y divide-gray-200">
           {announcements.map((announcement) => (
             <li key={announcement.id} className="py-5">
               <div className="relative focus-within:ring-2 focus-within:ring-indigo-500">

@@ -6,7 +6,15 @@
 -->
 <div class="bg-gray-100">
     
-  <div class="relative min-h-screen">
+  <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+  -->
+  <div class="h-full">
     <header x-data="{ open: false }" class="bg-white shadow">
       <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
         <div class="relative h-16 flex justify-between">
@@ -45,7 +53,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
             </button>
           </div>
           <div class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
-            <button class="flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+            <button type="button" class="flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
               <span class="sr-only">View notifications</span>
               <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -116,7 +124,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
               <div class="text-base font-medium text-gray-800">Lisa Marie</div>
               <div class="text-sm font-medium text-gray-500">lisamarie@example.com</div>
             </div>
-            <button class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+            <button type="button" class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
               <span class="sr-only">View notifications</span>
               <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
@@ -242,8 +250,8 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     </div>
 
                     <div class="col-span-4 sm:col-span-2">
-                      <label for="country" class="block text-sm font-medium text-gray-700">Country / Region</label>
-                      <select id="country" name="country" autocomplete="country" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
+                      <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+                      <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
                         <option>United States</option>
                         <option>Canada</option>
                         <option>Mexico</option>
@@ -251,7 +259,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     </div>
 
                     <div class="col-span-4 sm:col-span-2">
-                      <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
+                      <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
                       <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
                     </div>
                   </div>
@@ -280,43 +288,43 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                     </legend>
                     <div class="relative bg-white rounded-md -space-y-px">
                       
-                        <label x-radio-group-option="" class="border-gray-200 rounded-tl-md rounded-tr-md  relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 " x-state:on="Checked" x-state:off="Not Checked" :class="{ 'bg-orange-50 border-orange-200 z-10': value === 'Startup', 'border-gray-200': !(value === 'Startup') }">
+                        <label x-radio-group-option="" class="rounded-tl-md rounded-tr-md  relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none" x-description="Checked: &quot;bg-orange-50 border-orange-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-orange-50 border-orange-200 z-10': (value === 'Startup'), 'border-gray-200': !(value === 'Startup') }">
                           <div class="flex items-center text-sm">
                             <input type="radio" x-model="value" name="pricing-plan" value="Startup" class="h-4 w-4 text-orange-500 border-gray-300 focus:ring-gray-900" aria-labelledby="pricing-plans-0-label" aria-describedby="pricing-plans-0-description-0 pricing-plans-0-description-1">
                             <span id="pricing-plans-0-label" class="ml-3 font-medium text-gray-900">Startup</span>
                           </div>
                           <p id="pricing-plans-0-description-0" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-center">
-                            <span class="text-gray-900 font-medium" x-state:on="Checked" x-state:off="Not Checked" :class="{ 'text-orange-900': value === 'Startup', 'text-gray-900': !(value === 'Startup') }">$29 / mo</span>
+                            <span class="font-medium" x-description="Checked: &quot;text-orange-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-orange-900': (value === 'Startup'), 'text-gray-900': !(value === 'Startup') }">$29 / mo</span>
                             <!-- space -->
-                            <span x-state:on="Checked" x-state:off="Not Checked" class="text-gray-500" :class="{ 'text-orange-700': value === 'Startup', 'text-gray-500': !(value === 'Startup') }">($290 / yr)</span>
+                            <span x-description="Checked: &quot;text-orange-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-orange-700': (value === 'Startup'), 'text-gray-500': !(value === 'Startup') }">($290 / yr)</span>
                           </p>
-                          <p id="pricing-plans-0-description-1" class="text-gray-500 ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-state:on="Checked" x-state:off="Not Checked" :class="{ 'text-orange-700': value === 'Startup', 'text-gray-500': !(value === 'Startup') }">Up to 5 active job postings</p>
+                          <p id="pricing-plans-0-description-1" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-description="Checked: &quot;text-orange-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-orange-700': (value === 'Startup'), 'text-gray-500': !(value === 'Startup') }">Up to 5 active job postings</p>
                         </label>
                       
-                        <label x-radio-group-option="" class="border-gray-200   relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 " x-state:on="Checked" x-state:off="Not Checked" :class="{ 'bg-orange-50 border-orange-200 z-10': value === 'Business', 'border-gray-200': !(value === 'Business') }">
+                        <label x-radio-group-option="" class="  relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none" x-description="Checked: &quot;bg-orange-50 border-orange-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-orange-50 border-orange-200 z-10': (value === 'Business'), 'border-gray-200': !(value === 'Business') }">
                           <div class="flex items-center text-sm">
                             <input type="radio" x-model="value" name="pricing-plan" value="Business" class="h-4 w-4 text-orange-500 border-gray-300 focus:ring-gray-900" aria-labelledby="pricing-plans-1-label" aria-describedby="pricing-plans-1-description-0 pricing-plans-1-description-1">
                             <span id="pricing-plans-1-label" class="ml-3 font-medium text-gray-900">Business</span>
                           </div>
                           <p id="pricing-plans-1-description-0" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-center">
-                            <span class="text-gray-900 font-medium" x-state:on="Checked" x-state:off="Not Checked" :class="{ 'text-orange-900': value === 'Business', 'text-gray-900': !(value === 'Business') }">$99 / mo</span>
+                            <span class="font-medium" x-description="Checked: &quot;text-orange-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-orange-900': (value === 'Business'), 'text-gray-900': !(value === 'Business') }">$99 / mo</span>
                             <!-- space -->
-                            <span x-state:on="Checked" x-state:off="Not Checked" class="text-gray-500" :class="{ 'text-orange-700': value === 'Business', 'text-gray-500': !(value === 'Business') }">($990 / yr)</span>
+                            <span x-description="Checked: &quot;text-orange-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-orange-700': (value === 'Business'), 'text-gray-500': !(value === 'Business') }">($990 / yr)</span>
                           </p>
-                          <p id="pricing-plans-1-description-1" class="text-gray-500 ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-state:on="Checked" x-state:off="Not Checked" :class="{ 'text-orange-700': value === 'Business', 'text-gray-500': !(value === 'Business') }">Up to 25 active job postings</p>
+                          <p id="pricing-plans-1-description-1" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-description="Checked: &quot;text-orange-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-orange-700': (value === 'Business'), 'text-gray-500': !(value === 'Business') }">Up to 25 active job postings</p>
                         </label>
                       
-                        <label x-radio-group-option="" class="border-gray-200  rounded-bl-md rounded-br-md relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 " x-state:on="Checked" x-state:off="Not Checked" :class="{ 'bg-orange-50 border-orange-200 z-10': value === 'Enterprise', 'border-gray-200': !(value === 'Enterprise') }">
+                        <label x-radio-group-option="" class=" rounded-bl-md rounded-br-md relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none" x-description="Checked: &quot;bg-orange-50 border-orange-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-orange-50 border-orange-200 z-10': (value === 'Enterprise'), 'border-gray-200': !(value === 'Enterprise') }">
                           <div class="flex items-center text-sm">
                             <input type="radio" x-model="value" name="pricing-plan" value="Enterprise" class="h-4 w-4 text-orange-500 border-gray-300 focus:ring-gray-900" aria-labelledby="pricing-plans-2-label" aria-describedby="pricing-plans-2-description-0 pricing-plans-2-description-1">
                             <span id="pricing-plans-2-label" class="ml-3 font-medium text-gray-900">Enterprise</span>
                           </div>
                           <p id="pricing-plans-2-description-0" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-center">
-                            <span class="text-gray-900 font-medium" x-state:on="Checked" x-state:off="Not Checked" :class="{ 'text-orange-900': value === 'Enterprise', 'text-gray-900': !(value === 'Enterprise') }">$249 / mo</span>
+                            <span class="font-medium" x-description="Checked: &quot;text-orange-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-orange-900': (value === 'Enterprise'), 'text-gray-900': !(value === 'Enterprise') }">$249 / mo</span>
                             <!-- space -->
-                            <span x-state:on="Checked" x-state:off="Not Checked" class="text-gray-500" :class="{ 'text-orange-700': value === 'Enterprise', 'text-gray-500': !(value === 'Enterprise') }">($2490 / yr)</span>
+                            <span x-description="Checked: &quot;text-orange-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-orange-700': (value === 'Enterprise'), 'text-gray-500': !(value === 'Enterprise') }">($2490 / yr)</span>
                           </p>
-                          <p id="pricing-plans-2-description-1" class="text-gray-500 ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-state:on="Checked" x-state:off="Not Checked" :class="{ 'text-orange-700': value === 'Enterprise', 'text-gray-500': !(value === 'Enterprise') }">Unlimited active job postings</p>
+                          <p id="pricing-plans-2-description-1" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-description="Checked: &quot;text-orange-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-orange-700': (value === 'Enterprise'), 'text-gray-500': !(value === 'Enterprise') }">Unlimited active job postings</p>
                         </label>
                       
                     </div>

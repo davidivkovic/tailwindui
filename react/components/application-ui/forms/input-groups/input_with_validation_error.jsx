@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 */
@@ -24,7 +24,7 @@ export default function Example() {
       </label>
       <div className="mt-1 relative rounded-md shadow-sm">
         <input
-          type="text"
+          type="email"
           name="email"
           id="email"
           className="block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md"

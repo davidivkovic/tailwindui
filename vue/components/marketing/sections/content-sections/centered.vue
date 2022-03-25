@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/typography'),
-    ]
+    ],
   }
   ```
 -->
@@ -54,7 +54,7 @@
       </div>
       <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
         <p>Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong> sed <strong>eget risus enim</strong>. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. <a href="#">Mattis mauris semper</a> sed amet vitae sed turpis id.</p>
-        <ul>
+        <ul role="list">
           <li>Quis elit egestas venenatis mattis dignissim.</li>
           <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
           <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>

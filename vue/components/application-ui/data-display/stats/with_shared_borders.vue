@@ -1,9 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div>
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      Last 30 days
-    </h3>
+    <h3 class="text-lg leading-6 font-medium text-gray-900">Last 30 days</h3>
     <dl class="mt-5 grid grid-cols-1 rounded-lg bg-white overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
       <div v-for="item in stats" :key="item.name" class="px-4 py-5 sm:p-6">
         <dt class="text-base font-normal text-gray-900">

@@ -23,7 +23,10 @@ export default function Example() {
               neque.
             </p>
           </div>
-          <ul className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl">
+          <ul
+            role="list"
+            className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl"
+          >
             {people.map((person) => (
               <li key={person.name}>
                 <div className="space-y-6">
@@ -33,7 +36,7 @@ export default function Example() {
                       <h3>{person.name}</h3>
                       <p className="text-indigo-600">{person.role}</p>
                     </div>
-                    <ul className="flex justify-center space-x-5">
+                    <ul role="list" className="flex justify-center space-x-5">
                       <li>
                         <a href={person.twitterUrl} className="text-gray-400 hover:text-gray-500">
                           <span className="sr-only">Twitter</span>

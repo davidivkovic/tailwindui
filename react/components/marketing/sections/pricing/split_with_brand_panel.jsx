@@ -88,7 +88,7 @@ export default function Example() {
                 </span>
               </p>
             </div>
-            <ul className="rounded overflow-hidden grid gap-px sm:grid-cols-2">
+            <ul role="list" className="rounded overflow-hidden grid gap-px sm:grid-cols-2">
               {checklist.map((item) => (
                 <li
                   key={item}

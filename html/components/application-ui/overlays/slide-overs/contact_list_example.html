@@ -4,7 +4,7 @@
     <!-- Background overlay, show/hide based on slide-over state. -->
     <div class="absolute inset-0" aria-hidden="true"></div>
 
-    <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex sm:pl-16">
+    <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
       <!--
         Slide-over panel, show/hide based on slide-over state.
 
@@ -15,15 +15,13 @@
           From: "translate-x-0"
           To: "translate-x-full"
       -->
-      <div class="w-screen max-w-md">
-        <div class="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
+      <div class="pointer-events-auto w-screen max-w-md">
+        <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
           <div class="p-6">
             <div class="flex items-start justify-between">
-              <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">
-                Team
-              </h2>
-              <div class="ml-3 h-7 flex items-center">
-                <button class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500">
+              <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Team</h2>
+              <div class="ml-3 flex h-7 items-center">
+                <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500">
                   <span class="sr-only">Close panel</span>
                   <!-- Heroicon name: outline/x -->
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -45,29 +43,29 @@
               </nav>
             </div>
           </div>
-          <ul class="flex-1 divide-y divide-gray-200 overflow-y-auto">
+          <ul role="list" class="flex-1 divide-y divide-gray-200 overflow-y-auto">
             <li>
-              <div class="relative group py-6 px-5 flex items-center">
-                <a href="#" class="-m-1 flex-1 block p-1">
+              <div class="group relative flex items-center py-6 px-5">
+                <a href="#" class="-m-1 block flex-1 p-1">
                   <div class="absolute inset-0 group-hover:bg-gray-50" aria-hidden="true"></div>
-                  <div class="flex-1 flex items-center min-w-0 relative">
-                    <span class="flex-shrink-0 inline-block relative">
+                  <div class="relative flex min-w-0 flex-1 items-center">
+                    <span class="relative inline-block flex-shrink-0">
                       <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                       <!-- Online: "bg-green-400", Offline: "bg-gray-300" -->
                       <span class="bg-green-400 absolute top-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white" aria-hidden="true"></span>
                     </span>
                     <div class="ml-4 truncate">
-                      <p class="text-sm font-medium text-gray-900 truncate">Leslie Alexander</p>
-                      <p class="text-sm text-gray-500 truncate">@lesliealexander</p>
+                      <p class="truncate text-sm font-medium text-gray-900">Leslie Alexander</p>
+                      <p class="truncate text-sm text-gray-500">@lesliealexander</p>
                     </div>
                   </div>
                 </a>
-                <div class="ml-2 flex-shrink-0 relative inline-block text-left">
-                  <button type="button" class="group relative w-8 h-8 bg-white rounded-full inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="options-menu-0-button" aria-expanded="false" aria-haspopup="true">
+                <div class="relative ml-2 inline-block flex-shrink-0 text-left">
+                  <button type="button" class="group relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" id="options-menu-0-button" aria-expanded="false" aria-haspopup="true">
                     <span class="sr-only">Open options menu</span>
-                    <span class="flex items-center justify-center h-full w-full rounded-full">
+                    <span class="flex h-full w-full items-center justify-center rounded-full">
                       <!-- Heroicon name: solid/dots-vertical -->
-                      <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
                       </svg>
                     </span>
@@ -83,7 +81,7 @@
                       From: "transform opacity-100 scale-100"
                       To: "transform opacity-0 scale-95"
                   -->
-                  <div class="origin-top-right absolute z-10 top-0 right-9 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-0-button" tabindex="-1">
+                  <div class="absolute top-0 right-9 z-10 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-0-button" tabindex="-1">
                     <div class="py-1" role="none">
                       <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                       <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-0-item-0">View profile</a>

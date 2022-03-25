@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
   }
   ```
 -->
@@ -23,7 +23,7 @@
           <p class="text-xl text-gray-500">Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras.</p>
         </div>
         <div class="lg:col-span-2">
-          <ul class="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0">
+          <ul role="list" class="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0">
             <li v-for="person in people" :key="person.name" class="sm:py-8">
               <div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
                 <div class="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
@@ -38,7 +38,7 @@
                     <div class="text-lg">
                       <p class="text-gray-500">{{ person.bio }}</p>
                     </div>
-                    <ul class="flex space-x-5">
+                    <ul role="list" class="flex space-x-5">
                       <li>
                         <a :href="person.twitterUrl" class="text-gray-400 hover:text-gray-500">
                           <span class="sr-only">Twitter</span>
@@ -74,8 +74,7 @@ const people = [
     role: 'Co-Founder / CEO',
     imageUrl:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio:
-      'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
     twitterUrl: '#',
     linkedinUrl: '#',
   },

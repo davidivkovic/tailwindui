@@ -10,11 +10,19 @@
     plugins: [
       // ...
       require('@tailwindcss/forms'),
-    ]
+    ],
   }
   ```
 -->
-<div class="relative min-h-screen bg-white">
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="min-h-full">
   <!-- Navbar -->
   <nav class="bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +88,7 @@
         <!-- Actions section -->
         <div class="hidden lg:block lg:ml-4">
           <div class="flex items-center">
-            <button class="bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
+            <button type="button" class="bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
               <span class="sr-only">View notifications</span>
               <!-- Heroicon name: outline/bell -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -109,17 +117,11 @@
               -->
               <div class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                 <!-- Active: "bg-gray-100", Not Active: "" -->
-                <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">
-                  Your Profile
-                </a>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"> Your Profile </a>
 
-                <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">
-                  Settings
-                </a>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1"> Settings </a>
 
-                <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">
-                  Sign out
-                </a>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2"> Sign out </a>
               </div>
             </div>
           </div>
@@ -146,9 +148,9 @@
           </div>
           <div class="ml-3">
             <div class="text-base font-medium text-gray-800">Whitney Francis</div>
-            <div class="text-sm font-medium text-gray-500">whitneyfrancis@example.com</div>
+            <div class="text-sm font-medium text-gray-500">whitney.francis@example.com</div>
           </div>
-          <button class="ml-auto bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
+          <button type="button" class="ml-auto bg-gray-50 flex-shrink-0 rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
             <span class="sr-only">View notifications</span>
             <!-- Heroicon name: outline/bell -->
             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -172,7 +174,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:flex xl:items-center xl:justify-between">
       <div class="flex-1 min-w-0">
         <nav class="flex" aria-label="Breadcrumb">
-          <ol class="flex items-center space-x-4" role="list">
+          <ol role="list" class="flex items-center space-x-4">
             <li>
               <div>
                 <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-700">Jobs</a>
@@ -189,9 +191,7 @@
             </li>
           </ol>
         </nav>
-        <h1 class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-          Back End Developer
-        </h1>
+        <h1 class="mt-2 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Back End Developer</h1>
         <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-8">
           <div class="mt-2 flex items-center text-sm text-gray-500">
             <!-- Heroicon name: solid/briefcase -->
@@ -247,18 +247,8 @@
         </span>
 
         <span class="sm:ml-3 relative z-0">
-          <!--
-            Custom select controls like this require a considerable amount of JS to implement from scratch. We're planning
-            to build some low-level libraries to make this easier with popular frameworks like React, Vue, and even Alpine.js
-            in the near future, but in the mean time we recommend these reference guides when building your implementation:
-
-            https://www.w3.org/TR/wai-aria-practices/#Listbox
-            https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
-          -->
           <div>
-            <label id="listbox-label" class="sr-only">
-              Change published status
-            </label>
+            <label id="listbox-label" class="sr-only"> Change published status </label>
             <div class="relative">
               <div class="inline-flex shadow-sm rounded-md divide-x divide-purple-600">
                 <div class="relative z-0 inline-flex shadow-sm rounded-md divide-x divide-purple-600">
@@ -267,9 +257,7 @@
                     <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                     </svg>
-                    <p class="ml-2.5 text-sm font-medium">
-                      Published
-                    </p>
+                    <p class="ml-2.5 text-sm font-medium">Published</p>
                   </div>
                   <button type="button" class="relative inline-flex items-center bg-purple-500 p-2 rounded-l-none rounded-r-md text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus:z-10 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                     <span class="sr-only">Change published status</span>
@@ -301,9 +289,7 @@
                   <div class="flex flex-col">
                     <div class="flex justify-between">
                       <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-                      <p class="font-normal">
-                        Published
-                      </p>
+                      <p class="font-normal">Published</p>
                       <!--
                         Checkmark, only display for selected option.
 
@@ -317,9 +303,7 @@
                       </span>
                     </div>
                     <!-- Highlighted: "text-purple-200", Not Highlighted: "text-gray-500" -->
-                    <p class="text-gray-500 mt-2">
-                      This job posting can be viewed by anyone who has the link.
-                    </p>
+                    <p class="text-gray-500 mt-2">This job posting can be viewed by anyone who has the link.</p>
                   </div>
                 </li>
 
@@ -367,6 +351,7 @@
         <!-- Tabs -->
         <div class="sm:hidden">
           <label for="tabs" class="sr-only">Select a tab</label>
+          <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
           <select id="tabs" name="tabs" class="mt-4 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md">
             <option>Applied</option>
 
@@ -402,20 +387,16 @@
                 <span class="bg-purple-100 text-purple-600 hidden ml-2 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">6</span>
               </a>
 
-              <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                Offer
-              </a>
+              <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Offer </a>
 
-              <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                Disqualified
-              </a>
+              <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Disqualified </a>
             </nav>
           </div>
         </div>
       </div>
 
       <!-- Stacked list -->
-      <ul class="mt-5 border-t border-gray-200 divide-y divide-gray-200 sm:mt-0 sm:border-t-0" role="list">
+      <ul role="list" class="mt-5 border-t border-gray-200 divide-y divide-gray-200 sm:mt-0 sm:border-t-0">
         <li>
           <a href="#" class="group block">
             <div class="flex items-center py-5 px-4 sm:py-6 sm:px-0">
@@ -432,7 +413,7 @@
                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                       </svg>
-                      <span class="truncate">emilyselman@example.com</span>
+                      <span class="truncate">emily.selman@example.com</span>
                     </p>
                   </div>
                   <div class="hidden md:block">
@@ -477,25 +458,13 @@
           </a>
         </div>
         <div class="hidden md:-mt-px md:flex">
-          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-            1
-          </a>
+          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 1 </a>
           <!-- Current: "border-purple-500 text-purple-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200" -->
-          <a href="#" class="border-purple-500 text-purple-600 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium" aria-current="page">
-            2
-          </a>
-          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-            3
-          </a>
-          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-            4
-          </a>
-          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-            5
-          </a>
-          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium">
-            6
-          </a>
+          <a href="#" class="border-purple-500 text-purple-600 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium" aria-current="page"> 2 </a>
+          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 3 </a>
+          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 4 </a>
+          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 5 </a>
+          <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200 border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium"> 6 </a>
         </div>
         <div class="-mt-px w-0 flex-1 flex justify-end">
           <a href="#" class="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-200">

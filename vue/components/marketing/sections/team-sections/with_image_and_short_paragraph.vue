@@ -10,7 +10,7 @@
     plugins: [
       // ...
       require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
   }
   ```
 -->
@@ -23,7 +23,7 @@
           <p class="text-xl text-gray-500">Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras.</p>
         </div>
         <div class="lg:col-span-2">
-          <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
+          <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
             <li v-for="person in people" :key="person.name">
               <div class="space-y-4">
                 <div class="aspect-w-3 aspect-h-2">
@@ -37,7 +37,7 @@
                   <p class="text-gray-500">{{ person.bio }}</p>
                 </div>
 
-                <ul class="flex space-x-5">
+                <ul role="list" class="flex space-x-5">
                   <li>
                     <a :href="person.twitterUrl" class="text-gray-400 hover:text-gray-500">
                       <span class="sr-only">Twitter</span>
@@ -71,8 +71,7 @@ const people = [
     role: 'Senior Front-end Developer',
     imageUrl:
       'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio:
-      'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
     twitterUrl: '#',
     linkedinUrl: '#',
   },

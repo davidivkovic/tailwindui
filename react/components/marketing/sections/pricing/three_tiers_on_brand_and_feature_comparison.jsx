@@ -261,6 +261,7 @@ export default function Example() {
                 </div>
                 <h4 className="sr-only">Features</h4>
                 <ul
+                  role="list"
                   className={classNames(
                     plan.featured
                       ? 'border-gray-200 divide-gray-200'

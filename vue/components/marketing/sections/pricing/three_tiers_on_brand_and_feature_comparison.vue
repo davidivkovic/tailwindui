@@ -44,7 +44,7 @@
               </div>
             </div>
             <h4 class="sr-only">Features</h4>
-            <ul :class="[plan.featured ? 'border-gray-200 divide-gray-200' : 'border-indigo-500 divide-indigo-500 divide-opacity-75', 'mt-7 border-t divide-y lg:border-t-0']">
+            <ul role="list" :class="[plan.featured ? 'border-gray-200 divide-gray-200' : 'border-indigo-500 divide-indigo-500 divide-opacity-75', 'mt-7 border-t divide-y lg:border-t-0']">
               <li v-for="mainFeature in plan.mainFeatures" :key="mainFeature.id" class="py-3 flex items-center">
                 <CheckIcon :class="[plan.featured ? 'text-indigo-500' : 'text-indigo-200', 'w-5 h-5 flex-shrink-0']" aria-hidden="true" />
                 <span :class="[plan.featured ? 'text-gray-600' : 'text-white', 'ml-3 text-sm font-medium']">{{ mainFeature.value }}</span>
@@ -172,9 +172,9 @@
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
-              <tr v-for="(feature, featureIdx) in features" :key="feature.title">
+              <tr v-for="feature in features" :key="feature.title">
                 <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-600">{{ feature.title }}</th>
-                <td v-for="tier in feature.tiers" :key="tier.title" :class="[featureIdx === features.length - 1 ? 'pl-4' : 'px-4', 'relative w-1/4 py-0 text-center']">
+                <td v-for="(tier, tierIdx) in feature.tiers" :key="tier.title" :class="[tierIdx === feature.tiers.length - 1 ? 'pl-4' : 'px-4', 'relative w-1/4 py-0 text-center']">
                   <span class="relative w-full h-full py-3">
                     <span v-if="typeof tier.value === 'string'" :class="[tier.featured ? 'text-indigo-600' : 'text-gray-900', 'text-sm font-medium']">{{ tier.value }}</span>
                     <template v-else>
@@ -235,9 +235,9 @@
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
-              <tr v-for="(perk, perkIdx) in perks" :key="perk.title">
+              <tr v-for="perk in perks" :key="perk.title">
                 <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-600">{{ perk.title }}</th>
-                <td v-for="tier in perk.tiers" :key="tier.title" :class="[perkIdx === perks.length - 1 ? 'pl-4' : 'px-4', 'relative w-1/4 py-0 text-center']">
+                <td v-for="(tier, tierIdx) in perk.tiers" :key="tier.title" :class="[tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4', 'relative w-1/4 py-0 text-center']">
                   <span class="relative w-full h-full py-3">
                     <CheckIcon v-if="tier.value === true" class="mx-auto h-5 w-5 text-indigo-600" aria-hidden="true" />
                     <XIcon v-else class="mx-auto h-5 w-5 text-gray-400" aria-hidden="true" />
